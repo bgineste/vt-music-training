@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-gut-blocks/page-entrainement",
+	"version": "0.1.0",
+	"title": "Bloc page entraînement",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc d'une page d'entrainement, bloc racine du plugin",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"titrePage": {
+			"type": "string",
+			"default": ""
+		},
+		"largeurPageMax": {
+			"type": "string",
+			"default": "1280"
+		}
+	},
+    "providesContext": {
+        "bloc-oeuvre/largeurPageMax": "largeurPageMax"
+    },
+	"textdomain": "bloc-oeuvre",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

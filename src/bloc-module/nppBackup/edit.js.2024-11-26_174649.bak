@@ -1,0 +1,70 @@
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { TextControl } from '@wordpress/components';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+
+    // Déconstruction des props
+    const { context } = props;
+    const { "bloc-oeuvre/cheminFichiersOeuvre": cheminFichiersOeuvre } = context;
+    const { attributes: { cheminFichiersModule, titreModule }, setAttributes } = props;
+
+    // Initialisation du chemin si absent
+    if (!cheminFichiersModule) {
+        setAttributes({ cheminFichiersModule: cheminFichiersOeuvre });
+    }
+
+    // Template pour la zone structurée
+    const TEMPLATE_PRONONCIATIONS = [
+        ['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }]
+    ];
+
+    return (
+        <div {...blockProps}>
+            {/* Mode d'édition */}
+            {props.isSelected ? (
+                <div className="vt--parametrage-bloc">
+                    <TextControl
+                        label="Titre du morceau"
+                        value={titreModule}
+                        onChange={(val) => setAttributes({ titreModule: val })}
+                    />
+                    <TextControl
+                        label="Chemin des fichiers du morceau"
+                        value={cheminFichiersModule}
+                        onChange={(val) => setAttributes({ cheminFichiersModule: val })}
+                    />
+                    <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
+                    
+					<InnerBlocks
+						allowedBlocks={['core/paragraph', 'vt-music-training/bloc-prononciation']}
+						template={[
+							['core/paragraph', { placeholder: 'Zone libre : Ajoutez votre contenu ici' }],
+							['vt-music-training/bloc-prononciation', { placeholder: 'Bloc de prononciation' }]
+						]}
+
+						templateLock=null						placeholder="Ajoutez vos blocs ici"
+					/>
+
+
+                </div>
+            ) : (
+                /* Mode d'affichage */
+                <div className="wp-block-group vt--un-module">
+                    <h4 className="has-blue-color has-text-color wp-block-heading">{titreModule}</h4>
+                    
+                        <InnerBlocks
+						allowedBlocks={['core/paragraph', 'vt-music-training/bloc-prononciation']}
+						template={[
+							['core/paragraph', { placeholder: 'Zone libre : Ajoutez votre contenu ici' }],
+							['vt-music-training/bloc-prononciation', { placeholder: 'Bloc de prononciation' }]
+						]}
+
+						templateLock=null						placeholder="Ajoutez vos blocs ici"
+					/>
+                </div>
+            )}
+        </div>
+    );
+}

@@ -1,0 +1,6 @@
+/**
+ * S'applique au bloc page-entrainement  sur le site et dans l'éditeur
+ */
+.vt--une-oeuvre {
+	background-color: var(vt--bg-test);
+}

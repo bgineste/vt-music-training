@@ -1,0 +1,34 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-music-training/un-fichier-tutti",
+	"version": "0.1.0",
+	"title": "Un fichier 'tutti'",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Un fichier d'entraînement commun à tous les pupitres",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"cheminFichierTutti": {
+			"type": "string",
+			"default": ""
+		},
+		"nomFichierTutti": {
+			"type": "string",
+			"default": ""
+		},
+		"etatDuBoutonTypeDeFichier": {
+			"type": "sting",
+			"default": "v"
+		}
+	},
+	"usesContext": [ "bloc-fichiers-de-travail/cheminFichiers" ],	
+	"textdomain": "music-training",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

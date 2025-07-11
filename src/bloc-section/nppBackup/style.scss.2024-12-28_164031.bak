@@ -1,0 +1,72 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+.vt--une-page_wrap {
+	/*all: initial;*/
+	display: flex;
+	justify-content: center;
+}
+#vt--une-page {
+	all: initial;
+	display: block;
+	font-family: 'Inter var', courier, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: -0.015em; 
+	text-align: left;
+	width: 100%;
+	max-width: var(--vt--largeur-utile); /* à préciser */
+	margin: auto;
+	padding: 0 !important;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: var(--vt--bg-main);
+	color: #333;
+	word-break: break-word;
+	word-wrap: break-word;
+
+}
+
+#vt--une-page{
+	h1, h2, h3, h4, h5, h6 {
+		border: none;
+		font-size: inherit;
+		font-family: 'Inter var', courier, sans-serif;
+		font-feature-settings: "lnum";
+		font-variant-numeric: lining-nums;
+		font-weight: 700;
+		text-align: inherit;
+		letter-spacing: -0.0415625em;
+		line-height: 1.25;
+		padding: 0;
+		margin: 0;
+	}
+	
+	h2 {
+		font-size: 1.6em;
+	}
+	h3 {
+		font-size: 1.25em;
+	}
+	h5 {
+		font-size: 0.9em;
+	}
+	@media (min-width: 700px) {
+		h2 {
+			font-size: 3em;
+		} 
+		h3 {
+			font-size: 2em;
+		} 
+		h5 {
+			font-size: 1.5em;
+		} 
+	}
+	
+}
+
+/* à définir pour l'éditeur ? */
+.vt--une-page {
+	
+}

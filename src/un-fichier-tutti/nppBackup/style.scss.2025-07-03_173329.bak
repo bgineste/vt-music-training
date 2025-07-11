@@ -1,0 +1,52 @@
+/**
+ * S'applique au bloc bloc-fichiers-de-travail sur le site et dans l'éditeur
+ */
+
+.vt--une-section {
+	.vt--un-fichier-tutti {
+		width: 100%; /* Le bloc occupe toute la largeur disponible */
+		width: auto; /* Le bloc occupe la largeur nécessaire */
+		max-width: 96vw; /* Limite la largeur maximale, si nécessaire */
+		font-size: 1.2em;
+		background-color: var(--vt--bg-symbole-pupitre);
+		color: var(--vt--co-symbole-pupitre);
+		margin-top: 0.5%;
+		margin-bottom: 0.5%;
+		padding: 0.5%;
+		border-radius: 8px;
+	}
+	@media (min-width: 700px) {
+		.vt--un-fichier-tutti{
+			font-size: 1.5em;
+			max-width: 900px;
+		}
+	}
+
+	.vt--un-fichier-tutti {
+		> * {
+		display: flex;
+		padding: 0.5%;
+		
+		flex-direction: row;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 10px;
+		}
+		.vt--label {
+			white-space: nowrap; /* Empêche le retour à la ligne */
+			text-align: center;
+			flex-grow: 1; /* S'étend pour occuper l'espace disponible */
+		}
+		.fa-solid {
+			font-size: 1.8em;
+			color: white;
+			background-color: var(--vt--bg-symbole-pupitre);
+			flex-shrink: 0; /* Ne rétrécit pas */
+		}
+		@media (min-width: 700px) {
+			.fa-solid {
+				font-size: 2.3em;
+			}
+		}
+	}
+}

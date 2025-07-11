@@ -1,0 +1,57 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	const blockProps = useBlockProps.save()
+    const {attributes: { titrePage }, attributes: { largeurPageMax }, attributes: { classeBlocEntete } } = props
+
+	return (
+	<>
+		<div {...blockProps } className="vt--une-page_wrap">
+			<div id="vt--une-page" className="vt--une-page">
+				{ titrePage && (
+					<h2 className="wp-block-heading">{ titrePage }</h2>
+				) }
+				<InnerBlocks.Content />
+			</div>
+			/* le bloc suivant a pour but de mettre a dispostion des scripts la classe du bloc d'entête s'il est persistant en haut de page*/
+            <div data-classe-bloc-entete={classeBlocEntete}>
+            </div>
+			<div id="vt--lecteur-entrainement" className="vt--masque-modal" style="display: none;">
+				<div className="vt--masque-modal-inner">
+					<div className="vt--popup-lecteur-entrainement">
+						<div id="vt-bloc-lecteur" className="vt--bloc-lecteur">
+						</div>
+						<div className="vt--clavier-lecteur">
+						</div>
+						<div className="vt--echap-lecteur-entrainement">
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<script>
+			/*page = document.getElementsByClassName("vt--une-page")[0];
+			enveloppe = page.parentNode;
+			enveloppe.style.backgroundColor="pink";
+			enveloppe.style.display = "flex";
+			enveloppe.style.flexDirection = "column";
+			page.setAttribute("style","max-width: {largeurPageMax}px !important; self-align: center; background-color: green;");*/
+		</script>
+	</>
+	)
+}

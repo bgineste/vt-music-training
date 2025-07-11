@@ -1,0 +1,20 @@
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', (event) => {
+        //const target = event.target;
+        // Gestion des éléments .vt--fichier-tutti-trigger / Lancement de lecture
+		const trigger = event.target.closest('.vt--fichier-tutti-trigger'); // Remonte à l'élément parent
+        if (trigger) {
+            const chemin = vtmusicNormalizePath(trigger.getAttribute('data-chemin'));
+            const nom = trigger.getAttribute('data-nom');
+            const type = trigger.getAttribute('data-type');
+			const affichageClavier = trigger.getAttribute('data-clavier');
+			const fichierStereo = trigger.getAttribute('data-stereo');
+
+            if (typeof vtActiverLecteur === 'function') {
+                vtActiverLecteur(chemin, nom, type, affichageClavier, fichierStereo);
+            } else {
+                console.error('La fonction vtActiverLecteur n’est pas définie.');
+            }
+        }
+	});
+});

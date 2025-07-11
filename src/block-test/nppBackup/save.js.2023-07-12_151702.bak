@@ -1,0 +1,57 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+	// Déstructuration des props
+	const { content, selection } = props.attributes
+	console.log(content)
+	//convertit chaine content el array
+/*	function items(content) {
+		 let aitems = content.split('&')
+	  return aitems.map(x => x.split('|'))
+	}*/
+	const items(content) => {
+		 let aitems = content.split('&')
+	  return aitems.map(x => x.split('|'))
+	}
+	
+	
+	return (
+		<div { ...blockProps }>
+			{
+				 props ? (''):(<p>props est dans les choux</p>)
+			}					
+	{ content ? ( 		
+    <div  className="vt-bloc-prononciation">
+      {items(content).map((a, index) => (
+        <div key={index}>{a[0]} / {a[1]}</div>
+      ))}
+    </div> ) : (
+		<p>prononciations est undefined !</p>
+	)
+	}	
+	{ selection ? ( 		
+    <div  className="vt-bloc-prononciation">
+      Sélectionné
+    </div> ) : (
+		<div className="vt-bloc-prononciation">Pas activé !</div>
+	)
+	}	
+		</div>
+	);
+}

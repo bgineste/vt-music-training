@@ -1,0 +1,73 @@
+/** 
+  Fonctions liées au bloc-module
+  V 1.0 
+*/
+
+/** Traitement du bouton de rétractation du module
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".vt--bouton-bloc-esc").forEach(bouton => {
+        bouton.addEventListener("click", () => {
+            console.log("Fonction x exécutée !");
+            bascule_affichage_module(bouton);
+        });
+    });
+});
+
+/** Traitement du bouton d'appel à l'index de l'oeuvre
+	Actionne le bouton index-oeuvre 
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".vt--bouton-appel-index-oeuvre").forEach(bouton => {
+        bouton.addEventListener("click", () => {
+			console.log("rappel index");
+			let oeuvre=bouton.closest('.vt--une-oeuvre');
+			let boutonIndex=oeuvre.getElementsByClassName('vt--block-bouton-index')[0];
+			console.log("Action sur bouton index");
+			boutonIndex.checked=false;
+			boutonIndex.click();
+		});
+    });
+});
+
+
+function bascule_affichage_module(boutonEsc) {
+	console.log(boutonEsc);
+
+	const blocEntrainement = boutonEsc.closest('.vt--un-module');
+	if (!blocEntrainement) return;
+
+	const idBlocEntrainement = blocEntrainement.id;
+	const blocEsc = blocEntrainement.querySelector('.vt--bloc-esc');
+	if (!blocEsc) return;
+
+	const blocEncadrant = blocEntrainement; // modifiable si un parent différent est requis
+
+	// Valeurs par défaut si variables globales non définies
+	const defaultPaddingTop = "10px";  // ajuster selon besoin
+	const defaultPaddingBottom = "10px";
+
+	const expandedPaddingTop = typeof bloc_encadrant_module_padding_top !== 'undefined'
+		? bloc_encadrant_module_padding_top
+		: defaultPaddingTop;
+
+	const expandedPaddingBottom = typeof bloc_encadrant_module_padding_bottom !== 'undefined'
+		? bloc_encadrant_module_padding_bottom
+		: defaultPaddingBottom;
+
+	if (boutonEsc.checked) {
+		blocEsc.style.display = "block";
+		blocEncadrant.style.paddingTop = expandedPaddingTop;
+		blocEncadrant.style.paddingBottom = expandedPaddingBottom;
+		createCookie(`vt-${idBlocEntrainement}`, "Affiché", 365);
+	} else {
+		blocEsc.style.display = "none";
+		blocEncadrant.style.paddingTop = "5px";
+		blocEncadrant.style.paddingBottom = "5px";
+		createCookie(`vt-${idBlocEntrainement}`, "Masqué", 365);
+	}
+
+	return true;
+}

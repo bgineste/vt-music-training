@@ -1,0 +1,230 @@
+/* Style pour le plugin vt-music-training */
+/* V 1.1 */   
+
+/*-------------------------------------------------------------------------------------------------
+Couleur de fond de la page d'entraînement
+--------------------------------------------------------------------------------------------------*/
+/*
+#site-content {
+	background-color: white !important;
+}
+*/
+
+:root {
+	--vtmt--hauteur-zone-externe-reservee: 0px;
+	--vtmt--largeur-utile: 1280px;
+}
+
+/* Les règles ci-dessous se trouvaient dans le thème sous lequel a été développé le plugin */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	-webkit-font-smoothing: antialiased;
+	word-break: break-word;
+	word-wrap: break-word;
+}
+
+/*-------------------------------------------------------------------------------------------------
+ Largeur de la colonne d'édition
+ Surcharge fichier editor-style-block.css (theme : assets/css)
+ -------------------------------------------------------------------------------------------------*/
+/*
+.wp-block {
+	max-width: 900px !important;
+}
+*/
+/*-------------------------------------------------------------------------------------------------
+Couleur de fond de l'éditeur
+--------------------------------------------------------------------------------------------------*/
+/*
+.editor-styles-wrapper {
+	background-color: Gainsboro !important;
+}
+.editor-styles-wrapper .wp-block-group{
+	border: thin solid grey;
+}
+*/
+/*-------------------------------------------------------------------------------------------------
+Mise en forme des blocs non sélectionné ou sélectionné
+--------------------------------------------------------------------------------------------------*/
+/*
+.vt--bloc-not-isselected {
+	border: thick double #32a1ce;
+	background-color: #c1bcb8;
+	color: black;
+}
+.vt--bloc-isselected {
+	border: thick double black;
+	background-color: #c1bcb8;
+	color: black;
+}
+*/
+/*
+.vt--parametrage-bloc {
+	border: thick double #32a1ce;
+	background-color: WhiteSmoke;
+	color: black;
+	padding: 1%;
+}
+.vt--parametrage-bloc p {
+	
+	font-size: 15px;
+}
+*/
+/*-------------------------------------------------------------------------------------------------
+Mise en page de blocs particuliers les blocs gutenberg personnalisés
+--------------------------------------------------------------------------------------------------*/
+.vt--btnLecteur {
+/*	display: table; */
+	background-color: white;
+	line-height: 4rem;
+	white-space: normal;
+	text-align: center;
+	border-radius: 8px;
+	padding: 3px 10px 3px 10px;
+	margin-left: 1rem;
+	margin-right: 2rem;
+}
+/*
+.vt--btnLecteur > i {
+	display: table-cell;
+	vertical-align: middle;
+	text-decoration: none;
+	text-size: 2rem;
+  
+}
+*/
+.vt--play::before {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 2.5rem;
+	content: "\f04b";
+	color: var(--vtmt--bg-symbole-fichier-de-travail);
+}
+.vt--pause::before {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 3rem;
+	content: "\f04c";
+}
+.vt--bouton-init {
+	background-color: white; /* var(--vtmt--bg-symbole-fichier-de-travail);*/
+	color: var(--vtmt--bg-symbole-fichier-de-travail);	
+}
+.vt--bouton-init-actif {
+	background-color: var(--vtmt--bg-flash);
+}
+
+/*-------------------------------------------------------------------------------------------------
+Mise en forme des innerblocks dans les blocs gutenberg personnalisés
+--------------------------------------------------------------------------------------------------*/
+/*
+.vt--block-editor-inner-blocks {
+	border: thick double black;
+	background-color: Lavender;
+	padding: 1%;
+}
+.vt--block-editor-inner-blocks .vt--block-editor-inner-blocks {
+	border: thick double black;
+	background-color: Thistle;
+	padding: 1%;
+}
+.vt--block-editor-inner-blocks .vt--block-editor-inner-blocks .vt--block-editor-inner-blocks{
+	border: thick double black;
+	background-color: Silver;
+	padding: 1%;
+}
+.vt--block-editor-inner-blocks .vt--block-editor-inner-blocks .vt--block-editor-inner-blocks .vt--block-editor-inner-blocks{
+	border: thick double black;
+	background-color: gold;
+	padding: 1%;
+}
+
+	.vt--editor-groupe-pupitres {
+		border: thick double teal;
+		background-color: Cornsilk;
+		padding: 1%;
+	}
+	.vt--editor-un-pupitre {
+		border: thick solid olive;
+		background-color: Floralwhite;
+		padding: 1%;
+	}
+*/
+/*-------------------------------------------------------------------------------------------------
+Règles générales
+--------------------------------------------------------------------------------------------------*/
+.vt--display-none {
+	display: none !important;
+}
+
+/*---------------------------------------------------------------------------------------------------
+Bouton switch
+-----------------------------------------------------------------------------------------------------*/
+	.vt--bouton__switch {
+	  position: relative;
+	  display: inline-block;
+	  width: 60px !important;
+	  min-width: 60px !important; /*nécessaire pour les petits écrans, quand ça wrappe*/
+	  height: 34px !important;
+	  margin: 0 0 0 2% !important;
+	}
+
+	.vt--bouton__switch input { 
+	  opacity: 0;
+	  width: 0;
+	  height: 0;
+	}
+
+	.vt--bouton__slider {
+	  position: absolute;
+	  cursor: pointer;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: #afafaf; /*#ccc;*/
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.vt--bouton__slider:before {
+	  position: absolute;
+	  content: "";
+	  height: 26px;
+	  width: 26px;
+	  left: 4px;
+	  bottom: 4px;
+	  background-color: white;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.vt--bouton__switch input:checked + .vt--bouton__slider {
+	  background-color: #2196F3; /* valeur par défaut */
+	  background-color: var(--vtmt--switch-checked);
+	}
+
+	.vt--bouton__switch input:focus + .vt--bouton__slider {
+	  box-shadow: 0 0 1px #2196F3; /* valeur par défaut */
+	  box-shadow: 0 0 1px var(--vtmt--switch-focus); /*#2196F3;*/
+	}
+
+	.vt--bouton__switch input:checked + .vt--bouton__slider:before {
+	  -webkit-transform: translateX(26px);
+	  -ms-transform: translateX(26px);
+	  transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.vt--bouton__slider.vt--bouton__round {
+	  border-radius: 34px;
+	}
+
+	.vt--bouton__slider.vt--bouton__round:before {
+	  border-radius: 50%;
+	}
+
+
+

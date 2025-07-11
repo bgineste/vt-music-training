@@ -1,0 +1,26 @@
+import { useBlockProps } from '@wordpress/block-editor'
+
+const deprecated = [
+	// Version N – 1
+    { 
+		attributes: {
+			title: {
+                type: 'string',
+                source: 'text',
+                selector: 'title',
+            }
+		},
+		save( props ) {
+			const { title } = props.attributes
+
+			return (
+				<div {…useBlockProps.save()}>
+                	<p className="title">{title}</p>
+                </div>
+			)
+		},
+	}
+	// Version N – 2 …
+]
+
+export default deprecated

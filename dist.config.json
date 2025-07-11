@@ -1,0 +1,8 @@
+{
+  "filesToInclude": [
+    "vt-music-training.php",
+    "readme.txt",
+    "build",
+    "assets"
+ ]
+}

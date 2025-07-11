@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-gut-blocks/bloc-oeuvre",
+	"version": "0.1.0",
+	"title": "Bloc Oeuvre",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc d'une oeuvre. Se trouve à la racine d'une page d'entrainement. Il peut y en avoir plusieurs, adjacents",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"cheminFichiers": {
+			"type": "string",
+			"default": ""
+		},
+		"titreOeuvre": {
+			"type": "string",
+			"default": ""
+		}
+	},
+    "providesContext": {
+        "bloc-oeuvre/cheminFichiersOeuvre": "cheminFichiers",
+		"bloc-oeuvre/titreOeuvre": "titreOeuvre"
+    },
+	"textdomain": "bloc-oeuvre",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

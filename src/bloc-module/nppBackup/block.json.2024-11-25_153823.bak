@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-gut-blocks/bloc-module",
+	"version": "0.1.0",
+	"title": "Module d'entrainement",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc d'une pièce d'une oeuvre. Se trouve à la racine d'un bloc oeuvre. Il peut y en avoir plusieurs, adjacents",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"cheminFichiersModule": {
+			"type": "string",
+			"default": ""
+		},
+		"titreModule": {
+			"type": "string",
+			"default": ""
+		}
+	},
+    "providesContext": {
+        "bloc-module/cheminFichiersModule": "cheminFichiersModule"
+    },
+	"usesContext": [ "bloc-oeuvre/cheminFichiersOeuvre" ],	"textdomain": "bloc-module",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

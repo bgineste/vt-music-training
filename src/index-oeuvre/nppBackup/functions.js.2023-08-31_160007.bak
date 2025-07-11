@@ -1,0 +1,18 @@
+/** Fonctions pour index-oeuvre 
+  V 1.0 
+*/
+
+	var adjacentIDs = [];
+	function getAdjacentIDs(element) {
+		adjacentIDs = [];
+		let sibling = element.nextElementSibling;
+
+		while (sibling) {
+			adjacentIDs.push(sibling.id);
+			sibling = sibling.nextElementSibling;
+		}
+
+//		return adjacentIDs;
+	}
+
+	export { getAdjacentIDs };

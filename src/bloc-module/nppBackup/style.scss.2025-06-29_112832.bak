@@ -1,0 +1,71 @@
+/**
+ * S'applique au bloc bloc-module  sur le site et dans l'éditeur
+ */
+
+/* ------------------------------------ bloc d'entraînement vt--un-module) -------------------------------------------------*/
+.vt--une-section {
+	.vt--une-oeuvre .vt--un-module {
+		position: relative; /* pour permettre des positionnements absolus dans le groupe (par exemple un index en bas à gauche) */
+		display: flex;
+		flex-direction: column;
+		max-width: 100% !important;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		background-color: var(--vt--bg-un-module); 
+		/* test  pour remplacer le sélecteur .ec__groupe-entrainement .wp-block-group.ec__un-morceau.has-background*/
+		padding: 1%;
+		.vt--bloc-esc {
+			background-color: var(--vt--bg-un-module);
+		}
+	}
+
+	.vt--un-module  .vt--bloc-esc {
+		margin-bottom: 0 !important;
+	}
+	
+	.vt--un-module h4 {
+		font-weight: 400;
+	}
+
+	.vt--un-module h5 {
+		padding-left: 1% !important;
+		color: var(--vt--co-titre-second);	
+	}
+
+	/*------------------------------- Groupe Titre + Bouton escamotage --------------------------------------*/
+	.vt--un-module .vt--titre-et-bouton-esc {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin: 0 auto !important;
+		max-width: 100% !important;
+		width: 100%;
+	}
+	.vt--un-module h4.vt--titre-de-morceau {
+		color: white; /*var(--vt--co-titre-morceau);*/
+/*		font-size: 0.85em;*/
+		margin: 0 !important;
+		width: max-content !important;
+		max-width: calc(100% - 80px) !important;
+	}
+
+		/*@media (min-width: 700px) {
+			.vt--un-module p.vt--titre-de-morceau {
+				font-size: 1.4em;
+			}
+		}*/
+
+	.vt--un-module .vt--titre-et-bouton-esc > [class*="__inner-container"] * {
+		/*align-self: center;*/
+	}
+
+	/* Bouton de retour à l'index de l'oeuvre*/
+	.vt--bouton-index-oeuvre {
+		background-color: var(--vt--bg-couleur-site);
+		display: inline;
+		padding-top: 0.3em;
+		padding-bottom: 0.3em
+	}
+}

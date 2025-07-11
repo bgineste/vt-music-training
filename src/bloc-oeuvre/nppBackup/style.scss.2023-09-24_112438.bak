@@ -1,0 +1,32 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.vt--une-oeuvre {
+	
+	width: 100% !important;
+	max-width: 100% !important; /*calc(100% - 8rem)*/
+	font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	/*margin-bottom: 0 !important;*/
+}
+
+.vt--une-oeuvre [class*="__inner-container"] > :not(.consignes):not(.bloc-paroles):not(.enregistrement):not(.wp-block-audio):not(.execution){
+	max-width: 100% !important;
+}
+
+.vt--une-oeuvre #sitecontent {
+	background-color: white;
+}
+
+.vt--une-oeuvre .vt--entete {
+	background-color: var(--bg-section-a);
+	color: var(--co-section-a);
+	padding: 0 1% 0.1% 1%;
+}
+
+

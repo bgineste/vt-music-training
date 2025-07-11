@@ -1,0 +1,794 @@
+/* 
+  Fonctions liées à la page d'entrainement
+  V 1.1 
+*/
+
+
+/*
+Super Globales
+*/
+
+var vtHauteurReservee = 0; // dimension verticale du bloc fixe en haut de page - s'il existe - exemple la zone de menu. Ce bloc est identifié par le nom de da classe, qui est saisi dans bloc-main pour initialiser l'attribut 'classeBlocEntete' de bloc-main. Pour que cela fonctionne, il faut que le bloc fixe ait un nom de classe unique dans la page - ou qu'il soit le premier bloc de cette classe dans la page 
+
+var oeuvres = new Object();
+function vtValorisationSuperGlobales() {
+	// pour chaque oeuvre ou groupe d'oeuvres, définir les élements principaux
+	var les_oeuvres = document.getElementsByClassName('vt--une-oeuvre');
+	//if (les_oeuvres == null) {alert("oeuvre non trouvée");}
+	if (les_oeuvres != null) {
+		for (var i= 0; i < les_oeuvres.length; i++) {
+			// 1 - objet 'bouton index on-off' qui affiche/masque le panneau des liens vers les modules de l'oeuvre (ou groupe d'oeuvres)
+			var boutons_index_on_off = les_oeuvres[i].getElementsByClassName('bouton-index-on-off');
+			//alert(les_oeuvres[i].id);
+			oeuvres[les_oeuvres[i].id] = les_oeuvres[i];
+			oeuvres[les_oeuvres[i].id]["bouton-index-on-off"] = boutons_index_on_off[0];
+		}
+	}
+}
+
+
+// variables globales qui permettent de régler le padding du module (module_entrainement) en fonction de son état (affiché/masqué)
+// utilisés aussi dans la fonction 'bascule_affichage_module'
+var bloc_encadrant_module_padding_top = "0";
+var bloc_encadrant_module_padding_bottom = "0";
+
+/*
+Mise en conformité des modules avec leurs cookies qui indiquent si le module est affiché intégralement ou non
+*/
+
+
+function vtAffichageMasquageModules()
+{
+	// repérer tous les boutons de masquage
+	var boutons_esc = document.getElementsByClassName('vt--bouton-bloc-esc');
+	if (boutons_esc != null) {
+		for (var i= 0; i < boutons_esc.length; i++) {
+			var bloc_entrainement = boutons_esc[i].closest('.vt--un-module');
+			// var bloc_encadrant_module = boutons_esc[i].closest('.vt--un-module');
+			var bloc_encadrant_module = bloc_entrainement;
+			if (i == 0) { // on sauvegarde les valeurs de padding du bloc encadrant la module, car on les fait varier pour des raisons esthétiques en fonction de l'état affiché/masqué du bloc masquable
+				var style_bloc_encadrant_module = window.getComputedStyle(bloc_encadrant_module, null);
+				bloc_encadrant_module_padding_top = style_bloc_encadrant_module.getPropertyValue("padding-top");
+				bloc_encadrant_module_padding_bottom = style_bloc_encadrant_module.getPropertyValue("padding-bottom");
+			}
+			var bloc_esc = bloc_entrainement.getElementsByClassName('vt--bloc-esc')[0];
+			var id_bloc_entrainement = bloc_entrainement.id;
+			var etat_initial = "Affiché";
+			var cook = readCookie('vt-'+id_bloc_entrainement);					  
+			if (cook != null) {
+				etat_initial = cook;
+			}
+			if (etat_initial=="Affiché")
+			{
+				bloc_esc.style.display="block";
+				boutons_esc[i].checked = true;
+			}
+			else
+			{
+				bloc_esc.style.display="none";
+				boutons_esc[i].checked = false;
+				bloc_encadrant_module.style.paddingTop = "5px";
+				bloc_encadrant_module.style.paddingBottom = "5px";
+			}			
+		}
+	}
+}
+
+
+
+/*
+ Script chargement de la page 
+*/
+ 
+jQuery(document).ready(function(){
+	/* 
+	1 - Affecte des ID aux oeuvres et aux modules
+	*/
+	var lesOeuvres = document.getElementsByClassName("vt--une-oeuvre")
+	for (let iOeuvre = 0; iOeuvre < lesOeuvres.length; iOeuvre++) {
+		let oeuvre = lesOeuvres[iOeuvre]
+		oeuvre.id = 'oeuvre_' + (iOeuvre + 1)
+		let lesModules = oeuvre.getElementsByClassName("vt--un-module")
+		for (let iModule = 0; iModule < lesModules.length; iModule++) {
+			let module = lesModules[iModule]
+			module.id = 'module_' + (iOeuvre + 1) + "-" + (iModule + 1)
+		}
+	}
+	/*
+	2 = Init des super Globales
+	*/
+	vtValorisationSuperGlobales();
+//	init_bouton_on_off_panneau_index();
+	/*
+	3 - Retour des modules à leur état lors de la dernière session / grâce à des cookies
+	*/
+	vtAffichageMasquageModules();
+});
+
+/*
+window.addEventListener("resize", 
+
+function () {
+	
+	// les hauteurs du site-header et de l'image d'entête sont utilisée pour caler les blocs afin qu'ils ne passent pas sous le header
+	// la hauteur du site-header est susceptible de varier lorsque les dimensions de la fenêtre varient (browse passant de plein écran à écran réduit, basculement du smartphone...). Pour cette raison cette fonction est appelée par l'événement window.resize 
+
+		if (document.getElementById("variables-hauteur")) {
+			document.head.removeChild(document.getElementById("variables-hauteur"));
+		}
+		var style = document.createElement("style");
+		style.id = "variables-hauteur";
+
+		// Add a media (and/or media query) here if you'd like!
+		// style.setAttribute("media", "screen")
+		// style.setAttribute("media", "only screen and (max-width : 1024px)")
+
+		// WebKit hack :(
+		style.appendChild(document.createTextNode(""));
+
+		// Add the <style> element to the page
+		document.head.appendChild(style);
+
+		var VTsheet = style.sheet;
+		
+		VTsheet.insertRule(':root' + ' {  --header-height: ' + document.getElementById("site-header").offsetHeight + 'px;  --image-height: ' + document.getElementById("cadre-image-entete").offsetHeight + 'px;  }');
+	
+});
+*/
+/**----------------------------------------------------------------------------------------------------
+* Actualisation en temps réel de la variable root css '--vt--hauteur-zone-externe-reservee' et de la variable globale vtHauteurReservee (déclarée et documentée en haut de page)
+------------------------------------------------------------------------------------------------------*/
+document.addEventListener('DOMContentLoaded', () => {
+    // Trouver le bloc Gutenberg dans lequel se trouve défini data-classe-bloc-entete
+    const blockElement = document.querySelector('[data-classe-bloc-entete]');
+    if (!blockElement) {
+        console.warn('Bloc avec data-classe-bloc-entete introuvable.');
+        return;
+    }
+
+    // Récupérer la classe cible
+    const targetClass = blockElement.getAttribute('data-classe-bloc-entete');
+    if (!targetClass) {
+        console.warn('Aucune classe cible définie dans le bloc.');
+        return;
+    }
+
+    // Identifier l'élément extérieur basé sur la classe cible
+    const targetElement = document.querySelector(`.${targetClass}`);
+    if (!targetElement) {
+        console.warn(`Aucun élément trouvé avec la classe "${targetClass}".`);
+        return;
+    }
+
+    // Surveiller la hauteur de l'élément
+    const updateCssVariable = (height) => {
+		const hauteurArrondie = Math.ceil(height);
+        document.documentElement.style.setProperty('--vt--hauteur-zone-externe-reservee', `${hauteurArrondie}px`);
+    };
+
+    const resizeObserver = new ResizeObserver((entries) => {
+        for (let entry of entries) {
+            if (entry.target === targetElement) {
+                updateCssVariable(entry.contentRect.height);
+				vtHauteurReservee = entry.contentRect.height;
+            }
+        }
+    });
+
+    resizeObserver.observe(targetElement);
+
+    // Nettoyage si nécessaire
+    window.addEventListener('unload', () => resizeObserver.disconnect());
+});
+
+/*
+Fonctions lecteurs audio et video
+*/
+// ON POSTULE QU'IL N'Y A, A TOUT INSTANT, QU'UN SEUL LECTEUR DEFINI DANS LE NAVIGATEUR
+
+
+/**----------------------------------------------------------------------------------------------------
+* Ecoute des clics de lancement de lectures et du clavier
+-----------------------------------------------------------------------------------------------------*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        // Gestion des éléments .vt--fichier-tutti-trigger / Lancement de lecture
+		const trigger = target.closest('.vt--fichier-tutti-trigger'); // Remonte à l'élément parent
+        if (trigger) {
+            const chemin = vtNormalizePath(trigger.getAttribute('data-chemin'));
+            const nom = trigger.getAttribute('data-nom');
+            const type = trigger.getAttribute('data-type');
+			const affichageClavier = trigger.getAttribute('data-clavier');
+			const fichierStereo = trigger.getAttribute('data-stereo');
+
+            if (typeof vtActiverLecteur === 'function') {
+                vtActiverLecteur(chemin, nom, type, affichageClavier, fichierStereo);
+            } else {
+                console.error('La fonction vtLanceLecture n’est pas définie.');
+            }
+        } else {
+			if (vtLecteur) {
+				// Gestion des <button> du bloc clavier
+				if (target.tagName === 'BUTTON' || target.closest('button')) {
+					const button = target.tagName === 'BUTTON' ? target : target.closest('button');
+					const clavierBlock = button.closest('.vt--clavier-lecteur');
+					
+					if (clavierBlock) {
+						// ligne 1 du clavier (play/pause déplacements curseur de lecture)
+						if (button === vtLecteur.boutonPlayPause) {
+							vtLecteur.PlayPause();
+						}
+						else if (button.classList.contains('vt--repete-en-boucle')) {
+							vtLecteur.RepeteEnBoucleLeMorceau(button); 
+						}
+						else if (button.classList.contains('vt--rewind')) {
+							vtRewind();
+						}
+						else if (button.classList.contains('vt--Ar10')) {
+							vtLecteur.Saut(-10);
+						}
+						else if (button.classList.contains('vt--Ar3')) {
+							vtLecteur.Saut(-3);
+						}
+						else if (button.classList.contains('vt--Av3')) {
+							vtLecteur.Saut(3);
+						}
+						else if (button.classList.contains('vt--Av10')) {
+							vtLecteur.Saut(10);
+						}
+						// ligne 2 du clavier (modulation de la vitesse d'exécution)
+						else if (button.classList.contains('vt--SpeedDown')) {
+							console.log('Bouton "vt--SpeedDown" cliqué :', button);
+							vtLecteur.Speed('down');
+						}
+						else if (button.classList.contains('vt--SpeedNormal')) {
+							console.log('Bouton "vt--Normal" cliqué :', button);
+							vtLecteur.Speed('normal');
+						}
+						else if (button.classList.contains('vt--SpeedUp')) {
+							console.log('Bouton "vt--SpeedUp" cliqué :', button);
+							vtLecteur.Speed('up');
+						}
+						// ligne 3 du clavier (traitement de boucles)
+						else if (button.classList.contains('vt--DefDebBoucle')) {
+							console.log('Bouton "vt--DefDebBoucle" cliqué :', button);
+							vtLecteur.DefDebBoucle();
+							vtLecteur.ElargirCompteurBoucle('vt--compteur-deb-boucle');
+						}
+						else if (button.classList.contains('vt--DefFinBoucle')) {
+							console.log('Bouton "vt--DefFinBoucle" cliqué :', button);
+							vtLecteur.DefFinBoucle();
+							vtLecteur.ElargirCompteurBoucle('vt--compteur-fin-boucle');
+						}
+						else if (button === vtLecteur.btnBoucle) {
+							console.log('Bouton "boucle" cliqué :', button);
+							vtLecteur.LoopIt();
+						}
+					}
+				} else {
+					// gestion des flèches d'ajustement du début et de la fin de boucle (ligne 3 du clavier)
+					
+					if (target.closest('.vt--deb-boucle-moins')){
+						vtLecteur.TraiteFleche('vt--deb-boucle-moins');
+					} else if (target.closest('.vt--deb-boucle-plus')) {
+						vtLecteur.TraiteFleche('vt--deb-boucle-plus');
+					} else if (target.closest('.vt--fin-boucle-moins')) {
+						vtLecteur.TraiteFleche('vt--fin-boucle-moins');
+					} else if (target.closest('.vt--fin-boucle-plus')) {
+						vtLecteur.TraiteFleche('vt--fin-boucle-plus');
+					}
+				}
+				// Gestion du zoom et du bouton quitter
+				if (target.tagName === 'I') {
+					//const bouton = target;
+					const MasqueModalLecteur = target.closest('#vt--lecteur-entrainement');
+					
+					if (MasqueModalLecteur) {
+						if (target.classList.contains('vt--repete-en-boucle')) {
+							console.log('Bouton "vt--repete-en-boucle" cliqué :', target);
+							vtRepeteEnBoucleLeMorceau(target); 
+						}
+						else if (target.classList.contains('vt--desactiver-lecteur-entrainement')) {
+							console.log('Bouton "vt--desactiver-lecteur-entrainement" cliqué :', target);
+							vtLecteur.DesactiverLecteurEntrainement(MasqueModalLecteur); 
+						}
+					}
+				}
+			}
+		}
+    });
+	
+});
+
+/**-----------------------------------------------------------------------------------------------
+* FONCTIONS DU LECTEUR
+------------------------------------------------------------------------------------------------*/
+
+var vtLecteur = null
+
+var pseudoChoriste = null;
+const vt_urlPHP_TraitementBoucles ='/wp-content/themes/twentytwenty-vt/js/mediaplayer-enreg-boucle.php';
+//const urlPHP_TraitementBoucles ='http://voce-tolosa.ddns.net/sript-php-externe/';
+
+//var vtAffVitesse = null; // champ d'affichage de la vitesse d'exécution
+//var vtBtnPlayPause = null; // Bouton play/pause
+//var vtBtnRepeteEnBoucle = null // Bouton Répète tout le morceau push/pull
+//var vtEtatRepeteEnBoucle = false; // indique sila répétition du morceau est activée
+//var vtRepeteEnBoucleID = null;
+//var vtBtnBoucle = null; // Bouton boucle push/pull
+// var vtLoopID = null;
+//var vtTdebBoucle = 0;
+//var vtTfinBoucle = 0;
+//var vtAffDebBoucle = null; // champ d'affichage de l'heure de début de boucle
+//var vtAffFinBoucle = null; // champ d'affichage de l'heure de la fin de boucle
+//var vtEtatBoucle = false; // indique si une boucle est activée
+var vtIdSaisieNomBoucle = "";
+var vtBouclesDefinies ={};
+var vtIdChoixBoucle = "";
+var vtPupitreActuel = null;
+var vtMediaPlayer = null;
+var vtSuffixePlayer = null;
+var vtNomFichierSourceAudioVideo = null;
+var vtClasseLecteur = "";
+const vtoBalance = {
+	audioContext: null,
+	audioSource: null,
+	volumeNodeL: null,
+	volumeNodeR: null,
+	channelsCount: null,
+	splitterNode: null,
+	mergeNode: null
+}
+
+const vtBalance = Object.create(vtoBalance)
+
+
+
+function vtActiverLecteur(cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo) {
+		
+	let vtBlocLecteur = document.getElementById("vt--bloc-lecteur");
+	let source = cheminFichierTutti + nomFichierTutti;
+	console.log(source);
+	switch (typeFichierTutti) {
+		case "v":
+			console.log("tag video");
+			vtBlocLecteur.innerHTML='<video controls="" autoplay="" playsinline="" preload="no" controlslist="nodownload" data-origwidth="0" data-origheight="0" src= "' + source + '"><p>Votre navigateur est trop ancien pour lire ce fichier</p></video>';
+		break;
+		case "a":
+		
+		break;
+	}
+	vtLecteur = vtBlocLecteur.firstElementChild;
+	// Initialiser tous les attributs 
+	Object.assign(vtLecteur, {
+		boutonPlayPause: document.getElementById("vt--PlayPause"),
+		etatRepeteEnBoucleLeMorceau: false,  // boucle sur tout de morceau
+		etatBoucle: false,			// boucle active sur un segment
+		btnRepeteEnBoucleLeMorceau: null,    // le bouton "répète en boucle tout le morceau"
+		affVitesse: null,			// le champ d'affichage de la vitesse
+		btnBoucle: null, 			// Bouton boucle push/pull
+		affDebBoucle: null,			// le champ d'affichage du début de boucle
+		affFinBoucle: null,			// le champ d'affichage de la fin de boucle
+		tDebBoucle: 0,				// moment du début de boucle
+		tFinBoucle: 0,				// moment de fin de boucle
+		loopID: null,				// constante associée à l'itératioin de la boucle
+		// les méthodes
+		SetEcoutePlayPause: vtSetEcoutePlayPause,
+		ActualiserBoutonPlayPause: vtActualiserBoutonPlayPause,
+		RepeteEnBoucleLeMorceau: vtRepeteEnBoucleLeMorceau,
+		Rewind: vtRewind,
+		Saut: vtSaut,
+		Speed: vtSpeed,
+		DefDebBoucle: vtDefDebBoucle,
+		DefFinBoucle: vtDefFinBoucle,
+		ElargirCompteurBoucle: vtElargirCompteur,
+		TraiteFleche: vtTraiteFleche,
+		LoopIt: vtLoopIt,
+		PlayPause: vtEventPlayPause,
+		DesactiverLecteurEntrainement: vtDesactiverLecteurEntrainement
+	});
+
+	vtLecteur.SetEcoutePlayPause("actif");
+
+	// affichage du clavier ?
+	if (affichageClavier === "false") {
+		document.getElementById("vt--clavier-lecteur").style.display = 'none';
+	} else {
+		// affichage de la balance stéréo ?
+		if (fichierStereo === "false") {
+			document.getElementById("vt--balance").style.display = 'none';
+		}
+
+		// actualisation symbole bouton play/pause
+		console.log("initialisation du bouton play/pause");
+		vtLecteur.ActualiserBoutonPlayPause();
+
+		// actualisation du compteur de vitesse
+		let PBR = vtLecteur.playbackRate;
+		let Rate = parseInt(100*PBR,10);
+
+		vtLecteur.AffVitesse = document.getElementById("vt--aff-vitesse");			   
+		if (vtLecteur.AffVitesse != null) {
+			vtLecteur.AffVitesse.innerHTML = Rate+ '%';
+		}
+		
+		
+		// initialisation des compteurs de boucles
+		vtLecteur.AffDebBoucle = document.getElementById("vt--deb-boucle");			   
+		vtLecteur.AffFinBoucle = document.getElementById("vt--fin-boucle");			   
+		vtLecteur.AffDebBoucle.innerHTML = '00:00';
+		vtLecteur.AffFinBoucle.innerHTML = '00:00';
+		// initialisation du bouton de lancement des boucles
+		vtLecteur.btnBoucle = document.getElementById("vt--btn-boucle");
+		
+		
+	}
+	// pour finir : afficher (libérer le masque)
+	document.getElementById("vt--lecteur-entrainement").removeAttribute("style");
+	document.getElementsByTagName('body')[0].style.overflowY='hidden';
+	
+}
+
+
+function vtDesactiverLecteurEntrainement(MasqueModalLecteur) {
+// 	fusion avec vtFermeLecteur
+//	document.getElementById(idMasqueLecteur).style.display='none';
+	// Effacer le lecteur et rendre le scroll à body
+	MasqueModalLecteur.style.display='none';
+	document.getElementsByTagName('body')[0].style.overflowY='auto';
+	// désactiver le lecteur
+	
+	vtLecteur.SetEcoutePlayPause("inactif");
+	vtLecteur.pause();
+	clearInterval(vtLecteur.loopID);
+	vtLecteur.loopID = null; // V3.2
+	if (vtLecteur.etatRepeteEnBoucleLeMorceau && vtLecteur.btnRepeteEnBoucleLeMorceau) {
+		vtLecteur.btnRepeteEnBoucleLeMorceau.classList.remove("vt--bouton-clavier-enfonce");
+	}
+	/* pas nécessaire : initialisation faire à l'activation */
+	vtLecteur.AffDebBoucle.innerHTML = '00:00';
+	vtLecteur.AffFinBoucle.innerHTML = '00:00';
+	document.getElementById("vt--clavier-lecteur").removeAttribute("style");
+	document.getElementById("vt--balance").removeAttribute("style");
+	vtLecteur = null;
+}
+/*
+function vtPlayLecteur() {
+	if (vtLecteur != null) {
+		vtLecteur.play()
+		vtLecteur.ActualiserBoutonPlayPause()
+	}
+}
+function vtPauseLecteur() {
+	if (vtLecteur != null) {
+		vtLecteur.pause()
+		console.log("pause")
+		vtLecteur.ActualiserBoutonPlayPause()
+	}
+}
+*/
+function vtFermeLecteur() {
+	if (vtLecteur != null) {
+		vtLecteur.pause()
+		//vtLecteur.boutonPlayPause.classList.remove("vt--pause")
+		//vtLecteur.boutonPlayPause.classList.add("vt--play")
+		vtBoutonPlayPause("pause")
+		vtLecteur.boutonPlayPause.classList.remove("vt--bouton-init-actif")
+		vtLecteur.boutonPlayPause.classList.add("vt--bouton-init")
+		//vtLecteur.boutonPlayPause.removeEventListener('click', vtEventPlayPause)
+		
+		clearInterval(vtLecteur.loopID)
+		//RAZ de tous les attributs
+		vtLecteur = null
+	}
+}
+
+
+
+// fusionner init et start 
+
+
+/**------------------------------------------------------------------------------------
+* Fonctions de rappel des écoutes
+-------------------------------------------------------------------------------------*/
+
+// vtLecteur.PlayPause (fonction on/off)
+function vtEventPlayPause() {
+	if (vtLecteur != null) {
+		if (vtLecteur.paused) {
+			vtLecteur.play()
+			vtLecteur.ActualiserBoutonPlayPause()
+		} else {
+			vtLecteur.pause()
+//			console.log("pause")
+			vtLecteur.ActualiserBoutonPlayPause()
+		}
+	}
+}
+
+// vtLecteur.RepeteEnBoucleLeMorceau
+function vtRepeteEnBoucleLeMorceau(btnRepeteEnBoucleLeMorceau=null) { // push/pull répète en boucle la totalité du morceau
+//	console.log(vtEtatRepeteEnBoucleLeMorceau);
+	if (!vtLecteur) {return}
+	if (!vtLecteur.btnRepeteEnBoucleLeMorceau && btnRepeteEnBoucleLeMorceau) {
+		Object.assign(vtLecteur, { 		
+		btnRepeteEnBoucleLeMorceau: btnRepeteEnBoucleLeMorceau    // le bouton "répète en boucle"
+	});
+	}
+	let etatRepeteEnBoucleLeMorceau = vtLecteur.etatRepeteEnBoucleLeMorceau;
+	if (!etatRepeteEnBoucleLeMorceau) {
+		if (vtLecteur.etatBoucle) { vtLoopIt();} // Si une boucle est active on l'arrête
+		vtLecteur.btnRepeteEnBoucleLeMorceau.classList.add("vt--bouton-clavier-enfonce");
+//		Lecteur.currentTime=0;
+		console.log(vtLecteur.duration);
+		vtLecteur.loopID=setInterval(function(){
+			if (vtLecteur.currentTime >= vtLecteur.duration) {
+				vtLecteur.currentTime=0;
+				if (vtLecteur.paused) {
+					vtLecteur.play();
+				}
+			}
+		},800);
+		vtLecteur.etatRepeteEnBoucleLeMorceau = true;
+		// aspect
+	} else {
+		clearInterval(vtLecteur.loopID);
+		vtLecteur.loopID = null; // V3.2
+		vtLecteur.btnRepeteEnBoucleLeMorceau.classList.remove("vt--bouton-clavier-enfonce");
+		vtLecteur.etatRepeteEnBoucleLeMorceau = false;
+		
+	}
+	
+}
+
+// vtLecteur.Rewind
+function vtRewind(){
+	if (vtLecteur) {
+		vtLecteur.pause();
+		vtLecteur.currentTime=0;
+		vtLecteur.play();
+	}
+}
+	
+// vtLecteur.Saut
+function vtSaut(duree){
+	if (vtLecteur) {
+		let end = vtLecteur.seekable.end(0);
+		let curseur = vtLecteur.currentTime + duree;
+		vtLecteur.currentTime = curseur  > end ? end : curseur < 0 ? 0 : curseur ;
+	}
+}
+
+// vtLecteur.Speed
+function vtSpeed(valeur) {
+	if (vtLecteur) {
+		let Rate = 0;
+		switch (valeur) {
+			case 'down':
+				if (vtLecteur.playbackRate > .50) {
+					vtLecteur.playbackRate -= .05;
+				}
+				Rate = parseInt(100*vtLecteur.playbackRate + 0.99,10); //Math.ceil(100*PBR);
+			break;
+			case 'up':
+				if (vtLecteur.playbackRate < 1.25) {
+					vtLecteur.playbackRate += .05;
+				}
+				Rate = parseInt(100*vtLecteur.playbackRate,10);
+			break;
+			case 'normal': 
+				vtLecteur.playbackRate = 1;
+				Rate = 100;
+			break;
+		}
+		if (vtLecteur.AffVitesse != null) {
+			vtLecteur.AffVitesse.innerHTML = Rate+ '%';
+		}
+		
+	}
+}
+
+// vtLecteur.DefDebBoucle
+function vtDefDebBoucle() {
+	let nDeb = vtLecteur.currentTime;
+	vtLecteur.tDebBoucle = parseInt(nDeb,10); //Math.floor(nDeb);
+	
+   if (vtLecteur.AffDebBoucle != null) {
+		vtLecteur.AffDebBoucle.innerHTML = cvSecTime(vtLecteur.tDebBoucle);
+   }
+}
+
+// vtLecteur.DefFinBoucle
+function vtDefFinBoucle() {
+	let nFin = vtLecteur.currentTime;
+	vtLecteur.tFinBoucle = parseInt(nFin,10); //Math.floor(nFin);
+	
+   if (vtLecteur.AffFinBoucle != null) {
+		vtLecteur.AffFinBoucle.innerHTML = cvSecTime(vtLecteur.tFinBoucle);
+   }
+}
+
+// vtLecteur.TraiteFleche
+function vtTraiteFleche(signatureFleche) {
+	let borneBoucle = ""; // "debBoucle" ou "finBoucle"
+	let typeFleche = "";   // "flecheGauche" (diminuer le moment) ou "flecheDroite" (augmenter le moment)
+	switch (signatureFleche) {
+		case 'vt--deb-boucle-moins':
+			borneBoucle = "debBoucle";
+			typeFleche = "flecheGauche";
+		break;
+		case 'vt--deb-boucle-plus':
+			borneBoucle = "debBoucle";
+			typeFleche = "flecheDroite";
+		break;
+		case 'vt--fin-boucle-moins':
+			borneBoucle = "finBoucle";
+			typeFleche = "flecheGauche";
+		break;
+		case 'vt--fin-boucle-moins':
+			borneBoucle = "finBoucle";
+			typeFleche = "flecheDroite";
+		break;
+	}
+	let horodate = 0;
+	let lcr = 0;
+	let lcrInit = vtLecteur.currentTime;
+	let dansLaBoucle = (lcrInit >= vtLecteur.tDebBoucle && lcrInit <= vtLecteur.tFinBoucle); // V3.2
+	//var attente = 0;
+	if (borneBoucle == "debBoucle") {horodate = parseInt(vtLecteur.tDebBoucle);} else {horodate = parseInt(vtLecteur.tFinBoucle);}
+	if (typeFleche == "flecheGauche") {horodate = horodate - 1;} else {horodate = horodate + 1;}
+	if (horodate < 0) {horodate = 0;}
+	if (horodate > vtLecteur.seekable.end(0)) {horodate = parseInt(vtLecteur.seekable.end(0),10);}
+	if (borneBoucle == "debBoucle") {
+		vtLecteur.tDebBoucle = horodate;
+		vtLecteur.AffDebBoucle.innerHTML = cvSecTime(horodate);
+	} else {
+		vtLecteur.tFinBoucle = horodate;
+		vtLecteur.AffFinBoucle.innerHTML = cvSecTime(horodate);
+	}
+	if (vtLecteur.EtatBoucle && dansLaBoucle) {
+		if (vtLecteur.loopID != null) {
+			// on est peut-être sorti de l'intervalle de la boucle (qui vient d'être modifié)
+			lcr = vtLecteur.currentTime;
+			if (lcr < vtLecteur.tDebBoucle || lcr >= vtLecteur.tFinBoucle) { 
+				vtLecteur.currentTime = vtLecteur.tDebBoucle;
+			}
+/*			loopID=setInterval(function(){
+				if (vtLecteur.currentTime >= tFinBoucle) vtLecteur.currentTime=tDebBoucle;
+			},800); */
+			
+		}
+	}
+}
+
+// vtLecteur.ElargirCompteurBoucle
+function vtElargirCompteur(idCompteur) {
+	var x = document.getElementById(idCompteur);
+	x.classList.add("vt--support-compteur-elargi");
+	
+}
+
+// vtLecteur.LoopIt
+function vtLoopIt(){ //Push / Pull bouton Lance boucle
+	//alert(EtatBoucle);
+	var lcr = 0;
+//	var attente = 0;
+	if (!vtLecteur.etatBoucle) {
+		if (parseFloat(vtLecteur.tFinBoucle) <= parseFloat(vtLecteur.tDebBoucle)) {
+			return;
+		}
+		// si on est en train de boucler sur le morceau : on arrête ce bouclage avant de lancel la boucle définie					 
+		if (vtLecteur.etatRepeteEnBoucleLeMorceau) { vtLecteur.RepeteEnBoucleLeMorceau();}
+		vtLecteur.btnBoucle.classList.add("vt--bouton-clavier-enfonce");
+		lcr = parseInt(vtLecteur.currentTime);
+		// le lecteur n'est pas dans l'intervalle de la boucle : on le ramène au début de la boucle
+		// sinon on diffère la fonction interval du temps restant
+		if (lcr < vtLecteur.tDebBoucle || lcr >= vtLecteur.tFinBoucle) { 
+			vtLecteur.currentTime=vtLecteur.tDebBoucle;
+		}
+		vtLecteur.loopID=setInterval(function(){
+			if (vtLecteur.currentTime >= vtLecteur.tFinBoucle) vtLecteur.currentTime = vtLecteur.tDebBoucle;
+		},800);
+		vtLecteur.etatBoucle = true;
+		// aspect
+	} else {
+		// on arrête la boucle
+		clearInterval(vtLecteur.loopID);
+		vtLecteur.loopID = null;	// V2.1
+		vtLecteur.tDebBoucle = 0;
+		vtLecteur.tFinBoucle = parseInt(vtLecteur.duration,10);
+		vtLecteur.btnBoucle.classList.remove("vt--bouton-clavier-enfonce");
+		vtLecteur.etatBoucle = false;
+		// aspect
+		
+	}
+}
+
+// vtLecteur.SetEcoutePlayPause
+function vtSetEcoutePlayPause(etatEcoute) {
+	// il s'agit d'écouter ou non la touche play/pause des controls du lecteur
+	// l'écoute de la touche play/pause du clavier est réaliser par addEventListener
+	// etatEcoute :"actif","inactif"
+
+	if (etatEcoute === "actif") {
+		vtLecteur.addEventListener('play', vtLecteur.ActualiserBoutonPlayPause);
+		vtLecteur.addEventListener('pause', vtLecteur.ActualiserBoutonPlayPause);
+	} else {
+		vtLecteur.removeEventListener('play', vtLecteur.ActualiserBoutonPlayPause);
+		vtLecteur.removeEventListener('pause', vtLecteur.ActualiserBoutonPlayPause);
+	}
+}
+
+// vetLecteur.ActualiserBoutonPlayPause
+function vtActualiserBoutonPlayPause() {
+	if (vtLecteur != null) {
+		let etatLecteur = (vtLecteur.paused) ? "pause" : "play"
+//		console.log(etatLecteur)
+		let target = vtLecteur.boutonPlayPause.firstElementChild
+		if (target) {
+			if (etatLecteur === "pause") {
+				target.classList.remove("fa-pause")
+				target.classList.add("fa-play")		
+			} else {
+				target.classList.remove("fa-play")
+				target.classList.add("fa-pause")		
+			}
+		}
+	}
+}
+
+
+
+/*
+function vtBtnPlayPause(type="audio",fichier="",bouton=null,start=true,annuleLecteurApresLecture=false) {
+	if (vtLecteur == null) {
+		vtInitLecteur(type="audio",fichier="",bouton=null,start=true,annuleLecteurApresLecture=false);
+	}
+}
+*/
+// passer les paramètres sous la forme d'array - prévoir la possibilité d'utiliser ou non les balises audio vidéo et leurs contrôles - ainsi on pourrait synchroniser ces contrôles avec ceux du script, voire supprimer ceux du scripts et n'ajouter que ceux qui font défaut : la balance G/D par exemple.
+
+// UTILITE DE LA FONCTION SUIVANTE ?
+
+function vtTraiteBoutonInitLecteur(baliseLecteur,typeLecteur,fichierMusique,boutonInitLecteur,boutonPlayPause,startAuto=true,fermeLecteurFinLecture=false) {
+	// vtTraiteBoutonInitLecteur est utilisé pour le bloc 'une prononciation' seulement 
+
+	// baliseLecteur : objet <audio> ou <video> s'il existe
+	// typeLecteur : "audio" ou "video"
+	// fichierMusique : fichier .mp3 ou .mp4
+	// boutonInitLecteur : objet bouton qui active le lecteur (peut être, dans certain cas, le même que le boutonPlayPause)
+	// boutonPlayPause : objet bouton qui commande play et pause (qui initialise le lecteur au premier clic, s'il fait fonction de boutonInitLecteur)
+	// startAuto : booléen pour le start automatique de la lecture
+	// fermeLecteurFinLecture : booléen pour la fermeture du lecteur en fin de lecture 
+
+	// si l'appel est fait depuis un bouton d'activation différent de celui du lecteur actuel : on stoppe celui-ci
+	if (vtLecteur != null && vtLecteur.boutonInitLecteur !== boutonInitLecteur) {
+		vtFermeLecteur()
+	}
+	if (vtLecteur == null) {
+		console.log(fichierMusique)
+		vtInitLecteur(baliseLecteur,typeLecteur,fichierMusique,boutonInitLecteur,boutonPlayPause,startAuto,fermeLecteurFinLecture)
+	} 
+}
+
+/*
+function ActiverLecteurEntrainement(fichier, objet, typeFichier) {
+	switch (typeFichier){
+		case 'audio':
+		blocLecteur = document.getElementById('entrainement_bloc-audio');
+		blocLecteur.style.display = 'flex';
+		document.getElementById('entrainement_bloc-video').style.display = 'none';
+		vtLecteur = blocLecteur.firstElementChild; //document.querySelector('audio'); // document.getElementById('lecteur-audio');
+		//idLecteur = "lecteur-audio";
+		break;
+	}
+	document.getElementById('entrainement_legende-lecteur').innerHTML = objet.firstChild.textContent; //.nextElementSibling
+	vtLecteur.src = fichier;
+	document.getElementsByTagName('body')[0].style.overflowY='hidden';
+	document.getElementById('entrainement_lecteur-audio-video').style.display='block';
+	vtLecteur.onended = function(){vtLecteur = null; blocLecteur = null; document.getElementsByTagName('body')[0].style.overflowY='auto';document.getElementById('entrainement_lecteur-audio-video').style.display='none';};
+}
+*/

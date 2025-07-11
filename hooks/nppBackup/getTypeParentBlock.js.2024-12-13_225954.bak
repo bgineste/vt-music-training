@@ -1,0 +1,14 @@
+import { useSelect } from '@wordpress/data';
+
+export function getTypeParentBlock(clientId) {
+    const parentClientId = useSelect(
+        (select) => select('core/block-editor').getBlockRootClientId(clientId),
+        [clientId]
+    );
+    const siblingBlocks = useSelect(
+        (select) => select('core/block-editor').getBlocks(parentClientId),
+        [parentClientId]
+    );
+	console.log("@@@Parent ",parentClient[0].name) 
+	return parentClient[0].name
+}

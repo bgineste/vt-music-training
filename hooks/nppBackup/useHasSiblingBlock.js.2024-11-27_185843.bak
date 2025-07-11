@@ -1,0 +1,20 @@
+import { useSelect } from '@wordpress/data';
+
+/**
+ * Hook personnalisé pour vérifier si un sibling de type donné existe.
+ *
+ * @param {string} clientId - ID du bloc courant.
+ * @param {string} siblingBlockName - Nom du sibling à rechercher (e.g., 'my-plugin/child-block-c').
+ * @returns {boolean} - Retourne `true` si un sibling correspondant est trouvé, sinon `false`.
+ */
+const useHasSiblingBlock = (clientId, siblingBlockName) => {
+    return useSelect((select) => {
+        const parentClientId = select('core/block-editor').getBlockParents(clientId)[0];
+        if (!parentClientId) return false;
+
+        const parentChildren = select('core/block-editor').getBlocks(parentClientId) || [];
+        return parentChildren.some((block) => block.name === siblingBlockName);
+    }, [clientId, siblingBlockName]);
+};
+
+export default useHasSiblingBlock;

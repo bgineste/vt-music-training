@@ -1,0 +1,39 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/*
+.wp-block-create-block-bloc-prononciation {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+*/
+.bk-prononciation {
+	padding: 0 !important;
+}
+
+.bk-prononciation h4 {
+	padding-left: 1% !important;
+	font-size: 1.2em;
+	color: var(--co-titre-bloc);
+}
+
+.bk-prononciation .elements-prononciations {
+	margin: 0 !important;
+	margin-bottom: 2% !important;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 100% !important;
+	align-items: center;
+	gap: 3%;
+}
+.bk-parametrage {
+	background-color: WhiteSmoke;
+	padding: 1%;
+}

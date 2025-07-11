@@ -1,0 +1,22 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-vt-gut-blocks-vt-prononciation {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+	display: flex;
+	flex-direction: column
+}
+.vt-bloc-prononciation {
+	background-color: yellow;
+	color: red;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px 20px;
+}

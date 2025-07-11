@@ -1,0 +1,80 @@
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+//import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
+import { __ } from '@wordpress/i18n';
+
+//import getTypeParentBlock from '../../hooks/getTypeParentBlock';
+import { TextControl, RadioControl } from '@wordpress/components';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
+    const { labelFichierTutti, cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo } = attributes;
+
+    // Initialisation du chemin si absent
+    if (!cheminFichierTutti) {
+        setAttributes({ cheminFichierTutti: cheminFichiers });
+    }
+
+    //const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/un-fichier-tutti', 'vt-music-training/des-fichiers-pupitre' ] // à compléter
+
+	// Template pour InnerBlocks
+    /*const TEMPLATE_PRONONCIATIONS = [
+        ['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }],
+    ];*/
+
+    return (
+	
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div className="vt--parametrage-bloc">
+                    <TextControl
+                        label="Label du fichier 'tutti' (audio ou vidéo)"
+						help={ 'Par ex.: Video/partition Interprète' }
+                        value={labelFichierTutti}
+                        onChange={(val) => setAttributes({ labelFichierTutti: val })}
+                    />
+                    <TextControl
+                        label="Chemin du fichier 'tutti'"
+                        value={cheminFichierTutti}
+                        onChange={(val) => setAttributes({ cheminFichierTutti: val })}
+                    />
+                    <TextControl
+                        label="Nom du fichier"
+                        value={nomFichierTutti}
+                        onChange={(val) => setAttributes({ nomFichierTutti: val })}
+                    />
+					<RadioControl
+						label={ 'Type de fichier '}
+						/*help={ 'actif => true, inactif => false' }*/
+						selected={ typeFichierTutti}
+						options={ [
+							{ label: 'audio', value: 'a' },
+							{ label: 'video', value: 'v' },
+						] }
+						onChange={ ( value ) => 
+							setAttributes( { typeFichierTutti: (value)})
+						}
+					/>
+					<ToggleControl
+						label={ 'Afficher le clavier sous le lecteur' }
+						checked={ affichageClavier }
+						onChange={(value) => setAttributes({ affichageClavier: (value) })}
+					/>
+					{ affichageClavier && (
+						<ToggleControl
+							label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+							checked={ fichierStereo }
+							onChange={(value) => setAttributes({ fichierStereo: (value) })}
+						/>
+					)}
+                 </div>
+            ) : (
+                <div className="vt--fichier-tutti vt--block-editor-inner-blocks">
+					{ labelFichierTutti}
+                </div>
+            )}
+        </div>
+    );
+}

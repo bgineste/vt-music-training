@@ -1,0 +1,203 @@
+import { useBlockProps } from '@wordpress/block-editor';
+import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { TextControl, RadioControl, ToggleControl, Button, PanelBody } from '@wordpress/components';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
+    const { cheminFichierDefaut, typeFichierDefaut, affichageClavier, fichierStereo } = attributes;
+
+    // Initialisation du chemin si absent
+    if (!cheminFichierDefaut) {
+        setAttributes({ cheminFichierDefaut: cheminFichiers });
+    }
+
+//---------------------------------------------------------------------------------------
+
+    // Parse JSON string into an object for internal manipulation
+    const initialGroups = attributes.chaineFichiersPupitre ? JSON.parse(attributes.chaineFichiersPupitre) : [];
+    const [groups, setGroups] = useState(initialGroups);
+
+    const saveGroupsToAttributes = (updatedGroups) => {
+        // Convert the object back to a JSON string before saving to attributes
+        const jsonString = JSON.stringify(updatedGroups);
+        setAttributes({ chaineFichiersPupitre: jsonString });
+        setGroups(updatedGroups);
+    };
+
+    const addGroup = () => {
+        const updatedGroups = [...groups, { titre: '', fichiers: [] }];
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const removeGroup = (index) => {
+        const updatedGroups = [...groups];
+        updatedGroups.splice(index, 1);
+        saveGroupsToAttributes(updatedGroups);
+    };
+/*
+    const addFileToGroup = (groupIndex) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers.push({ label: '', chemin: '' });
+        saveGroupsToAttributes(updatedGroups);
+    };
+*/
+	const addFileToGroup = (groupIndex) => {
+		const updatedGroups = [...groups];
+		updatedGroups[groupIndex].fichiers.push({
+			label: '',
+			chemin: '',
+			nomfichier: '',
+			typeFichier: typeFichierDefaut,
+			affichageClavierPupitre: affichageClavier,
+			fichierStereoPupitre: fichierStereo
+		});
+		saveGroupsToAttributes(updatedGroups);
+	};
+
+    const removeFileFromGroup = (groupIndex, fileIndex) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers.splice(fileIndex, 1);
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const updateGroupTitle = (groupIndex, newTitle) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].titre = newTitle;
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const updateFile = (groupIndex, fileIndex, key, value) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers[fileIndex][key] = value;
+        saveGroupsToAttributes(updatedGroups);
+    };
+//---------------------------------------------------------------------------------------
+
+    return (
+	
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div className="vt--parametrage-bloc">
+                    <TextControl
+                        label="Chemin par défaut des fichiers 'pupitre'"
+                        value={cheminFichierDefaut}
+                        onChange={(val) => setAttributes({ cheminFichierDefaut: val })}
+                    />
+					<RadioControl
+						label={ 'Type de fichier par défaut'}
+						/*help={ 'actif => true, inactif => false' }*/
+						selected={ typeFichierDefaut}
+						options={ [
+							{ label: 'audio', value: 'a' },
+							{ label: 'video', value: 'v' },
+						] }
+						onChange={ ( value ) => 
+							setAttributes( { typeFichierDefaut: (value)})
+						}
+					/>
+					<ToggleControl
+						label={ 'Afficher le clavier sous le lecteur' }
+						checked={ affichageClavier }
+						onChange={(value) => setAttributes({ affichageClavier: (value) })}
+					/>
+					{ affichageClavier && (
+						<ToggleControl
+							label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+							checked={ fichierStereo }
+							onChange={(value) => setAttributes({ fichierStereo: (value) })}
+						/>
+					)}
+					
+					{groups.map((group, groupIndex) => (
+						
+						<PanelBody className="vt--editor-groupe-pupitres"
+							title={`Groupe ${groupIndex + 1}`}
+							key={groupIndex}
+							initialOpen={true}
+						>
+						
+							<TextControl
+								label={__('Titre du groupe (facultatif)', 'text-domain')}
+								value={group.titre}
+								onChange={(value) => updateGroupTitle(groupIndex, value)}
+							/>
+							{group.fichiers.map((file, fileIndex) => (
+								<div key={fileIndex} style={{ marginBottom: '10px' }} className="vt--editor-un-pupitre">
+									<TextControl
+										label={__('Label du pupitre', 'text-domain')}
+										help={ 'Par ex.: S pour Soprano, A pour Alto, T1 pour Ténor 1, etc' }
+ 										value={file.label}
+										onChange={(value) => updateFile(groupIndex, fileIndex, 'label', value)}
+									/>
+									<TextControl
+										label={__('Chemin du fichier', 'text-domain')}
+										value={file.chemin || cheminFichierDefaut}
+										onChange={(value) => updateFile(groupIndex, fileIndex, 'chemin', value)}
+									/>
+									<TextControl
+										label={__('Nom du fichier', 'text-domain')}
+										value={file.nomfichier}
+										onChange={(value) => updateFile(groupIndex, fileIndex, 'nomfichier', value)}
+									/>
+									<RadioControl
+										label={ 'Type de fichier'}
+										selected={ file.typeFichier || typeFichierDefaut }
+										options={ [
+											{ label: 'audio', value: 'a' },
+											{ label: 'video', value: 'v' },
+										] }
+										onChange={ ( value ) => updateFile(groupIndex, fileIndex, 'typeFichier', value) }
+									/>
+									<ToggleControl
+										label={ 'Afficher le clavier sous le lecteur' }
+										checked={ file.affichageClavierPupitre || affichageClavier}
+										onChange={(value) => updateFile(groupIndex, fileIndex, 'affichageClavierPupitre', value)}
+									/>
+									{ affichageClavierPupitre && (
+										<ToggleControl
+											label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+											checked={ file.fichierStereoPupitre || fichierStereo }
+											onChange={(value) => updateFile(groupIndex, fileIndex, 'fichierStereoPupitre', value)}
+										/>
+									)}
+									<Button
+										isDestructive
+										onClick={() => removeFileFromGroup(groupIndex, fileIndex)}
+									>
+										{__('Supprimer ce pupitre', 'text-domain')}
+									</Button>
+								</div>
+							))}
+							<Button onClick={() => addFileToGroup(groupIndex)}>
+								{__('Ajouter un pupitre', 'text-domain')}
+							</Button>
+							<Button
+								isDestructive
+								onClick={() => removeGroup(groupIndex)}
+								style={{ marginTop: '10px' }}
+							>
+								{__('Supprimer ce groupe', 'text-domain')}
+							</Button>
+						</PanelBody>
+					))}
+					<Button
+						isPrimary
+						onClick={addGroup}
+						style={{ marginTop: '20px' }}
+					>
+						{__('Ajouter un groupe', 'text-domain')}
+					</Button>
+					
+                 </div>
+            ) : (
+                <div className="vt--fichier-tutti vt--block-editor-inner-blocks">
+					Fichiers pupitre
+                </div>
+            )}
+        </div>
+    );
+}

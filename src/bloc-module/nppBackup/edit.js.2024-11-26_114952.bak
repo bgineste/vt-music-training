@@ -1,0 +1,96 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { TextControl } from '@wordpress/components';
+
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function Edit(props) {
+/*
+	const blockProps = useBlockProps()
+    const { context } = props;
+    const { "bloc-prononciation/cheminFichiers": cheminFichiers } = context
+    const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { typefichier },attributes: { interprete }, setAttributes, } = props
+	const pathDuBloc = cheminFichiers
+	const pathCourant = path
+	if ( !pathCourant ) {setAttributes( { path:  pathDuBloc } )}
+*/
+
+	const blockProps = useBlockProps()
+	// déconstruction
+    const { context } = props;
+	const { "bloc-oeuvre/cheminFichiersOeuvre": cheminFichiersOeuvre } = context
+    const { attributes: { cheminFichiersModule }, attributes: { titreModule }, setAttributes, } = props
+	const pathDuBloc = cheminFichiersOeuvre
+	const pathCourant = cheminFichiersModule
+	if ( !pathCourant ) {setAttributes( { cheminFichiersModule:  pathDuBloc } )}
+//	const ALLOWED_BLOCKS = [ 'core/paragraph, vt-music-training/bloc-prononciation' ]
+	return (
+		<div  {...blockProps } >
+			{ props.isSelected ? ( 
+						 <div className="vt--parametrage-bloc">
+							<TextControl
+								label={ 'Titre du morceau' }
+								value={ titreModule }
+								onChange={ ( val ) =>
+									setAttributes( { titreModule: ( val ) } )
+								}
+							/>
+							<TextControl
+								label={ 'Chemin des fichiers le morceau' }
+								value={ cheminFichiersModule
+								}
+								onChange={ ( val ) =>
+									setAttributes( { cheminFichiersModule: ( val ) } )
+								}
+							/>
+							{ <p>Insérer ici les blocs qui composent le module : paroles (lyrics), vidéos et audios de travail : tutti& pupitres, audios de prononciation,consignes du chef,enregistrements de référence</p> }
+							<InnerBlocks />
+						</div>
+				) : ( 
+		<div className="wp-block-group vt--un-module">
+			<h4 className="has-blue-color has-text-color wp-block-heading">{ titreModule }</h4>
+			
+			<div className="vt--zone-libre">
+				<InnerBlocks /*allowedBlocks={['core/paragraph', 'core/image']}*/ />
+			</div>
+			<div className="vt--prononciations">
+				<InnerBlocks
+					template={[
+						['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }]
+					]}
+					templateLock="all"
+				/>
+			</div>
+		</div>
+				) 
+			}
+		</div>
+	);
+}

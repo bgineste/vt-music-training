@@ -1,0 +1,102 @@
+/**
+ * S'applique au bloc index-oeuvre  sur le site et dans l'éditeur
+ */
+
+
+.vt--block-bouton-index {
+	margin-left: 0 !important;
+	padding: 2%;
+	margin-bottom: 2%;
+	background-color: var(--vt--bg-symbole-pupitre);
+	color: var(--vt--co-symbole-pupitre);
+	width: max-content !important;
+	max-width: 100% !important;
+	border-radius: 10px;
+	border: 3px ridge var(--vt--bg-symbole-pupitre);
+	
+}
+.vt--block-bouton-index:hover {
+	cursor: pointer;
+	color: #B0C4DE;
+
+}
+.vt--block-bouton-index h5 {
+	padding: 0;
+	margin: 0 !important;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.vt--popup__support {
+	display: none;
+	background-color: var(--vt--bg-masque-clair);
+	margin: 0 !important;
+	width: 100%;
+	max-width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: calc(100vh - var(--vt--hauteur-zone-externe-reservee));
+	box-sizing: unset;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+
+}
+.vt--popup__support::before, .vt--popup__support::after {
+	box-sizing: unset;
+}
+
+.vt--wrap-index-choeurs  {
+	background-color: var(--vt--bg-un-module);
+	/*opacity: 0.9;*/
+	border-radius: 10px;
+	display: flex;
+	margin: 0 1%;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 99%;
+	/*max-width: calc(var(--vt--largeur-utile) * 0.99) !important;  */
+	max-width: min(var(--vt--largeur-utile) * 0.99, 600px) !important;  
+	justify-content: center;
+	gap: 25px 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	opacity: .9;
+
+	/*max-height: 100vh;*/
+}
+
+@media only screen and (max-height: 600px) {
+	.vt--popup__support {
+	}
+	.vt--wrap-index-choeurs {
+		/*
+		align-items: flex-start;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		*/
+	}
+
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+
+div.vt--lien-vers-ancre {
+	width: fit-content !important;
+	padding: 0.8% !important;
+	/*background-color: var(--vt--bg-symbole-pupitre); */ /*#005177;*/
+	color: var(--vt--co-symbole-pupitre); /*white*/
+	border: .5px solid;
+	border-radius:10px;
+	text-decoration: none !important;
+	line-height: normal;
+	opacity: 1;
+}
+
+div.vt--lien-vers-ancre:hover {
+	color: #B0C4DE;
+	cursor: pointer;
+}
+

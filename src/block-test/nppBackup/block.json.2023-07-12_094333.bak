@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "vt-gut-blocks/vt-prononciation",
+	"version": "0.1.0",
+	"title": "Block prononciation",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Bloc pour les audios de prononciation",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		 
+		"content": {
+			"type": "string",
+			"source": "text",
+			"selector": ".content"
+		
+		},
+		
+		"prononciations": {
+			"type": "array",
+			"source": "array"
+		
+		},
+		
+		"selection": {
+			"type": "boolean",
+			"source": "text"
+			
+		
+		}
+	},
+	"textdomain": "vt-gut-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

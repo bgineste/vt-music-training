@@ -1,0 +1,63 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+	// Déstructuration des props
+	const { chaineDescriptive, tstring, selection } = props.attributes
+//	console.log(tbool)
+//	alert(chaineDescriptive)
+	//convertit chaine content en array
+	const items = (content) => {
+		 let aitems = content.split('&')
+	  return aitems.map(x => x.split('|'))
+	}
+    const nombreInnerBlocks = props.attributes.nombreSousBlocs || 0; // Valeur par défaut : 1
+	
+	
+	return (
+		<div { ...blockProps }>
+			{
+				 props ? (''):(<p>props est dans les choux</p>)
+			}
+	{ chaineDescriptive ? ( 		
+    <div  className="vt-bloc-block-test">
+		
+      {items(chaineDescriptive).map((item, index) => (
+        <div key={index}>{index} - {item[0]} / {item[1]}</div>
+      ))}
+    </div> ) : (
+		<p>block-tests est undefined !</p>
+	)
+	}	
+					{/* Répéter les InnerBlocks en fonction de numInnerBlocks */}
+					{Array.from({ length: nombreInnerBlocks }).map((_, index) => (
+						<div { ...blockProps } className="vache-qui-rit">
+                    <InnerBlocks.content />
+						</div>
+					))}
+	{ selection ? ( 		
+    <div  className="vt-bloc-block-test">
+		
+		Sélectionné
+    </div> ) : (
+		<div className="vt-bloc-block-test">Pas activé !</div>
+	)
+	}	
+		</div>
+	);
+}

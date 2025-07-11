@@ -1,0 +1,7 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+
+.vt--section {
+	padding: 0;
+}

@@ -1,0 +1,36 @@
+/** 
+  Fonctions liées au bloc-module
+  V 1.0 
+*/
+
+function bascule_affichage_module(bouton_esc) {
+	console.log(bouton_esc);
+	/*
+	// recherche du bloc d'entrainement qui renferme le bouton escape actionné
+	var bloc_entrainement = bouton_esc.closest('.vt--un-module');
+	var id_bloc_entrainement = bloc_entrainement.id; // sera utile pour le cookie stockant le statut du bloc_esc
+	// recherche du bloc qui encadre le module. Il est utile de le connaître pour faire varier son padding en fontion du statut (affiché/masqué) du module 
+	var bloc_encadrant_module = bloc_entrainement; //bouton_esc.closest('.ec__un-morceau');
+	// recherche du bloc escamotable
+	var bloc_esc = bloc_entrainement.getElementsByClassName('vt--bloc-esc')[0];
+
+    if(bouton_esc.checked)
+    {
+        bloc_esc.style.display="block";
+		//restituer les padding du bloc entrainement
+		bloc_encadrant_module.style.paddingTop = bloc_encadrant_module_padding_top;
+		bloc_encadrant_module.style.paddingBottom = bloc_encadrant_module_padding_bottom;
+		createCookie('vt-'+id_bloc_entrainement,"Affiché",365);
+    }
+    else
+    {
+        bloc_esc.style.display="none";
+        //réduire les paddings du bloc entrainement pour qu'il occupe moins de place
+		bloc_encadrant_module.style.paddingTop = "5px";
+		bloc_encadrant_module.style.paddingBottom = "5px";
+		createCookie('vt-'+id_bloc_entrainement,"Masqué",365);
+    }
+	*/
+    return true;
+}
+	

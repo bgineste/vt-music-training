@@ -1,0 +1,9 @@
+/**
+ * S'applique au bloc bloc-fichiers-de-travail sur le site et dans l'éditeur
+ */
+
+#vt--une-page {
+	.vt--les-fichiers-de-travail {
+		/*background-color: pink;*/
+	}
+}

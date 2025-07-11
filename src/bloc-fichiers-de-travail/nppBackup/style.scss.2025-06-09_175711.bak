@@ -1,0 +1,15 @@
+/**
+ * S'applique au bloc bloc-fichiers-de-travail sur le site et dans l'éditeur
+ */
+
+.vt--une-page {
+	.vt--les-fichiers-de-travail {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		width: auto;max-width: 100%;
+		margin-bottom: 4em;
+		margin-top: 4em;
+	}
+}

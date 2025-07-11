@@ -1,0 +1,36 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+    const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { interprete }, setAttributes, } = props;
+	const fichier = path + nomfichier
+//	const chaineOnClick = "startLecteur('audio', '+fichier+')"
+	
+	console.log(chaineOnClick) // renvoie bien le chemin complet du fichier
+	return (
+		<div { ...blockProps }>
+			 <div className="une-prononciation">
+			 { { texte } != "" ? (
+			 <a  onClick="startLecteur('audio', ' + {fichier} + ')" > { texte } </a>
+			 ):(
+			 <p>Saisir le texte à prononcer</p>
+			 ) }
+			 </div>
+		</div>
+	);
+}

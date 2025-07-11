@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "vt-gut-blocks/vt-block-test",
+	"version": "0.1.0",
+	"title": "Block block-test",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Bloc pour les audios de block-test",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		 
+		"chaineDescriptive": {
+			"type": "string"		
+		},
+		
+		"tstring": {
+			"type": "string"
+		},
+		
+		"selection": {
+			"type": "boolean",
+			"default": true		
+		},
+		"typeLecteur": {
+			"type": "string",
+			"default": "audio"
+		}
+	},
+	"textdomain": "vt-gut-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

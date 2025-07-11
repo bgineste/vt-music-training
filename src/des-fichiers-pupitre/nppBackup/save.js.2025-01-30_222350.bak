@@ -1,0 +1,53 @@
+import { useBlockProps } from '@wordpress/block-editor';
+
+/*
+export default function save(props) {
+	const blockProps = useBlockProps.save()
+    const {attributes: { cheminFichierDefaut, typeFichierDefaut, affichageClavier, fichierStereo }} = props
+
+	return (
+		<div {...blockProps } className="vt--un-fichier-tutti">
+			<div>
+				<div className="vt--label">Fichiers pupitre</div>
+				<i class="fa-solid fa-square-caret-right"></i>
+			</div>
+		</div>
+
+	)
+}
+*/
+
+
+export default function save({ attributes }) {
+    const blockProps = useBlockProps.save();
+    const { chaineFichiersPupitre } = attributes;
+
+    // Convertir la chaîne JSON en tableau d'objets
+    const groups = chaineFichiersPupitre ? JSON.parse(chaineFichiersPupitre) : [];
+
+    return (
+        <div {...blockProps} className="vt--fichiers-pupitre">
+            {groups.map((group, groupIndex) => (
+                <div key={groupIndex} className="vt--group-fichiers-pupitre">
+                    {group.titre && <div className="vt--group-titre">{group.titre}</div>}
+
+                    <div className="vt--pupitre-container">
+                        {group.fichiers.map((file, fileIndex) => (
+                            <button
+                                key={fileIndex}
+                                className="vt--pupitre-button"
+                                data-chemin={file.chemin}
+                                data-nomfichier={file.nomfichier}
+                                data-type={file.typeFichier}
+                                data-clavier={file.affichageClavier}
+                                data-stereo={file.fichierStereo}
+                            >
+                                {file.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+}

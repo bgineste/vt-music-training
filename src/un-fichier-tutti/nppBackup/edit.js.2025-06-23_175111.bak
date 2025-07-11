@@ -1,0 +1,211 @@
+import { useBlockProps } from '@wordpress/block-editor';
+//import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
+import { __ } from '@wordpress/i18n';
+
+//import getTypeParentBlock from '../../hooks/getTypeParentBlock';
+import { TextControl, RadioControl, ToggleControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
+    const { labelFichierTutti, cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo } = attributes;
+
+    // Initialisation du chemin si absent
+    if (!cheminFichierTutti) {
+        setAttributes({ cheminFichierTutti: cheminFichiers });
+    }
+
+const [uploading, setUploading] = useState(false);
+	const [erreurUpload, setErreurUpload] = useState(null);
+
+	const deleteFileFromServer = async (file,chemin) => {
+
+		if (!vtmtData || !vtmtData.nonce) {
+			throw new Error("Nonce manquant ou non injecté.");
+		}
+		const formData = new FormData();
+		formData.append('file', file);
+		formData.append('chemin', chemin);
+
+		const response = await fetch('/wp-json/vt-music-training/v1/supprimer-fichier', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: formData,
+			credentials: 'include',
+			headers: {
+				'X-WP-Nonce': vtmtData.nonce,
+			},
+		});
+
+		if (!response.ok) {
+			const errorData = await response.json();
+			throw new Error(errorData.message || 'Erreur lors de la suppression du fichier précédent');
+		}
+
+	}
+	
+	const uploadFileToServer = async (file, chemin) => {
+
+		if (!vtmtData || !vtmtData.nonce) {
+			throw new Error("Nonce manquant ou non injecté.");
+		}
+
+		const formData = new FormData();
+		formData.append('file', file);
+		formData.append('chemin', chemin);
+
+		const response = await fetch('/wp-json/vt-music-training/v1/upload-fichier', {
+			method: 'POST',
+			body: formData,
+			credentials: 'include',
+			headers: {
+				'X-WP-Nonce': vtmtData.nonce,
+			},
+		});
+
+		if (!response.ok) {
+			const errorData = await response.json();
+			throw new Error(errorData.message || 'Erreur lors de l’upload');
+		}
+		return await response.json(); // { nom, chemin, url }
+	};
+
+const handleFileChange = async (e) => {
+	const file = e.target.files[0];
+	if (!file) return;
+
+	const chemin = cheminFichierTutti || 'docs/2025/'; // à vérifier
+	setUploading(true);
+	setErreurUpload(null);
+
+	try {
+		// 1. Supprimer le fichier précédent s'il existe
+		if (nomFichierTutti) {
+			console.log("suppression " + nomFichierTutti);
+			const result0 = await deleteFileFromServer(nomFichierTutti, chemin);
+			console.log(result0.chemin);
+			/*await fetch('/wp-json/vt-music-training/v1/supprimer-fichier', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					chemin: chemin,
+					nom: nomFichierTutti,
+				}),
+				credentials: 'include',
+				headers: {
+					'X-WP-Nonce': vtmtData.nonce,
+				},
+			});*/
+		}
+
+		// 2. Uploader le nouveau fichier
+		const result = await uploadFileToServer(file, chemin);
+		setAttributes({
+			nomFichierTutti: result.nom,
+			cheminFichierTutti : result.chemin,
+		});
+	} catch (err) {
+		console.error(err);
+		setErreurUpload(err.message);
+	} finally {
+		setUploading(false);
+	}
+}
+	const fullUrl = `${cheminFichierTutti}/${nomFichierTutti}`;
+
+
+    return (
+	
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div>
+                    <TextControl
+                        label="Label du fichier 'tutti' (audio ou vidéo)"
+						help={ 'Par ex.: Video/partition Interprète' }
+                        value={labelFichierTutti}
+                        onChange={(val) => setAttributes({ labelFichierTutti: val })}
+                    />
+                    <TextControl
+                        label="Chemin du fichier 'tutti'"
+                        value={cheminFichierTutti}
+                        onChange={(val) => setAttributes({ cheminFichierTutti: val })}
+                    />
+                    <label class="label css-2o4jwd">
+                        Nom du fichier
+						<input class="components-text-control__input" value={nomFichierTutti} readonly />
+					</label>
+
+			<label class="label css-2o4jwd">
+			Télécharger un fichier
+			<input
+				type="file"
+				accept="audio/*,video/*"
+				onChange={handleFileChange}
+				style={{ marginTop: '1em' }}
+			/>
+			</label>
+
+			{uploading && <p>📤 Téléversement en cours...</p>}
+
+			{erreurUpload && <p style={{ color: 'red' }}>❌ {erreurUpload}</p>}
+
+			{nomFichierTutti && (
+				<div style={{ marginTop: '1em' }}>
+					<p><strong>Fichier sélectionné :</strong> {nomFichierTutti}</p>
+
+					{nomFichierTutti.match(/\.(mp3|wav)$/i) && (
+						<audio controls src={fullUrl} style={{ width: '100%' }}>
+							Votre navigateur ne supporte pas l’audio.
+						</audio>
+					)}
+
+					{nomFichierTutti.match(/\.(mp4|webm)$/i) && (
+						<video controls src={fullUrl} style={{ width: '100%' }}>
+							Votre navigateur ne supporte pas la vidéo.
+						</video>
+					)}
+
+					{!nomFichierTutti.match(/\.(mp3|wav|mp4|webm)$/i) && (
+						<a href={fullUrl} target="_blank" rel="noopener noreferrer">
+							📄 Ouvrir le fichier
+						</a>
+					)}
+				</div>
+			)}
+						
+					<RadioControl
+						label="Type de fichier"
+						/*help={ 'actif => true, inactif => false' }*/
+						selected={ typeFichierTutti}
+						options={ [
+							{ label: 'audio', value: 'a' },
+							{ label: 'video', value: 'v' },
+						] }
+						onChange={ ( value ) => 
+							setAttributes( { typeFichierTutti: (value)})
+						}
+					/>
+					<ToggleControl
+						label={ 'Afficher le clavier sous le lecteur' }
+						checked={ affichageClavier }
+						onChange={(value) => setAttributes({ affichageClavier: (value) })}
+					/>
+					{ affichageClavier && (
+						<ToggleControl
+							label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+							checked={ fichierStereo }
+							onChange={(value) => setAttributes({ fichierStereo: (value) })}
+						/>
+					)}
+                 </div>
+            ) : (
+                <div>
+					{ labelFichierTutti}
+                </div>
+            )}
+        </div>
+    );
+}

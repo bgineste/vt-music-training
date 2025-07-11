@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-music-training/bloc-main",
+	"version": "0.1.0",
+	"title": "Bloc principal d'une page entraînement",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc d'une page d'entrainement, bloc racine du plugin",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {	 
+		"idPage": {
+			"type": "string",
+			"default": ""
+		},
+		"titrePage": {
+			"type": "string",
+			"default": ""
+		},
+		"largeurPageMax": {
+			"type": "string",
+			"default": "1280"
+		},
+		"classeBlocEntete": {
+			"type": "string",
+			"default": ""
+		},
+        "isIphone": {
+            "type": "boolean",
+            "default": false
+        }
+	},
+    "providesContext": {
+        "bloc-main/largeurPageMax": "largeurPageMax"
+    },
+	"textdomain": "vt-music-training",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

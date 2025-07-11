@@ -1,0 +1,69 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+ 
+//import { getAdjacentIDs } from './functions';
+
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+    const { attributes: { texteDuBouton },attributes: { etatDuBouton }, setAttributes, } = props;
+/*	const adjacentIDs = [];
+	function getAdjacentIDs(element) {
+		adjacentIDs = [];
+		let sibling = element.nextElementSibling;
+
+		while (sibling) {
+			adjacentIDs.push(sibling.id);
+			sibling = sibling.nextElementSibling;
+		}
+
+//		return adjacentIDs;
+	}*/
+/*
+	const elementCourant = this; //document.getElementById('elementCourant');
+	const adjacentIDs = getAdjacentIDs(elementCourant);
+
+	console.log(adjacentIDs);
+*/
+//	const hMenu = document.getElementById("site-header") != null ? document.getElementById("site-header").offsetHeight : 0;
+	return (
+		<>
+		<div {...blockProps }  className="wp-block-group vt--entete" >
+		<>
+			<h3 class="wp-block-heading">Modules Voce Tolosa</h3>
+			<div className="vt--block-bouton-index" onClick="constructIndexOeuvre(this.parentNode);this.nextElementSibling.style.display = 'flex';this.nextElementSibling.getElementsByClassName('vt--wrap-index-choeurs')[0].innerHTML = HTMLindex;console.log(HTMLindex);" >
+				<h5> { texteDuBouton }</h5> 
+			</div>
+
+			<div class="vt--popup__support" style="display: none;">
+				<div class="vt--wrap-index-choeurs wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+			
+				</div>
+			</div>
+			
+		</>
+		</div>
+		<script>
+		window.onload = function(this)
+		{
+			
+			this.parentNode.style.backgroundColor = 'green'
+			
+		}
+		</script>
+		</>
+}

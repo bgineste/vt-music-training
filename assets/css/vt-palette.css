@@ -1,0 +1,74 @@
+/* Palette de couleurs pour le plugin vt-music-training */
+/* V 1.0 */
+
+:root { 
+/*non utilisés*/
+/* --vt--lk-body: #381b19; */ /* Couleur des liens - id - */ 
+/* --vt--lko-body: #e2c5c3; */ /* Couleur de liens survolés - id - */ 
+
+/* --vt--lk-section-a: #aa210f; */ /* Couleur des liens - id - */ 
+/* --vt--lko-section-a: #ee5944; */ /* Couleur de liens survolés - id - */ 
+/* --vt--bg-section-b: #d08856; */ /* Autre couleur de section */ 
+/* --vt--co-section-b: #000000; */ /* Couleur de caractères pour section-b */ 
+/* --vt--lk-section-b: #381b19; */ /* Couleur des liens - id - */ 
+/* --vt--lko-section-b: #e2c5c3; */ /* Couleur de liens survolés - id - */ 
+/* --vt--bg-agenda: #edefee; */ /* Couleur de fond de l'agenda */ 
+/* --vt--co-agenda: #595656; */ /* Couleur de caractères pour l'agenda */ 
+/* --vt--bg-header: #73170b; */ /* Couleur de fond du header */ 
+/* --vt--co-header: #edefee; */ /* Couleur de caractères pour header */ 
+/* --vt--lk-header: #edefee; */ /* Couleur des liens - id - */ 
+/* --vt--lko-header: #edefee; */ /* Couleur de liens survolés - id - */ 
+/* --vt--bg-footer: #595656; */ /* Couleur de fond du footer */ 
+/* --vt--co-footer: #edefee; */ /* Couleur de caractères pour footer */ 
+/* --vt--lk-footer: #bdc4c0; */ /* Couleur des liens - id - */ 
+/* --vt--lko-footer: #c1bcb8; */ /* Couleur de liens survolés - id - */ 
+/* --vt--bg-blanc: #c1bcb8; */ /* Couleur blanche - blanc cassé */ 
+/* --vt--bg-flash: #73170b; */ /* Couleur de fond éclatante pour l'éditorial */ 
+/* --vt--co-flash: #fde4e1; */ /* Couleur de caractères pour bg-flash */ 
+/* --vt--lk-flash: #381b19; */ /* Couleur des liens - id - */ 
+/* --vt--lko-flash: #e2c5c3; */ /* Couleur de liens survolés - id - */ 
+/* --vt--bg-popup-annonce: #73170b; */ /* Couleur de fond pour la popup d'annonce */ 
+/* --vt--co-popup-annonce: #fde4e1; */ /* Couleur de caractères pour bg-popup-annonce */ 
+/* --vt--lk-popup-annonce: #381b19; */ /* Couleur des liens - id - */ 
+/* --vt--lko-popup-annonce: #e2c5c3; */ /* Couleur de liens survolés - id - */ 
+/* --vt--lk-espace-entrainement: #2b5783; */ /* Couleur des liens de l'espace d'entraînement */ 
+/* --vt--lko-espace-entrainement: #4674b9; */ /* Couleur des liens survolés - id - */ 
+
+
+/*utilisés*/
+--vtmt--bg-section-wrap: #41403c;
+--vtmt--bg-section: #41403c; /* Couleur de fond du site */ 
+--vtmt--bg-section-editor: red;
+--vtmt--bg-oeuvre: #20060b;  /* Couleur de fond d'une oeuvre */ 
+--vtmt--co-oeuvre: #3e3e3e; /* Couleur de caractères pour oeuvre */ 
+--vtmt--bg-titre-oeuvre: #edefee;
+--vtmt--co-titre-oeuvre: #3e3e3e;
+--vtmt--bg-bloc-entete: #edefee;
+--vtmt--co-bloc-entete: #3e3e3e;
+--vtmt--lk-bloc-entete: #aa210f;
+--vtmt--lko-bloc-entete: #ee5944;
+--vtmt--bg-un-module: #595656; /* Couleur de fond pour un bloc d'entraînement */ 
+
+--vtmt--bg-popup-lecteur: #800020; /*#73170b;*/
+--vtmt--co-popup-lecteur: white;
+--vtmt--bg-clavier: #acacac;
+--vtmt--bg-symbole-fichier-de-travail: #005741; /*#4674b9;*/ /* Couleur de fond pour la désignation d'un pupitre (S, A, T, B) */ 
+--vtmt--co-symbole-fichier-de-travail: #fffff0; /* Couleur de caractère associée */ 
+--vtmt--bg-bouton-clavier-enfonce: grey;
+
+--vtmt--bg-flash: #73170b;  /* Couleur de fond éclatante */
+
+--vtmt--switch-checked: #41403c; /* Boutons swith */
+--vtmt--switch-focus: #41403c; /* Boutons swith */
+
+--vtmt--bg-symbole-bouton-index: #570016; 
+--vtmt--co-symbole-bouton-index: #fffff0;  
+
+--vtmt--bg-couleur-site: #73170b; /* utilisé pour les boutons particuliers tels les "retour" d'une liste d'index - A ASSORTIR AU SITE D'ACCUEIL */
+--vtmt--co-titre-second: #c0b5b3; /* Couleur de caractère associée */ 
+
+--vtmt--bg-masque-clair: rgba(255,255,255,0.5);
+--vtmt--bg-masque-fonce: rgba(0,0,0,0.1);
+
+} 
+

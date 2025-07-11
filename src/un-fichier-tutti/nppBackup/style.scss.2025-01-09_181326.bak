@@ -1,0 +1,40 @@
+/**
+ * S'applique au bloc bloc-fichiers-de-travail sur le site et dans l'éditeur
+ */
+
+#vt--une-page {
+	.vt--un-fichier-tutti {
+		font-size: 1.2em;
+		background-color: var(--vt--bg-symbole-pupitre);
+		color: var(--vt--co-symbole-pupitre);
+		margin-top: 0.5%;
+		margin-bottom: 0.5%;
+		padding: 0.5%;
+		border-radius: 8px;
+	}
+	@media (min-width: 700px) {
+		.vt--un-fichier-tutti{
+			font-size: 1.5em;
+		}
+	}
+
+	.vt--un-fichier-tutti {
+		> * {
+		display: flex;
+		padding: 0.5%;
+		
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 10px;
+		}
+		.vt--label {
+			text-align: center;
+		}
+		.fa-regular {
+			font-size: 3em;
+			color: white;
+			background-color: var(--vt--bg-symbole-pupitre);
+		}
+	}
+}

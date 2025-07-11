@@ -1,0 +1,133 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+export default function Edit( props ) {
+	const blockProps = useBlockProps()
+
+	
+	// La fonction qui met à jour la valeur
+	const onChangeContent = event => {
+		let liste = event.target.value
+		props.setAttributes( { chaineDescriptive: liste } )
+	}
+
+    // Gestion du nombre d'InnerBlocks à insérer
+    const nombreInnerBlocks = props.attributes.nombreSousBlocs || 1; // Valeur par défaut : 1
+
+	const onChangeNombre = event => {
+		let nb = event.target.value
+		props.setAttributes( { nombreSousBlocs: nb } )
+		nombreInnerBlocks = nb
+	}
+
+	// Gestion des contenus des innerBlocks
+    const sousBlocsData = props.attributes.sousBlocsData || [];
+
+    const updateInnerBlockData = (index, newData) => {
+        const updatedData = [...sousBlocsData];
+        updatedData[index] = newData;
+        props.setAttributes({ sousBlocsData: updatedData });
+//		console.log(props.attributes.sousBlocsData)
+    };
+	// La fonction qui met à jour l'option
+	const onChangeOption = event => {
+		props.setAttributes({selection: event.target.checked})
+	}
+	const setTypeLecteur = event => {
+		let lecteurChoisi = event.target.value
+		props.setAttributes( {typeLecteur: lecteurChoisi})
+	}
+
+	//la fonction qui convertit en array() la chaine passée en argument
+	const items = (arg) => {
+		 let aitems = arg.split('&')
+	  return aitems.map(x => x.split('|'))
+	}
+
+	
+	return (
+		<div { ...blockProps }>
+				<>
+					<label>Chaine textes|fichiers<br />
+						<input type='text' value={ props.attributes.chaineDescriptive } onChange={ onChangeContent } placeholder={ __('Write a text!', 'vt-gut-blocks' ) } />
+					</label>
+					<label>nombre de sous-blocs<br />
+						<input type='number' value={ props.attributes.nombreSousBlocs } onChange={ onChangeNombre } 		placeholder={ __('Write a text!', 'vt-gut-blocks' ) } />
+					</label>
+					<label>
+						<input type='checkbox' checked={(props.attributes.selection)} onChange={ onChangeOption }/>option
+					</label>
+
+				 
+					<label>
+					<input type="radio" checked={(props.attributes.typeLecteur == "audio")} onChange={setTypeLecteur}
+					 name="typelecteur" value="audio" />
+					audio</label>
+					<label>
+					<input type="radio" checked={(props.attributes.typeLecteur == "video")} onChange={setTypeLecteur}
+					 name="typelecteur" value="video" />
+					vidéo</label>
+				  
+
+					<div  className="vt-bloc-block-test">
+						
+					  { ( props.attributes.chaineDescriptive != null) ?
+						  items(props.attributes.chaineDescriptive).map((item, index) => (
+								<div key={index}>{index} - {item[0]} / {item[1]}</div> ))
+						: "RAS"
+					  }
+					</div>
+					<div>{ props.attributes.selection ? ('sélectionné') : ('pas sélectionné')} </div>
+					{/* Répéter les InnerBlocks en fonction de numInnerBlocks */}
+					{/*Array.from({ length: nombreInnerBlocks }).map((_, index) => (
+						<div key={index} { ...blockProps } className="vache-qui-rit">
+                    <InnerBlocks
+                        //allowedBlocks={['vt-gut-blocks/tata', 'core/image']}  // Liste des types de bloc autorisés
+                        templateLock={false}  // Permet de modifier les types de blocs insérés
+                        template={sousBlocsData[index]?.template || []}  // Utilisation du template stocké dans les attributs
+                        //... (autres attributs personnalisés pour chaque InnerBlocks)
+                        templateInsertUpdatesSelection={false}  // Désactive la sélection automatique après insertion d'un bloc
+                        onInsert={(newBlock) => {
+                            const newData = { ...sousBlocsData[index], template: [...newBlock] };
+                            updateInnerBlockData(index, newData);
+                        }}
+                    />
+						</div>
+					))*/}
+					        <div { ...blockProps }>
+            <InnerBlocks />
+        </div>
+				</>
+		</div>
+	)
+}
+

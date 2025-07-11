@@ -1,0 +1,1 @@
+<div id="error"><p class="wpdberror"><strong>Erreur de la base de données WordPress :</strong> [Table &#039;cfrancazal.zplaintes_test&#039; doesn&#039;t exist]<br /><code>SHOW FULL COLUMNS FROM `zplaintes_test`</code></p></div>{"success":false,"data":"Plainte pas enregistr\u00e9e"}

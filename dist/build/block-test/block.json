@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "vt-music-training/vt-block-test",
+  "version": "0.1.0",
+  "title": "Block block-test",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Bloc pour les audios de block-test",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "chaineDescriptive": {
+      "type": "string"
+    },
+    "nombreSousBlocs": {
+      "type": "integer",
+      "default": 1
+    },
+    "sousBlocsData": {
+      "type": "array",
+      "default": []
+    },
+    "selection": {
+      "type": "boolean",
+      "default": true
+    },
+    "typeLecteur": {
+      "type": "string",
+      "default": "audio"
+    }
+  },
+  "textdomain": "vt-music-training",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,26 @@
+/** 
+* Ecoute des boutons des pupitres
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    function InitLecteur(chemin, nomfichier, type) {
+        console.log(`Lecture de ${nomfichier} (${type}) depuis ${chemin}`);
+        // Code pour jouer l'audio ou la vidéo
+    }
+
+    document.querySelectorAll(".vt--pupitre-button").forEach(div => {
+        div.addEventListener("click", () => {
+            const chemin = vtNormalizePath(div.getAttribute("data-chemin"));
+            const nomfichier = div.getAttribute("data-nomfichier");
+            const type = div.getAttribute("data-type");
+            const clavier = div.getAttribute("data-clavier");
+            const stereo = div.getAttribute("data-stereo");
+
+            if (typeof vtActiverLecteur === 'function') {
+                vtActiverLecteur(chemin, nomfichier, type, clavier, stereo);
+            } else {
+                console.error('La fonction vtActiverLecteur n’est pas définie.');
+            }
+        });
+    });
+});

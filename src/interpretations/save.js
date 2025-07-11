@@ -1,0 +1,47 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+	// Déstructuration des props
+	const { interpretations } = props.attributes
+//	console.log(tbool)
+//	alert(chaineDescriptive)
+	//convertit chaine content en array
+	const items = (content) => {
+	  return content.map(x => x.split('|'))
+	}
+	
+	
+	return (
+		<div { ...blockProps }>
+			{
+				 props ? (''):(<p>props est dans les choux</p>)
+			}
+	{ interpretations ? ( 		
+    <div  className="vt--bloc-interpretation">
+		
+      {items(interpretations).map((item, index) => (
+        <div key={index}>{index} - {item[0]} / {item[1]}</div>
+      ))}
+    </div> ) : (
+		<p>interpretations est undefined !</p>
+	)
+	}	
+		</div>
+	);
+}

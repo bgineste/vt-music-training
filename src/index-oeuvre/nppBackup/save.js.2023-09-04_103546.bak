@@ -1,0 +1,64 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+ 
+//import { getAdjacentIDs } from './functions';
+
+export default function save(props) {
+	const blockProps = useBlockProps.save();
+    const { attributes: { texteDuBouton },attributes: { etatDuBouton }, setAttributes, } = props;
+/*	const adjacentIDs = [];
+	function getAdjacentIDs(element) {
+		adjacentIDs = [];
+		let sibling = element.nextElementSibling;
+
+		while (sibling) {
+			adjacentIDs.push(sibling.id);
+			sibling = sibling.nextElementSibling;
+		}
+
+//		return adjacentIDs;
+	}*/
+/*
+	const elementCourant = this; //document.getElementById('elementCourant');
+	const adjacentIDs = getAdjacentIDs(elementCourant);
+
+	console.log(adjacentIDs);
+*/
+	const hMenu = document.getElementById("site-header") != null ? document.getElementById("site-header").offsetHeight : 0;
+	return (
+		<div {...blockProps }  className="wp-block-group" >
+		<>
+			<div class="block-bouton-on-off-row">
+			<h5> { texteDuBouton }</h5> 
+			<label class="block-bouton-on-off-switch">
+			  <input class="bouton-index-on-off" type="checkbox" checked= {etatDuBouton} onclick="change_bouton_on_off_panneau_index(this);" />
+			  <span class="block-bouton-on-off-slider block-bouton-on-off-round"></span>
+			</label>
+			</div>
+			<a onClick="constructIndexOeuvre(this.parentNode);this.nextElementSibling.style.display = 'block';this.nextElementSibling.firstElementChild.innerHTML = HTMLindex;console.log(HTMLindex);">Chaine index choeurs</a>
+			
+			<div class="vt--popup__masque-modal" style="display: none;">
+				<div class="vt--popup__masque-modal-inner">
+					<div class="vt--popup__bloc">
+					</div>
+				</div>
+			</div>
+		</>
+		</div>
+	)
+}

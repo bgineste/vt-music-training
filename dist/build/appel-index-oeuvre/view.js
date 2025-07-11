@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".vt--lien-vers-ancre").forEach(e=>{e.addEventListener("click",()=>{console.log("rappel index");let t=e.closest(".vt--une-oeuvre").getElementsByClassName("vt--block-bouton-index")[0];t.checked=!1,t.click()})})});

@@ -1,0 +1,114 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+/*import { TextControl, RadioControl } from '@wordpress/components';*/
+import { TextControl } from '@wordpress/components';
+import { RadioControl } from '@wordpress/components';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function Edit(props) {
+//	const chemin = props.cheminFichiers
+//	console.log(props.cheminFichiers)
+	const blockProps = useBlockProps()
+    const { context } = props;
+    const { "bloc-prononciation/cheminFichiers": cheminFichiers } = context;
+    const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { typefichier },attributes: { interprete }, setAttributes, } = props;
+	const pathDuBloc = cheminFichiers
+	const pathCourant = path
+//	if ({path} != "") {setAttributes ({ path: { cheminFichiers }})}
+//	setAttributes( { path:  pathDuBloc } )
+	if ( !pathCourant ) {setAttributes( { path:  pathDuBloc } )}
+/*
+const MyRadioControl = () => {
+    const [ option, setOption ] = useState( 'a' );
+}
+*/	
+	return (
+		//ici saisir le texte, le path (actualisé par cheminFichiers), nomFichier et interprete (s'inspirer de bloc-test)
+		
+		<div { ...blockProps }>
+			{ props.isSelected ? ( 
+				<div className="bk-parametrage">
+				<p> { cheminFichiers } / { pathCourant } </p>
+					<TextControl
+						label={ 'Texte à prononcer' }
+						value={ texte }
+						onChange={ ( val ) =>
+							setAttributes( { texte: ( val ) } )
+						}
+					/>
+					<TextControl
+						label={ 'Chemin du fichier' }
+						value={ path }
+						onChange={ ( val ) =>
+							setAttributes( { path: ( val ) } )
+						}
+					/>
+					<TextControl
+						label={ 'Nom du fichier' }
+						value={ nomfichier }
+						onChange={ ( val ) =>
+							setAttributes( { nomfichier: ( val ) } )
+						}
+					/>
+					<TextControl
+						label={ 'Interprète' }
+						value={ interprete }
+						onChange={ ( val ) =>
+							setAttributes( { interprete: ( val ) } )
+						}
+					/>
+					<RadioControl
+						label={ 'Type de fichier '}
+						help={ 'mp3 => audio, mp4 => vidéo' }
+						selected={ typefichier }
+						options={ [
+							{ label: 'audio', value: 'audio' },
+							{ label: 'vidéo', value: 'video' },
+						] }
+						onChange={ ( value ) => 
+							setAttributes( { typefichier: (value)})
+						}
+					/>
+				</div>
+			) : ( 
+			 <div className="une-prononciation">
+			 { { texte } != "" ? (
+			 <p> { texte } </p>
+			 ):(
+			 <p>"Saisir le texte à prononcer"</p>
+			 ) }
+			 </div>
+			) 
+		}
+		</div>
+		
+		
+	);
+}

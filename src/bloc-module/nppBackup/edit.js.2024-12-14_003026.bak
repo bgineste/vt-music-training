@@ -1,0 +1,65 @@
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
+/*import getTypeParentBlock from '../../hooks/getTypeParentBlock';*/
+import { TextControl } from '@wordpress/components';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-oeuvre/cheminFichiersOeuvre": cheminFichiersOeuvre } = context;
+    const { cheminFichiersModule, titreModule, hasIndexOeuvre } = attributes;
+
+    // Utiliser le hook pour vérifier la présence d'un bloc sibling
+    const existIndexOeuvre = useHasSiblingBlock(clientId, 'vt-music-training/index-oeuvre');
+    if (hasIndexOeuvre !== existIndexOeuvre) {
+        setAttributes({ hasIndexOeuvre: existIndexOeuvre });
+    }
+	console.log("existIndexOeuvre",existIndexOeuvre)
+    // Initialisation du chemin si absent
+    if (!cheminFichiersModule) {
+        setAttributes({ cheminFichiersModule: cheminFichiersOeuvre });
+    }
+
+   /* const typeBlockParent = getTypeParentBlock(clientId);
+	console.log("Type du bloc parent ", typeBlockParent);*/
+
+    // Template pour InnerBlocks
+    const TEMPLATE_PRONONCIATIONS = [
+        ['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }],
+    ];
+
+    return (
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div className="vt--parametrage-bloc">
+                    <TextControl
+                        label="Titre du morceau"
+                        value={titreModule}
+                        onChange={(val) => setAttributes({ titreModule: val })}
+                    />
+                    <TextControl
+                        label="Chemin des fichiers du morceau"
+                        value={cheminFichiersModule}
+                        onChange={(val) => setAttributes({ cheminFichiersModule: val })}
+                    />
+                    <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
+                    <InnerBlocks
+                        allowedBlocks={['core/paragraph', 'vt-music-training/bloc-prononciation']}
+                        template={TEMPLATE_PRONONCIATIONS}
+                        placeholder="Ajoutez vos blocs ici"
+                    />
+                </div>
+            ) : (
+                <div className="wp-block-group vt--un-module">
+                    <h4 className="has-blue-color has-text-color wp-block-heading">{titreModule}</h4>
+                    <InnerBlocks
+                        allowedBlocks={['core/paragraph', 'vt-music-training/bloc-prononciation']}
+                        template={TEMPLATE_PRONONCIATIONS}
+                        placeholder="Ajoutez vos blocs ici"
+                    />
+                </div>
+            )}
+        </div>
+    );
+}

@@ -1,0 +1,42 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+export default function save(props) {
+	function vtmtNormalizePath(path) {
+
+		if (path === undefined) {return path}
+		return nPath = (path.endsWith('/')) ? path : path + '/'
+
+		
+	}
+	const blockProps = useBlockProps.save();
+    const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { interprete }, setAttributes, } = props;
+	const fichier = vtmtNormalizePath(path) + nomfichier
+//	const fichier = path + nomfichier
+
+	return (
+		<div { ...blockProps } className="vt--une-prononciation">
+			 
+			<>
+				<i class="fa-solid fa-square-caret-right" onClick={ "vtTraiteBoutonInitLecteur(baliseLecteur=null,typeLecteur='audio', fichierMusique='" + fichier + "',boutonInitLecteur=this,boutonPlayPause=this, startAuto=true, fermeLecteurFinLecture=true);console.log(fichier);"  }></i>
+				<div class="vt--btnLecteur vt--bouton-init vt--play" onClick={ "vtTraiteBoutonInitLecteur(baliseLecteur=null,typeLecteur='audio', fichierMusique='" + fichier + "',boutonInitLecteur=this,boutonPlayPause=this, startAuto=true, fermeLecteurFinLecture=true);console.log(fichier);"  } ></div>
+				<div> { texte } </div>
+			</>
+			 
+		</div>
+	);
+}

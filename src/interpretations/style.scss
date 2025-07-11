@@ -1,0 +1,20 @@
+/**
+ * S'applique au bloc interprétations  sur le site et dans l'éditeur
+ */
+
+.wp-block-vt-music-training-vt-prononciation {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+.vt--bloc-prononciation {
+	background-color: yellow;
+	color: red;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 10px 20px;
+}

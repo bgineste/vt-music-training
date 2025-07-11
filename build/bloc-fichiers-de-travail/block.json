@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vt-music-training/bloc-fichiers-de-travail",
+  "version": "0.1.0",
+  "title": "Groupe des fichiers de travail",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "C'est l'espace réservé aux différents types de fichiers de travail (tutti et pupitres)",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "cheminFichiers": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "providesContext": {
+    "bloc-fichiers-de-travail/cheminFichiers": "cheminFichiers"
+  },
+  "usesContext": [
+    "bloc-module/cheminFichiersModule"
+  ],
+  "textdomain": "music-training",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

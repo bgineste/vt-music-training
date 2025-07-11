@@ -1,0 +1,42 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+/*
+#vt--une-page  * {
+    all: unset; /* Réinitialise tous les styles */
+    box-sizing: border-box;
+}*/
+
+#vt--une-page {
+    all: initial; /* Réinitialise les styles globaux pour le conteneur */
+    font-family: "Inter var", Arial, sans-serif;
+	font-size: 1.8rem;
+	font-weight: 400;
+	letter-spacing: -0.015em; 
+	text-align: left;
+	word-break: break-word;
+	word-wrap: break-word;
+	background-color: var(--vt--bg-main);
+	width: 100%;
+	/*max-width: 600px;  à définir */
+	margin: auto;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.vt--une-page {
+	
+}
+
+@media (min-width: 700px) {
+	h2.vt--entete {
+		font-size: 4.8rem;
+	} 
+}
+
+
+/*.vt--section {
+	padding: 0;
+}
+*/

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-gut-blocks/index-oeuvre",
+	"version": "0.1.0",
+	"title": "Index des pièces d'une oeuvre",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc qui va générer l'index des morceaux d'une oeuvre",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {			 
+		"texteDuBouton": {
+			"type": "string",
+			"default": "Index des choeurs"
+		},
+		"etatDuBouton": "bolean",
+		"default": false
+		}
+	},		
+	"textdomain": "bloc-prononciation",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

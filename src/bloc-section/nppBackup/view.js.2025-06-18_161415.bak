@@ -1,0 +1,161 @@
+/**----------------------------------------------------------------------------------------------------
+* Définition de la balise touche-clavier
+-----------------------------------------------------------------------------------------------------*/
+
+
+class ToucheClavier extends HTMLElement {
+  connectedCallback() {
+    this.style.display = "inline-block";
+    this.style.width = "50px";
+    this.style.height = "50px";
+    this.style.margin = "3px";
+    this.style.marginTop = "10px";
+    this.style.padding = "3px";
+    this.style.border = "none";
+    this.style.borderRadius = "20%";
+    this.style.textAlign = "center";
+    this.style.lineHeight = "1.25";
+    this.style.letterSpacing = "0.0333em";
+    this.style.cursor = "pointer";
+    this.style.fontFamily = "'Inter var', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif";
+    this.style.fontWeight = "600";
+    this.style.userSelect = "none";
+    this.style.backgroundColor = "#fff";
+    this.style.color = "#000";
+    this.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+	this.style.fontSize = "1.7rem";
+    
+    this.addEventListener('click', () => {
+      const touche = this.getAttribute('data-touche');
+      console.log('Touche cliquée :', touche);
+    });
+
+    this.addEventListener('mousedown', () => {
+      this.style.backgroundColor = "#ddd";
+    });
+
+    this.addEventListener('mouseup', () => {
+      this.style.backgroundColor = "#f0f0f0";
+    });
+  }
+}
+customElements.define('touche-clavier', ToucheClavier);
+
+
+
+/**----------------------------------------------------------------------------------------------------
+* Ecoute des clics de lancement de lectures et du clavier
+-----------------------------------------------------------------------------------------------------*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('click', (event) => {
+        const target = event.target;
+/*
+        // Gestion des éléments .vt--fichier-tutti-trigger / Lancement de lecture
+		const trigger = target.closest('.vt--fichier-tutti-trigger'); // Remonte à l'élément parent
+        if (trigger) {
+            const chemin = vtNormalizePath(trigger.getAttribute('data-chemin'));
+            const nom = trigger.getAttribute('data-nom');
+            const type = trigger.getAttribute('data-type');
+			const affichageClavier = trigger.getAttribute('data-clavier');
+			const fichierStereo = trigger.getAttribute('data-stereo');
+
+            if (typeof vtActiverLecteur === 'function') {
+                vtActiverLecteur(chemin, nom, type, affichageClavier, fichierStereo);
+            } else {
+                console.error('La fonction vtLanceLecture n’est pas définie.');
+            }
+        } else { */
+			if (vtLecteur) {
+				// Gestion des <button> du bloc clavier
+				if (target.tagName === 'BUTTON' || target.closest('button')) {
+					const button = target.tagName === 'BUTTON' ? target : target.closest('button');
+					const clavierBlock = button.closest('.vt--clavier-lecteur');
+					
+					if (clavierBlock) {
+						// ligne 1 du clavier (play/pause déplacements curseur de lecture)
+						if (button === vtLecteur.boutonPlayPause) {
+							vtLecteur.PlayPause();
+						}
+						else if (button.classList.contains('vt--repete-en-boucle')) {
+							vtLecteur.RepeteEnBoucleLeMorceau(button); 
+						}
+						else if (button.classList.contains('vt--rewind')) {
+							vtRewind();
+						}
+						else if (button.classList.contains('vt--Ar10')) {
+							vtLecteur.Saut(-10);
+						}
+						else if (button.classList.contains('vt--Ar3')) {
+							vtLecteur.Saut(-3);
+						}
+						else if (button.classList.contains('vt--Av3')) {
+							vtLecteur.Saut(3);
+						}
+						else if (button.classList.contains('vt--Av10')) {
+							vtLecteur.Saut(10);
+						}
+						// ligne 2 du clavier (modulation de la vitesse d'exécution)
+						else if (button.classList.contains('vt--SpeedDown')) {
+							console.log('Bouton "vt--SpeedDown" cliqué :', button);
+							vtLecteur.Speed('down');
+						}
+						else if (button.classList.contains('vt--SpeedNormal')) {
+							console.log('Bouton "vt--Normal" cliqué :', button);
+							vtLecteur.Speed('normal');
+						}
+						else if (button.classList.contains('vt--SpeedUp')) {
+							console.log('Bouton "vt--SpeedUp" cliqué :', button);
+							vtLecteur.Speed('up');
+						}
+						// ligne 3 du clavier (traitement de boucles)
+						else if (button.classList.contains('vt--DefDebBoucle')) {
+							console.log('Bouton "vt--DefDebBoucle" cliqué :', button);
+							vtLecteur.DefDebBoucle();
+							vtLecteur.ElargirCompteurBoucle('vt--compteur-deb-boucle');
+						}
+						else if (button.classList.contains('vt--DefFinBoucle')) {
+							console.log('Bouton "vt--DefFinBoucle" cliqué :', button);
+							vtLecteur.DefFinBoucle();
+							vtLecteur.ElargirCompteurBoucle('vt--compteur-fin-boucle');
+						}
+						else if (button === vtLecteur.btnBoucle) {
+							console.log('Bouton "boucle" cliqué :', button);
+							vtLecteur.LoopIt();
+						}
+					}
+				} else {
+					// gestion des flèches d'ajustement du début et de la fin de boucle (ligne 3 du clavier)
+					
+					if (target.closest('.vt--deb-boucle-moins')){
+						vtLecteur.TraiteFleche('vt--deb-boucle-moins');
+					} else if (target.closest('.vt--deb-boucle-plus')) {
+						vtLecteur.TraiteFleche('vt--deb-boucle-plus');
+					} else if (target.closest('.vt--fin-boucle-moins')) {
+						vtLecteur.TraiteFleche('vt--fin-boucle-moins');
+					} else if (target.closest('.vt--fin-boucle-plus')) {
+						vtLecteur.TraiteFleche('vt--fin-boucle-plus');
+					}
+				}
+				// Gestion du zoom et du bouton quitter
+				if (target.tagName === 'I') {
+					//const bouton = target;
+					const MasqueModalLecteur = target.closest('#vt--lecteur-entrainement');
+					
+					if (MasqueModalLecteur) {
+						if (target.classList.contains('vt--repete-en-boucle')) {
+							console.log('Bouton "vt--repete-en-boucle" cliqué :', target);
+							vtRepeteEnBoucleLeMorceau(target); 
+						}
+						else if (target.classList.contains('vt--desactiver-lecteur-entrainement')) {
+							console.log('Bouton "vt--desactiver-lecteur-entrainement" cliqué :', target);
+							vtLecteur.DesactiverLecteurEntrainement(MasqueModalLecteur); 
+						}
+					}
+				}
+			}
+//		}
+    });
+	
+});
+

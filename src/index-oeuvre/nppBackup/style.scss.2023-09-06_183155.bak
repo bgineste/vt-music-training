@@ -1,0 +1,264 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/*
+.block-bouton-on-off-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 0 !important;
+	padding: 2%;
+	background-color: var(--bg-symbole-pupitre);
+	color: var(--co-symbole-pupitre);
+	width: max-content !important;
+	max-width: 100% !important;
+	border-radius: 10px;
+	border: 3px ridge var(--bg-symbole-pupitre);
+}
+*/
+/*
+.vt--bloc-index-choeurs > [class*="__inner-container"] {
+	padding-bottom: 1%;
+}
+*/
+.vt--block-bouton-index {
+	margin-left: 0 !important;
+	padding: 2%;
+	background-color: var(--vt--bg-symbole-pupitre);
+	color: var(--vt--co-symbole-pupitre);
+	width: max-content !important;
+	max-width: 100% !important;
+	border-radius: 10px;
+	border: 3px ridge var(--vt--bg-symbole-pupitre);
+	
+}
+.vt--block-bouton-index:hover {
+	cursor: pointer;
+}
+.vt--block-bouton-index h5 {
+	padding: 0;
+	margin: 0;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------*/
+/*
+.vt--popup__support {
+	background-color: var(--bg-masque-clair);
+	margin: 0 !important;
+	width: 100vw;
+	max-width: 100vw;
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	height: calc(100vh - var(--header-height));
+	z-index: 99;
+
+}
+
+.vt--Popup__inner {
+	display: flex;
+	width: 100%;
+	max-width: 100vw;
+	height: calc(100vh - var(--header-height));
+	align-items: center;
+}
+*/
+/*
+.vt--index-choeurs {
+	width: 100%;
+	max-width: 100vw;	
+}
+*/
+.vt--popup__support {
+	display: none;
+	background-color: var(--bg-masque-clair);
+	margin: 0 !important;
+	width: 100vw;
+	max-width: 100vw;
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	height: calc(100vh - var(--header-height));
+	align-items: center;
+	z-index: 99;
+
+}
+
+
+.vt--wrap-index-choeurs  {
+	background-color: var(--bg-un-morceau); /*var(--bg-section-a);*/
+	border-radius: 10px;
+	display: flex;
+	margin: 0 1%;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 99%;
+	max-width: calc(var(--largeur-utile) * 0.99) !important;  
+	justify-content: center;
+	gap: 25px 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	/*max-height: 100vh;*/
+}
+
+@media only screen and (max-height: 600px) {
+	.vt--popup__support {
+	}
+	.vt--wrap-index-choeurs {
+		/*
+		align-items: flex-start;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		*/
+	}
+
+}
+
+
+/*=========================================================================================================================*/
+/*
+.vt--index-choeurs {
+	display: flex;
+	justify-content: center;
+	background-color: var(--vt--bg-masque-clair); 
+	opacity: 0.2;
+	margin: 0 !important;
+
+	position: absolute;
+	top: var(--header-height);
+	left: 0;
+	height: calc(100vh - var(--header-height));
+	width: 100vw;
+
+
+}
+
+.vt--index-choeurs  > [class*="__inner-container"] {
+	display: flex;
+	height: calc(100vh - var(--header-height));
+	max-height: 98vh;
+	align-items: center;
+}
+
+.vt--index-choeurs .vt--wrap-index-choeurs {
+	display: flex;
+	max-width: var(--largeur-utile) !important;
+	background-color: var(--vt--bg-un-morceau); 
+	opacity: 1;
+	border-radius: 10px;
+	margin: 0 1%;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.vt--index-choeurs .vt--wrap-index-choeurs > [class*="__inner-container"] {
+	background-color: var(--vt--bg-un-morceau);
+	border-radius: 10px;
+	display: flex;
+	margin: 0 1%;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 100%;
+	justify-content: center;
+	
+}
+
+@media only screen and (max-height: 600px) {
+	.vt--index-choeurs {
+	}
+	.vt--index-choeurs  > [class*="__inner-container"] {
+		align-items: flex-start;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.vt--index-choeurs .vt--wrap-index-choeurs > [class*="__inner-container"] {
+		max-width: var(--largeur-utile);
+	}
+
+}
+*/
+/*===============================================================================================*/
+
+div.vt--lien-vers-ancre {
+	/*width: auto !important;*/
+	width: fit-content !important;
+	padding: 0.5% !important;
+	background-color: var(--vt--bg-symbole-pupitre); /*#005177;*/
+	color: var(--vt--co-symbole-pupitre); /*white*/
+	border-radius:10px;
+	text-decoration: none !important;
+}
+
+div.vt--lien-vers-ancre:hover {
+	color: #B0C4DE;
+}
+
+/* 
+label.block-bouton-on-off-switch {
+	margin-left: 2rem;
+}
+
+.block-bouton-on-off-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.block-bouton-on-off-switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.block-bouton-on-off-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:  #afafaf; 
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.block-bouton-on-off-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.block-bouton-on-off-switch input:checked + .block-bouton-on-off-slider {
+  background-color: var(--bg-body); 
+}
+
+.block-bouton-on-off-switch input:focus + .block-bouton-on-off-slider {
+  box-shadow: 0 0 1px var(--bg-body); 
+}
+
+.block-bouton-on-off-switch input:checked + .block-bouton-on-off-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.block-bouton-on-off-slider.block-bouton-on-off-round {
+  border-radius: 34px;
+}
+
+.block-bouton-on-off-slider.block-bouton-on-off-round:before {
+  border-radius: 50%;
+}
+*/

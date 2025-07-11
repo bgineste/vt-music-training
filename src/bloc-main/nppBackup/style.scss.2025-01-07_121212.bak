@@ -1,0 +1,134 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+.vt--une-page_wrap {
+	/*all: initial;*/
+	display: flex;
+	justify-content: center;
+}
+#vt--une-page {
+	all: initial;
+	display: block;
+	font-family: 'Inter var', courier, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: -0.015em; 
+	text-align: left;
+	width: 100%;
+	max-width: var(--vt--largeur-utile); /* à préciser */
+	margin: auto;
+	padding: 0 !important;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: var(--vt--bg-main);
+	color: #333;
+	word-break: break-word;
+	word-wrap: break-word;
+
+}
+
+#vt--une-page{
+	h1, h2, h3, h4, h5, h6 {
+		border: none;
+		font-size: inherit;
+		font-family: 'Inter var', courier, sans-serif;
+		font-feature-settings: "lnum";
+		font-variant-numeric: lining-nums;
+		font-weight: 700;
+		text-align: inherit;
+		letter-spacing: -0.0415625em;
+		line-height: 1.25;
+		padding: 0;
+		margin: 0;
+	}
+	
+	h2 {
+		font-size: 1.6em;
+	}
+	h3 {
+		font-size: 1.25em;
+	}
+	h4 {
+		font-size: 1em;
+	}
+	h5 {
+		font-size: 0.9em;
+	}
+	@media (min-width: 700px) {
+		h2 {
+			font-size: 3em;
+		} 
+		h3 {
+			font-size: 2em;
+		} 
+		h4 {
+			font-size: 1.5em;
+		} 
+		h5 {
+			font-size: 1.2em;
+		} 
+	}
+	/*----------------------------------------------------------------
+	Masque du lecteur
+	-----------------------------------------------------------------*/
+	.vt--masque-modal {
+		display: flex;
+		background-color: rgba(0, 0, 0, 0.5);
+		/*background-color: var(--vt--bg-masque-clair);*/
+		margin: 0 !important;
+		width: 100%;
+		max-width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		height: calc(100vh - var(--vt--hauteur-zone-externe-reservee));
+		justify-content: center;
+		align-items: center;
+		z-index: 10000000; /* pour masquer le bouton handicap*/
+
+
+	}
+
+	.vt--masque-modal-inner {
+		display: flex;
+		position: relative;
+		align-items: center;
+		width: 100%;
+		max-width: var(--largeur-utile);
+		height: 100%;
+		opacity: 1.0;
+	}
+
+	.vt--popup-lecteur-entrainement {
+		display: inline-block;
+		position: relative;
+		margin: 1vh auto 0; /* 8%*/
+		width: 98%;
+		max-width: 900px;
+		max-height: 96vh;
+		background-color: #E8E8E8;
+		color: rgb(26,26,26);
+		opacity: 1;
+		box-shadow: 0px 0px 20px #000;
+		border-radius: 3px;
+		scroll-behavior: smooth;
+		overflow: auto;
+		scroll-snap-type: y mandatory;
+		scroll-snap-align: start;
+		scrollbar-width: none;
+		vertical-align: start;
+		/*flex-direction: column;*/
+		/*align-items: center;*/
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+
+
+	
+}
+
+/* à définir pour l'éditeur ? */
+.vt--une-page {
+	
+}

@@ -1,0 +1,25 @@
+/**
+* S'applique au bloc-prononciation  sur le site et dans l'éditeur
+ */
+
+.vt--prononciation {
+	padding: 0 !important;
+}
+/*
+.vt--prononciation h4 {
+	padding-left: 1% !important;
+	font-size: 1.2em;
+	color: var(--vt--co-titre-bloc);
+}
+*/
+.vt--prononciation .vt--elements-prononciations {
+	margin: 0 !important;
+	margin-bottom: 2% !important;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 100% !important;
+	align-items: center;
+	gap: 3%;
+}

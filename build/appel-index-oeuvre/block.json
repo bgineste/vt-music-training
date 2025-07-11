@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vt-music-training/appel-index-oeuvre",
+  "version": "0.1.0",
+  "title": "Lien vers l'index des pièces d'une oeuvre",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Génére le bouton de renvoi à l'index des morceaux d'une oeuvre",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "texteDuBouton": {
+      "type": "string",
+      "default": "** INDEX **"
+    }
+  },
+  "textdomain": "vt-music-training",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

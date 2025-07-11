@@ -1,0 +1,48 @@
+/**
+ * S'applique au bloc bloc-module  sur le site et dans l'éditeur
+ */
+
+/* ------------------------------------ bloc d'entraînement vt--un-module) -------------------------------------------------*/
+
+.vt--une-oeuvre .vt--un-module {
+	max-width: 100% !important;
+	position: relative; /* pour permettre des positionnements absolus dans le groupe (par exemple un index en bas à gauche) */
+}
+
+.vt--un-module  > [class*="__inner-container"] {
+	display: flex;
+	flex-direction: column;
+	max-width: 100% !important;
+	margin-bottom: 1% !important;
+	background-color: var(--bg-un-morceau); 
+	/* test  pour remplacer le sélecteur .ec__groupe-entrainement .wp-block-group.ec__un-morceau.has-background*/
+	padding: 1%;
+}
+
+.vt--un-module  .bloc-esc {
+	margin-bottom: 0 !important;
+}
+
+/*------------------------------- Groupe Titre + Bouton escamotage --------------------------------------*/
+.vt--un-module .titre-et-bouton-esc {
+	margin: 0 auto !important;
+	max-width: 100% !important;
+}
+.vt--un-module p.titre-de-morceau {
+	color: white; /*var(--co-titre-morceau);*/
+	font-size: 1.4em;
+}
+
+.vt--un-module .titre-et-bouton-esc > [class*="__inner-container"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	max-width: 100% !important;
+	/*align-items: center;*/
+}
+
+.vt--un-module .titre-et-bouton-esc > [class*="__inner-container"] * {
+	/*align-self: center;*/
+}

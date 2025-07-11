@@ -1,0 +1,46 @@
+import { useBlockProps } from '@wordpress/block-editor'
+
+const deprecated = [
+	// insérer ici la prochaine version depréciée
+
+	// Version 0.1.0
+    { 
+		save( props ) {
+			const blockProps = useBlockProps.save();
+			const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { interprete }, setAttributes, } = props;
+			const fichier = path + nomfichier
+
+			return (
+				<div { ...blockProps }>
+					 <div className="vt--une-prononciation">
+					 { { texte } != "" ? (
+					 <a  onClick={ "startLecteur('audio', '" + fichier + "', start=true, annuleLecteurApresLecture=true)" } > { texte } </a>
+					 ):(
+					 <p>Saisir le texte à prononcer</p>
+					 ) }
+					 </div>
+				</div>
+			)
+		},
+
+
+/*		attributes: {
+			title: {
+                type: 'string',
+                source: 'text',
+                selector: 'title',
+            }
+		},
+		save( props ) {
+			const { title } = props.attributes
+
+			return (
+				<div {…useBlockProps.save()}>
+                	<p className="title">{title}</p>
+                </div>
+			)
+		}, */
+	}
+]
+
+export default deprecated

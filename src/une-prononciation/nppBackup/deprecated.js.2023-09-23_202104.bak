@@ -1,0 +1,31 @@
+// Cet essai de déprécation ne semble pas avoir fonctionné (peut-être parce qu'il y avait un paramètre de trop dans startLecteur et parceque startLecteur avait été supprimé)
+
+import { useBlockProps } from '@wordpress/block-editor'
+
+const deprecated = [
+	// insérer ici la prochaine version depréciée
+
+	// Version 0.1.0
+    { 
+		save( props ) {
+			const blockProps = useBlockProps.save();
+			const { attributes: { texte },attributes: { path },attributes: { nomfichier },attributes: { interprete }, setAttributes, } = props;
+			const fichier = path + nomfichier
+
+			return (
+				<div { ...blockProps }>
+					 <div className="vt--une-prononciation">
+					 { { texte } != "" ? (
+					 <a  onClick={ "startLecteur('audio', '" + fichier + "', start=true, annuleLecteurApresLecture=true)" } > { texte } </a>
+					 ):(
+					 <p>Saisir le texte à prononcer</p>
+					 ) }
+					 </div>
+				</div>
+			)
+		},
+
+	}
+]
+
+export default deprecated

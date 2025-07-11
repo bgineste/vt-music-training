@@ -1,0 +1,117 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+export default function Edit( props ) {
+	const blockProps = useBlockProps()
+
+	var monTableau
+	
+	// La fonction qui met à jour la valeur
+	const onChangeInterpretations = event => {
+		let liste = event.target.value
+//		let aliste = liste.split('|')
+		props.setAttributes( { interpretations: liste } )
+		console.log(props)
+	}
+	const onChangeCaract = event => {
+		let caract = event.target.value
+		props.attributes.caracteristiques.reperes = caract
+		console.log(props.attributes.caracteristiques)
+	}
+	// La fonction qui met à jour l'option
+	const onChangeOption = event => {
+		props.setAttributes({selection: event.target.checked})
+		console.log(props)
+	}
+	const setTypeLecteur = event => {
+		let lecteurChoisi = event.target.value
+		props.setAttributes( {typeLecteur: lecteurChoisi})
+	}
+
+	//la fonction qui convertit en array() la chaine passée en argument
+	const items = (arg) => {
+//		console.log(arg)
+	  return arg.split('|')
+	}
+	//la fonction convertit en string le tableau passé en argument
+	const chaine = (arg) => {
+		let s = ''
+		arg.forEach( item => {s + item + '|'})
+		console.log(s)
+		return s
+	}
+	
+	return (
+		<div { ...blockProps }>
+			{ props.isSelected ? ( 
+				<>
+					{props.attributes.caracteristiques ? (
+							for (var prop in props.attributes.caracteristiques) {
+								console.log(prop)
+							},
+
+						monTableau = Object.keys(props.attributes.caracteristiques).map(function(cle) {
+						return [cle, props.attributes.caracteristiques[cle]];
+}),
+						console.log(props.attributes.caracteristiques),
+						console.log(monTableau),
+							monTableau.map((item, index) => (
+							
+								<label>{item[0]}<br />
+								<input key={index} type='text' value={ item[1] } onChange={ onChangeCaract } placeholder={ __('Write a text!', 'vt-gut-blocks' ) } />
+							</label> ))
+						
+					) : ( <div>nada</div>)
+						
+					}
+				  
+
+				</>
+				) : ( 
+				<>
+					<div  className="vt-bloc-prononciation">
+					{						  console.log(props.attributes.caracteristiques),
+
+					 monTableau = Object.keys(props.attributes.caracteristiques).map(function(cle) {return [cle, props.attributes.caracteristiques[cle]];}),
+					   
+						  monTableau.map((item, index) => (
+								<div key={index}>{item[0]} - {item[1]}</div> ))
+					}
+					</div>
+					
+				</>	
+				) 
+			}
+		</div>
+	)
+}
+

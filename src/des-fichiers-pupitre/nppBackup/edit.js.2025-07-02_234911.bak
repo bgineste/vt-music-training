@@ -1,0 +1,362 @@
+import { useBlockProps } from '@wordpress/block-editor';
+//import { useState } from '@wordpress/element';
+import { __ } from '@wordpress/i18n';
+import { TextControl, RadioControl, ToggleControl, Button, PanelBody } from '@wordpress/components';
+import { useState, useRef } from '@wordpress/element';
+import './editor.scss';
+import { uploadFileToServer, deleteFileFromServer } from '../../js/vt-files-mngt.js';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
+    const { cheminFichier, typeFichier, affichageClavier, fichierStereo } = attributes;
+
+    // Initialisation du chemin si absent
+    if (!cheminFichier) {
+        setAttributes({ cheminFichier: cheminFichiers });
+    }
+	const fileInputRefs = useRef({});
+	const [uploading, setUploading] = useState(false);
+	const [erreurUpload, setErreurUpload] = useState(null);
+	
+//	let cheminFichierServer = [];
+//	let nomFichierServer = [];
+//	const [nomFichierServer, setNomFichierServer] = useState("");
+//	const nomCheminFichierServeurRefs = useRef({});
+	const paramsPupitresRefs = useRef({});
+	const pNomFichier = 0;
+	const pCheminFichier = 1;
+	
+const setNomFichierServer = (keyGroup, keyFile, nomFic)  => {
+//	nomFichierServer[keyGroup][keyFile] = nomFic;
+	nomFichierServer = updateOrAdd(nomFichierServer, [keyGroup, keyFile, nomFic], (a, b) => a[0] === b[0] && a[1] === b[1]);
+//	nomFichierServer = nomFic;
+}
+
+const handleFileChange = async (e, keyGroup, keyFile) => {
+	const fileNew = e.target.files[0];
+	console.log(e.target);
+	if (!fileNew) return;
+	console.log("Index courants : " + keyGroup + "/" + keyFile);
+	console.log(paramsPupitresRefs);
+	
+	//const chemin = cheminFichierTutti || 'docs/2025/'; // à vérifier
+	setUploading(true);
+	setErreurUpload(null);
+	//let nomFichierActuel = nomFichierServer[keyGroup][keyFile];
+	//console.log(nomFichierActuel);
+	console.log()
+	let cheminFichier = paramsPupitresRefs.current[`${keyGroup}-${keyFile}`][pCheminFichier];
+	let nomFichierPrec = paramsPupitresRefs.current[keyGroup][keyFile][pNomFichier];
+	try {
+		// 1. Supprimer le fichier précédent s'il existe
+		if (nomFichierPrec) {
+			console.log("suppression " + nomFichierPrec);
+			const resultDel = await deleteFileFromServer(nomFichierPrec, cheminFichier); // dans vt-files-mngt.js
+			console.log(resultDel.comment);
+		}
+
+		// 2. Uploader le nouveau fichier
+		
+		const resultUpload = await uploadFileToServer(fileNew, cheminFichier); // dans vt-files-mngt.js
+		console.log(resultUpload);
+		/*setAttributes({
+			nomFichierTutti: resultUpload.nom,
+			cheminFichierTutti : resultUpload.chemin,
+		});*/
+		//updateFile(groupIndexCourant, fileIndexCourant, 'nomfichier', resultUpload.nom);
+		updateFile(keyGroup, keyFile, 'nomfichier', resultUpload.nom);
+		paramsPupitresRefs[keyGroup][keyFile][pNomFichier] = resultUpload.nom;
+		
+		console.log("Upload " + resultUpload.chemin + " - " + resultUpload.nom);
+	} catch (err) {
+		console.error(err);
+		setErreurUpload(err.message);
+	} finally {
+		setUploading(false);
+	}
+}
+//	const fullUrl = `${cheminFichierServer}/${nomFichierServer}`;
+
+//---------------------------------------------------------------------------------------
+
+	// Styles particuliers
+	const boutonCommande = "font-size: 23px; font-weight: 600; border: white 2px solid;	border-radius: 8px; margin-right: 10px;"
+//---------------------------------------------------------------------------------------
+
+    // Parse JSON string into an object for internal manipulation
+    const initialGroups = attributes.chaineFichiersPupitre ? JSON.parse(attributes.chaineFichiersPupitre) : [];
+    const [groups, setGroups] = useState(initialGroups);
+
+    const saveGroupsToAttributes = (updatedGroups) => {
+        // Convert the object back to a JSON string before saving to attributes
+        const jsonString = JSON.stringify(updatedGroups);
+        setAttributes({ chaineFichiersPupitre: jsonString });
+        setGroups(updatedGroups);
+    };
+
+    const addGroup = () => {
+        const updatedGroups = [...groups, { titre: '', fichiers: [] }];
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const removeGroup = (index) => {
+        const updatedGroups = [...groups];
+        updatedGroups.splice(index, 1);
+        saveGroupsToAttributes(updatedGroups);
+    };
+/*
+    const addFileToGroup = (groupIndex) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers.push({ label: '', chemin: '' });
+        saveGroupsToAttributes(updatedGroups);
+    };
+*/
+	const addFileToGroup = (groupIndex) => {
+		const updatedGroups = [...groups];
+		updatedGroups[groupIndex].fichiers.push({
+			label: '',
+			chemin: cheminFichier,
+			nomfichier: '',
+			typeFichier: typeFichier,
+			affichageClavier: affichageClavier,
+			fichierStereo: fichierStereo
+		});
+		saveGroupsToAttributes(updatedGroups);
+	};
+
+    const removeFileFromGroup = (groupIndex, fileIndex) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers.splice(fileIndex, 1);
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const updateGroupTitle = (groupIndex, newTitle) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].titre = newTitle;
+        saveGroupsToAttributes(updatedGroups);
+    };
+
+    const updateFile = (groupIndex, fileIndex, key, value) => {
+        const updatedGroups = [...groups];
+        updatedGroups[groupIndex].fichiers[fileIndex][key] = value;
+        saveGroupsToAttributes(updatedGroups);
+    };
+	
+	const updateOrAdd = (array2D, newItem, compareFn) => {
+		const index = array2D.findIndex(item => compareFn(item, newItem));
+
+		if (index !== -1) {
+		// Modifier l'élément existant
+		const updatedArray = [...array2D];
+		updatedArray[index] = newItem;
+		return updatedArray;
+		} else {
+		// Ajouter un nouvel élément
+		return [...array2D, newItem];
+		}
+	}
+//---------------------------------------------------------------------------------------
+
+    return (
+	
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div className="vt--editor-bloc-pupitres">
+					<>
+					<div className="vt--editor-params-defaut-pupitres">
+						<h2>Paramètres par défaut des fichiers "Pupitres"</h2>
+						<TextControl
+							label="Chemin des fichiers"
+							value={cheminFichier}
+							onChange={(val) => setAttributes({ cheminFichier: val })}
+						/>
+						<RadioControl
+							label={ 'Type de fichier'}
+							/*help={ 'actif => true, inactif => false' }*/
+							selected={ typeFichier}
+							options={ [
+								{ label: 'audio', value: 'a' },
+								{ label: 'video', value: 'v' },
+							] }
+							onChange={ ( value ) => 
+								setAttributes( { typeFichier: (value)})
+							}
+						/>
+						<ToggleControl
+							label={ 'Afficher le clavier sous le lecteur' }
+							checked={ affichageClavier }
+							onChange={(value) => setAttributes({ affichageClavier: (value) })}
+						/>
+						{ affichageClavier && (
+							<ToggleControl
+								label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+								checked={ fichierStereo }
+								onChange={(value) => setAttributes({ fichierStereo: (value) })}
+							/>
+						)}
+					</div>
+					<div className="vt--editor-panel-wrapper">
+					{groups.map((group, groupIndex) => (
+						<PanelBody className="vt--editor-groupe-pupitres"
+							title={`Groupe ${groupIndex + 1}`}
+							key={groupIndex}
+							initialOpen={true}
+						>
+							 
+							<TextControl
+								label={__('Titre du groupe (facultatif)', 'text-domain')}
+								value={group.titre}
+								onChange={(value) => updateGroupTitle(groupIndex, value)}
+							/>
+							
+							{group.fichiers.map((file, fileIndex) => (
+									<div key={fileIndex} style={{ marginBottom: '10px' }} className="vt--editor-un-pupitre">
+										{ console.log("this ?") }
+										{ console.log(this) }
+										{paramsPupitresRefs.current[`${groupIndex}-${fileIndex}`] = [file.nomfichier, file.chemin]}
+										<TextControl
+											label={__('Label du pupitre', 'text-domain')}
+											help={ 'Par ex.: S pour Soprano, A pour Alto, T1 pour Ténor 1, etc' }
+											value={file.label}
+											onChange={(value) => updateFile(groupIndex, fileIndex, 'label', value)}
+										/>
+										<TextControl
+											label={__('Chemin du fichier', 'text-domain')}
+											value={file.chemin || cheminFichier}
+											onChange={(value) => updateFile(groupIndex, fileIndex, 'chemin', value)}
+										/>
+
+										<TextControl
+											label={__('Nom du fichier', 'text-domain')}
+											value={file.nomfichier}
+											readOnly
+										/>
+										<div style={{ marginTop: '1em' }}>
+										  <label className="label css-2o4jwd" style={{ display: 'none' }}>
+											{file.nomfichier ? 'Remplacer le fichier' : 'Choisir un fichier'}
+										  </label>
+
+										  <div style={{ display: 'flex', alignItems: 'center', gap: '1em' }}>
+											<button
+											  type="button"
+											  onClick={() => fileInputRefs.current[`${groupIndex}-${fileIndex}`]?.click()}
+											  className="components-button is-secondary"
+											>
+											  {file.nomfichier ? 'Choisir un nouveau fichier' : 'Choisir un fichier'}
+											</button>
+
+											<span style={{ fontStyle: 'italic', fontSize: '1rem' }}>
+											  {file.nomfichier || 'Aucun fichier sélectionné'}
+											</span>
+
+											{/* input caché */}
+											<input
+											  type="file"
+											  accept="audio/*,video/*"
+												ref={(el) => {
+													if (el) {
+													  fileInputRefs.current[`${groupIndex}-${fileIndex}`] = el;
+													}
+												}}
+
+											  onChange={(e) => handleFileChange(e, groupIndex, fileIndex)}
+											  
+											  style={{ display: 'none' }}
+											/>
+
+										  </div>
+										</div>
+										{uploading && <p>📤 Téléversement en cours...</p>}
+
+										{erreurUpload && <p style={{ color: 'red' }}>❌ {erreurUpload}</p>}
+										{console.log(groups[groupIndex].fichiers[fileIndex]['nomfichier'])}
+											{console.log(file.nomfichier)}
+										{file.nomfichier && (
+											<div style={{ marginTop: '1em', width: '100%', maxWidth: '250px' }}>
+												<p style={{ display: 'none' }}><strong>Fichier sélectionné :</strong> {file.nomfichier}</p>
+
+												{file.nomfichier.match(/\.(mp3|wav)$/i) && (
+													<audio controls src={file.chemin + "/" + file.nomfichier} >
+														Votre navigateur ne supporte pas l’audio.
+													</audio>
+												)}
+
+												{file.nomfichier.match(/\.(mp4|webm)$/i) && (
+													<video controls src={file.chemin + "/" + file.nomfichier}>
+														Votre navigateur ne supporte pas la vidéo.
+													</video>
+												)}
+																											 
+
+												{!file.nomfichier.match(/\.(mp3|wav|mp4|webm)$/i) && (
+													<a href={fullUrl} target="_blank" rel="noopener noreferrer">
+														📄 Ouvrir le fichier
+													</a>
+												)}
+											</div>
+										)}
+													
+																																
+
+										
+										<RadioControl
+											label={ 'Type de fichier'}
+											selected={ file.typeFichier || typeFichier }
+											options={ [
+												{ label: 'audio', value: 'a' },
+												{ label: 'video', value: 'v' },
+											] }
+											onChange={ ( value ) => updateFile(groupIndex, fileIndex, 'typeFichier', value) }
+										/>
+										<ToggleControl
+											label={ 'Afficher le clavier sous le lecteur' }
+											checked={ file.affichageClavier || affichageClavier}
+											onChange={(value) => updateFile(groupIndex, fileIndex, 'affichageClavier', value)}
+										/>
+										{ affichageClavier&& (
+											<ToggleControl
+												label={ 'Le fichier est stéréo : la voix principale a une piste dédiée' }
+												checked={ file.fichierStereo || fichierStereo }
+												onChange={(value) => updateFile(groupIndex, fileIndex, 'fichierStereo', value)}
+											/>
+										)}
+										<Button
+											isDestructive
+											onClick={() => removeFileFromGroup(groupIndex, fileIndex)}
+										>
+											{__('Supprimer ce pupitre', 'text-domain')}
+										</Button>
+									</div>
+								))}
+								<Button onClick={() => addFileToGroup(groupIndex)}>
+									{__('Ajouter un pupitre', 'text-domain')}
+								</Button>
+								<Button
+									isDestructive
+									onClick={() => removeGroup(groupIndex)}
+									style={{ marginTop: '10px' }}
+								>
+									{__('Supprimer ce groupe', 'text-domain')}
+								</Button>
+							</PanelBody>
+						))}
+						<Button
+							isPrimary
+							onClick={addGroup}
+							style={{ marginTop: '20px' }}
+						>
+							{__('Ajouter un groupe', 'text-domain')}
+						</Button>
+					</div>
+					</>
+                 </div>
+            ) : (
+                <div>
+					Fichiers pupitre
+                </div>
+            )}
+        </div>
+    );
+}

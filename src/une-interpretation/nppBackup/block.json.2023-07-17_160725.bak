@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "vt-gut-blocks/vt-une-interpretation",
+	"version": "0.1.0",
+	"title": "Bloc une-interprétation",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Bloc à insérer dans le bloc interprétations au bas des modules d'entraînement",
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"interprete": {
+			"type": "object",
+			"attributes": {
+				"value": {"type": "string", "default": ""},
+				"titre": {"type": "string", "default": "Interprètes"} 
+			}
+		},
+		"titre-version": {"type": "string", "default": ""},
+		"fichier": {"type": "string", "default": ""},
+		"audio-video":  {"type": "string", "default": "video"},
+		"reperes": {"type": "string", "default": ""}
+	},
+	"textdomain": "vt-gut-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

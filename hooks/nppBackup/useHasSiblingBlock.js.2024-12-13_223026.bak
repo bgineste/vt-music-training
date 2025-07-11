@@ -1,0 +1,21 @@
+import { useSelect } from '@wordpress/data';
+
+export default function useHasSiblingBlock(clientId, blockName) {
+    const parentClientId = useSelect(
+        (select) => select('core/block-editor').getBlockRootClientId(clientId),
+        [clientId]
+    );
+
+    const siblingBlocks = useSelect(
+        (select) => select('core/block-editor').getBlocks(parentClientId),
+        [parentClientId]
+    );
+
+    console.log('Parent Client ID:', parentClientId);
+    console.log('Sibling Blocks:', siblingBlocks);
+
+    const hasSibling = siblingBlocks.some((block) => block.name === blockName);
+    console.log(`Sibling "${blockName}" exists:`, hasSibling);
+
+    return hasSibling;
+}

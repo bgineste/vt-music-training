@@ -1,0 +1,44 @@
+/**
+ * S'applique au bloc bloc-oeuvre  sur le site et dans l'éditeur
+ */
+
+.vt--une-page {
+	.vt--une-oeuvre {
+		
+		width: 100% !important;
+		max-width: 100% !important; /*calc(100% - 8rem)*/
+		line-height: 2.4em;
+		margin-top: 2% !important;
+		background-color: var(--vt--bg-test);
+	}
+	.vt--une-oeuvre > * {
+		padding: 0 1% 0.1% 1%;
+	}
+
+	.vt--une-oeuvre > :not(.consignes):not(.bloc-paroles):not(.enregistrement):not(.wp-block-audio):not(.execution){
+		max-width: 100% !important;
+	}
+
+	.vt--une-oeuvre .vt--entete {
+		background-color: var(--vt--bg-section-a);
+		color: var(--vt--co-section-a);
+	}
+
+	.vt--une-oeuvre h2.vt--entete  {
+		margin-top: 3%;
+		margin-bottom: 2%;
+	}
+	
+	.vt--bloc-entete-oeuvre {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.vt--wrap-oeuvre {
+		
+	}
+
+}
+
+

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "vt-music-training/une-prononciation",
+  "version": "0.1.0",
+  "title": "Une Prononciation",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Bloc d'accès à une prononciation.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "texte": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "nomfichier": {
+      "type": "string"
+    },
+    "typefichier": {
+      "type": "string",
+      "default": "audio"
+    },
+    "interprete": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "usesContext": [
+    "bloc-prononciation/cheminFichiers"
+  ],
+  "textdomain": "vt-music-training",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

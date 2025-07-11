@@ -1,0 +1,66 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+.vt--une-page_wrap {
+	/*all: initial;*/
+	display: flex;
+	justify-content: center;
+}
+#vt--une-page {
+	all: initial;
+	display: block;
+	font-family: 'Inter var', courier, sans-serif;
+	font-size: 10px;
+	font-weight: 400;
+	letter-spacing: -0.015em; 
+	text-align: left;
+	width: 100%;
+	max-width: var(--vt--largeur-utile); /* à préciser */
+	margin: auto;
+	padding: 0 !important;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-radius: 4px;
+	background-color: var(--vt--bg-main);
+	color: #333;
+	word-break: break-word;
+	word-wrap: break-word;
+
+}
+
+#vt--une-page * {
+	display: block;
+}
+/*
+
+.vt--une-page {
+	.vt--une-oeuvre h2.vt--entete {
+		font-size: 2.6em !important;		
+	}
+	@media (min-width: 700px) {
+		vt--une-oeuvre h2.vt--entete {
+		font-size: 4.8em !important;
+		} 
+	}
+}
+
+.vt--une-page h4 {
+	font-size: 4em;
+}
+*/
+#vt--une-page h2 {
+	font-size: 2.6em;
+	background-color:green;
+}
+@media (min-width: 700px) {
+	#vt--une-page h2 {
+		font-size: 4.8em;
+		background-color: red;
+	} 
+}
+
+
+/*.vt--section {
+	padding: 0;
+}
+*/

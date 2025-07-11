@@ -1,0 +1,21 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-bloc-prononciation {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+.bk-prononciation {
+	padding: 0 !important;
+}
+
+.bk-prononciation h4 {
+	padding-left: 1% !important;
+	font-size: 1.2em;
+	color: var(--co-titre-bloc);
+}

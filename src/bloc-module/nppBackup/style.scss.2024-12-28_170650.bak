@@ -1,0 +1,134 @@
+/**
+ * S'applique au bloc bloc-module  sur le site et dans l'éditeur
+ */
+
+/* ------------------------------------ bloc d'entraînement vt--un-module) -------------------------------------------------*/
+#vt--une-page {
+	.vt--une-oeuvre .vt--un-module {
+		position: relative; /* pour permettre des positionnements absolus dans le groupe (par exemple un index en bas à gauche) */
+		display: flex;
+		flex-direction: column;
+		max-width: 100% !important;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		background-color: var(--vt--bg-un-morceau); 
+		/* test  pour remplacer le sélecteur .ec__groupe-entrainement .wp-block-group.ec__un-morceau.has-background*/
+		padding: 1%;
+	}
+
+	.vt--un-module  .vt--bloc-esc {
+		margin-bottom: 0 !important;
+	}
+
+	.vt--un-module h5 {
+		padding-left: 1% !important;
+		color: var(--vt--co-titre-bloc);	
+	}
+
+	/*------------------------------- Groupe Titre + Bouton escamotage --------------------------------------*/
+	.vt--un-module .vt--titre-et-bouton-esc {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin: 0 auto !important;
+		max-width: 100% !important;
+		width: 100%;
+	}
+	.vt--un-module p.vt--titre-de-morceau {
+		color: white; /*var(--vt--co-titre-morceau);*/
+		font-size: 0.85em;
+		margin: 0 !important;
+		width: max-content !important;
+		max-width: calc(100% - 80px) !important;
+	}
+
+		@media (min-width: 700px) {
+			.vt--un-module p.vt--titre-de-morceau {
+				font-size: 1.4em;
+			}
+		}
+
+	.vt--un-module .vt--titre-et-bouton-esc > [class*="__inner-container"] * {
+		/*align-self: center;*/
+	}
+
+	/*=============================================================
+	bloc afficher masquer (copié ici pour test)
+	=============================================================*/
+	/* Bloc escamoter */
+
+
+	.vt--afficher-masquer__switch {
+	  position: relative;
+	  display: inline-block;
+	  width: 60px !important;
+	  min-width: 60px !important; /*nécessaire pour les petits écrans, quand ça wrappe*/
+	  height: 34px !important;
+	  margin: 0 0 0 2% !important;
+	}
+
+	.vt--afficher-masquer__switch input { 
+	  opacity: 0;
+	  width: 0;
+	  height: 0;
+	}
+
+	.vt--afficher-masquer__slider {
+	  position: absolute;
+	  cursor: pointer;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: #afafaf; /*#ccc;*/
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.vt--afficher-masquer__slider:before {
+	  position: absolute;
+	  content: "";
+	  height: 26px;
+	  width: 26px;
+	  left: 4px;
+	  bottom: 4px;
+	  background-color: white;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.vt--afficher-masquer__switch input:checked + .vt--afficher-masquer__slider {
+	  background-color: #2196F3; /* valeur par défaut */
+	  background-color: var(--vt--bg-body);
+	}
+
+	.vt--afficher-masquer__switch input:focus + .vt--afficher-masquer__slider {
+	  box-shadow: 0 0 1px #2196F3; /* valeur par défaut */
+	  box-shadow: 0 0 1px var(--vt--bg-body); /*#2196F3;*/
+	}
+
+	.vt--afficher-masquer__switch input:checked + .vt--afficher-masquer__slider:before {
+	  -webkit-transform: translateX(26px);
+	  -ms-transform: translateX(26px);
+	  transform: translateX(26px);
+	}
+
+	/* Rounded sliders */
+	.vt--afficher-masquer__slider.vt--afficher-masquer__round {
+	  border-radius: 34px;
+	}
+
+	.vt--afficher-masquer__slider.vt--afficher-masquer__round:before {
+	  border-radius: 50%;
+	}
+
+	/* Bouton de retour à l'index de l'oeuvre*/
+	.vt--bouton-index-oeuvre {
+		background-color: var(--vt--bg-flash);
+		display: inline;
+		padding-top: 0.3em;
+		padding-bottom: 0.3em
+	}
+}

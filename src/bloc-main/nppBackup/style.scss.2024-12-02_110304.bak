@@ -1,0 +1,26 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+
+.vt--une-page {
+	background-color: var(--vt--bg-main);
+	font-family:"Inter var",-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,sans-serif;
+	font-size: 1.8rem;
+	font-weight: 400 !important;
+	letter-spacing: -0.015em; 
+	width: 100%;
+	padding: 0;
+	
+}
+
+@media (min-width: 700px) {
+	h2.vt--entete {
+		font-size: 4.8rem;
+	} 
+}
+
+
+/*.vt--section {
+	padding: 0;
+}
+*/

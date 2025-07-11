@@ -1,0 +1,67 @@
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
+import { __ } from '@wordpress/i18n';
+
+//import getTypeParentBlock from '../../hooks/getTypeParentBlock';
+import { TextControl } from '@wordpress/components';
+import './editor.scss';
+
+export default function Edit(props) {
+    const blockProps = useBlockProps();
+    const { context, attributes, setAttributes, clientId } = props;
+    const { "bloc-oeuvre/cheminFichiersOeuvre": cheminFichiersOeuvre } = context;
+    const { cheminFichiersModule, titreModule, hasIndexOeuvre } = attributes;
+
+    // Utiliser le hook pour vérifier la présence d'un bloc sibling
+    const existIndexOeuvre = useHasSiblingBlock(clientId, 'vt-music-training/index-oeuvre');
+    if (hasIndexOeuvre !== existIndexOeuvre) {
+        setAttributes({ hasIndexOeuvre: existIndexOeuvre });
+    }
+	console.log("existIndexOeuvre",existIndexOeuvre)
+    // Initialisation du chemin si absent
+    if (!cheminFichiersModule) {
+        setAttributes({ cheminFichiersModule: cheminFichiersOeuvre });
+    }
+
+    const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/bloc-fichiers-de-travail', 'vt-music-training/bloc-prononciation' ] // à compléter
+
+	// Template pour InnerBlocks
+    /*const TEMPLATE_PRONONCIATIONS = [
+        ['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }],
+    ];*/
+
+    return (
+	
+        <div {...blockProps}>
+            {props.isSelected ? (
+                <div>
+                    <TextControl
+                        label="Titre du module (nom du morceau, de la pièce, du numéro de l'oeuvre)"
+                        value={titreModule}
+                        onChange={(val) => setAttributes({ titreModule: val })}
+                    />
+                    <TextControl
+                        label="Chemin des fichiers du module"
+                        value={cheminFichiersModule}
+                        onChange={(val) => setAttributes({ cheminFichiersModule: val })}
+                    />
+                    <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
+                    <InnerBlocks
+                        allowedBlocks= { ALLOWED_BLOCKS }
+                        /*template={TEMPLATE_PRONONCIATIONS}*/
+                        placeholder="Ajoutez vos blocs ici"
+                    />
+                </div>
+            ) : (
+                <div>
+                    <h4>{titreModule}</h4>
+                    <InnerBlocks
+                        allowedBlocks= { ALLOWED_BLOCKS }
+                        /*template={TEMPLATE_PRONONCIATIONS}*/
+                        placeholder="Ajoutez vos blocs ici"
+                    />
+                </div>
+            )}
+        </div>
+    );
+}

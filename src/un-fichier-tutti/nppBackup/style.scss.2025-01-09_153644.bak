@@ -1,0 +1,18 @@
+/**
+ * S'applique au bloc bloc-fichiers-de-travail sur le site et dans l'éditeur
+ */
+
+#vt--une-page {
+	.vt--un-fichier-tutti > {
+		display: flex;
+		background-color: var(--vt--bg-symbole-pupitre);
+		margin-top: 0.5%;
+		margin-bottom: 0.5%;
+		padding: 0.5%;
+		
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 10px;
+	}
+}

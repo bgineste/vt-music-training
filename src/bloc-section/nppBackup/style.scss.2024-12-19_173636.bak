@@ -1,0 +1,32 @@
+/**
+ * S'applique au bloc bloc-main  sur le site et dans l'éditeur
+ */
+
+/* la classe vt--une-page est définie dans la déclaration du Shadow DOM */
+
+h1, h2, h3, h4, h5, h6 {
+	all: initial;
+	border: none;
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	text-align: inherit;
+}
+
+
+
+vt--une-page h2 {
+	font-size: 2.6em;
+}
+@media (min-width: 700px) {
+	vt--une-page h2 {
+		font-size: 4.8em;
+	} 
+}
+
+
+/*.vt--section {
+	padding: 0;
+}
+*/

@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-gut-blocks/bloc-prononciation",
+	"version": "0.1.0",
+	"title": "Bloc Prononciation",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "C'est le bloc des enregistrements de prononciation, s'il y en a. Il accueille les blocs de prononciation dans un InnerBlocks",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"cheminFichiers": {
+			"type": "string",
+			"default": "remplacer par chaine vide"
+		},
+		"chaineDescriptive": {
+			"type": "string"		
+		}
+	},
+	"usesContext": [ "bloc-oeuvre/cheminFichiersOeuvre" ],
+    "providesContext": {
+        "bloc-prononciation/cheminFichiers": "cheminFichiers"
+    },
+	"textdomain": "bloc-prononciation",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

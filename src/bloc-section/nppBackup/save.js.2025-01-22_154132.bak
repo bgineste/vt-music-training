@@ -1,0 +1,128 @@
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
+/**
+ * The save function defines the way in which the different attributes should
+ * be combined into the final markup, which is then serialized by the block
+ * editor into `post_content`.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ *
+ * @return {WPElement} Element to render.
+ */
+ 
+ /** 
+ * le div <div data-classe-bloc-entete={classeBlocEntete}> a pour utilité de mettre à disposition
+ *des scripts, la classe du bloc d'entête, si celui-ci doit être figé en haut de page
+ */
+
+export default function save(props) {
+	const blockProps = useBlockProps.save()
+    const {attributes: { titrePage }, attributes: { largeurPageMax }, attributes: { classeBlocEntete } } = props
+	// Récupérer la variable injectée par PHP
+    const isIphone = window.blockEditorData?.isIphone ?? false;
+/*
+	// Si on a besoin de disposer de l'attribut isIphone il faudrait remplacer l'instruction ci-dessus par la séquence ci-dessous
+	useEffect(() => {
+		// Détection ou récupération de isIphone
+		const isIphone = window.blockEditorData?.isIphone ?? false;
+
+		// Mettre à jour l’attribut
+		setAttributes({ isIphone });
+	}, []);
+*/
+	return (
+	<>
+		<div {...blockProps } className="vt--une-page_wrap">
+			<div id="vt--une-page" className="vt--une-page">
+				{ titrePage && (
+					<h2 className="wp-block-heading">{ titrePage }</h2>
+				) }
+				<InnerBlocks.Content />
+				<div id="vt--lecteur-entrainement" className="vt--masque-modal" style="display: none;">
+					<div className="vt--masque-modal-inner">
+						<div className="vt--popup-lecteur-entrainement">
+							<div id="vt--bloc-lecteur" className="vt--bloc-lecteur"></div>
+							<div id="vt--clavier-lecteur" className="vt--clavier-lecteur">
+								<div>
+									<button className="vt--repete-en-boucle" title="Répéter en boucle"><i className="fa-solid fa-arrows-spin"></i></button>
+									<button className="vt--rewind" title="Rembobiner"><i className="fas fa-undo-alt"></i></button>
+									<button className="vt--Ar10" title="Recul (10 sec)"><i className="fas fa-angle-double-left"></i></button>
+									<button className="vt--Ar3" title="Recul (3 sec)"><i className="fas fa-angle-left"></i></button>
+									<button className="vt--Av3" title="Avance (3 sec)"><i className="fas fa-angle-right"></i></button>
+									<button className="vt--Av10" title="Avance (10 sec)"><i className="fas fa-angle-double-right"></i></button>
+									
+									<button id="vt--PlayPause" className="vt--PlayPause"><i className="fas fa-play"></i></button>
+								</div>
+							{!isIphone && (	
+								<div>
+									<div id="vt--balance" className="vt--balance">
+										<div className="vt--balance-une-voie">
+											<input type="range" className="vt--balance-curseur" id="balanceG" min="0" max="10" value="10" step="1" onclick="setVol('G', this.value / 10);"  />
+											<div className="vt--balance-nom-voie">G</div>
+										</div>
+										<div className="vt--balance-une-voie">
+											<input type="range" className="vt--balance-curseur" id="balanceD" min="0" max="10" value="10" step="1" onclick="setVol('D', this.value / 10);"  />
+											<div className="vt--balance-nom-voie">D</div>
+										</div>
+									</div>
+								</div>
+							)}
+								<div>
+									<button className="vt--SpeedDown" title="Plus lentement"><i className="fas fa-chevron-down"></i></button>
+									<button className="vt--SpeedNormal" title="Vitesse normale"><i className="fas fa-circle" style="font-size: 1rem;"></i></button>
+									<button className="vt--SpeedUp" title="Plus vite"><i className="fas fa-chevron-up"></i></button>
+									<div className="vt--aff-compteur"><span id="vt--aff-vitesse">-</span></div>
+									
+								</div>
+								<div>
+									<button onclick="vtDefDebBoucle(); vtElargirCompteur('compteur-deb-boucle')" title="Marque le début de boucle"><i className="fas fa-step-forward"></i></button>
+									<div id="compteur-deb-boucle" className="vt--aff-compteur">
+										<div className="e-gr__texte-compteur"><div id="deb-boucle">-</div></div>
+										<div className="e-gr__masque-fleches">
+											<div className="e-gr__fleche e-gr__fleche-g"><div onclick="vtTraiteFleche('debBoucle','flecheGauche');"><i className="fas fa-caret-square-left"></i></div></div>
+											<div className="e-gr__fleche e-gr__fleche-d"><div onclick="vtTraiteFleche('debBoucle','flecheDroite');"><i className="fas fa-caret-square-right"></i></div></div>
+										</div>
+									</div>
+									<div id="compteur-fin-boucle" className="e-gr__support-compteur">
+										<div className="e-gr__texte-compteur"><div id="fin-boucle">-</div></div>
+										<div className="e-gr__masque-fleches">
+											<div className="e-gr__fleche e-gr__fleche-g"><div onclick="vtTraiteFleche('finBoucle','flecheGauche');"><i className="fas fa-caret-square-left"></i></div></div>
+											<div className="e-gr__fleche e-gr__fleche-d"><div onclick="vtTraiteFleche('finBoucle','flecheDroite');"><i className="fas fa-caret-square-right"></i></div></div>
+										</div>
+									</div>
+									<button onclick="vtDefFinBoucle(); vtElargirCompteur('compteur-fin-boucle')" title="Marque la fin de boucle"><i className="fas fa-step-backward"></i></button>
+									<select id="choix-boucle" onchange="vtChoixBoucle();" className="block-enregistrement-gr--clients-choix-boucle" style="display: none;" title="choix d'une boucle"></select>
+									<button id="boucle" title="Active/désactive la boucle" onclick="vtLoopIt()" value="choisir boucle"><i className="fas fa-sync-alt"></i></button>
+									<button id="enreg-boucle" className="vt--lanceEnregBoucle;" title="Enregistre l'intervalle défini" ><i className="fas fa-circle" style="color: red;"></i></button>
+									<button id="ren-suppr-boucle" className="vt--supprBoucle;" title="Renomme ou supprime la boucle courante" style="display: none;"><i className="fa-solid fa-trash-can"></i></button>
+									<div className="block-enregistrement-gr--clients-saisie-nom-boucle" style="display: none;">
+									<input id="saisie-nom-boucle" type="text" size="20" value="" placeholder="Affecter un nom à cette boucle" />
+									<button className="vt--enregBoucle;" title="Valide le nom de la boucle" ><i className="fas fa-check"></i></button>
+									</div>
+									
+								</div>
+							</div>
+							<div style="display: flex; width: 100%; justify-content: space-between; align-items: center; ">
+							<div style="display: flex; width: 100%; margin-right: .05vw; gap: 10px; justify-content: flex-start; font-size: 1.5em;">
+							<i className="fa-solid fa-magnifying-glass-plus" style="width: fit-content;" onClick="vtModifierLargeurBloc('vt--bloc-lecteur',50);"></i>
+							<i className="fa-solid fa-magnifying-glass-minus" style="width: fit-content;" onClick="vtModifierLargeurBloc('vt--bloc-lecteur',-50);"></i>
+							</div>
+							<i className
+							="vt--desactiver-lecteur-entrainement fa-sharp fa-regular fa-circle-xmark" style="width: fit-content; cursor: pointer; font-size: 3em; color: white;"></i>
+							</div>
+						</div>
+					</div>
+				</div>			
+			</div>
+            <div data-classe-bloc-entete={classeBlocEntete}>
+            </div>
+		</div>
+	</>
+	)
+}

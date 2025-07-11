@@ -1,0 +1,68 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps } from '@wordpress/block-editor';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {WPElement} Element to render.
+ */
+
+export default function Edit( props ) {
+	const blockProps = useBlockProps()
+
+	// La fonction qui met à jour la valeur
+	const onChangeContent = event => {
+		let liste = event.target.value
+		props.setAttributes( { content: liste } )
+		//let x = props.attributes.content.toUpperCase()
+		//props.setAttributes( {valeur: event.target.value.toUpperCase()} )
+		//event.target.value.split('&').map((a, index) => ({[`Step ${index + 1}`] : a}))
+		props.setAttributes( { prononciations: liste.split('&') } )
+	}
+//const animals = ["Dog", "Bird", "Cat", "Mouse", "Horse"];
+	return (
+		<div { ...blockProps }>
+			{ props.isSelected ? ( 
+				<input
+					type='text'
+					value={ props.attributes.content }
+					onChange={ onChangeContent }
+					placeholder={ __('Write a text!', 'vt-gut-blocks' ) }
+				/>
+			) : (
+				<div className="vt-bloc-pronciation">
+				<p className="valeur">{ props.attributes.valeur }</p>
+    <ul>
+      {props.attributes.prononciations.map((a, index) => (
+        <li key={index}>{a}</li>
+      ))}
+    </ul>				
+				</div>
+			) }
+		</div>
+	)
+}
+
