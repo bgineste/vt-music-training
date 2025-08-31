@@ -4,8 +4,8 @@
   "name": "vt-music-training/index-oeuvre",
   "version": "0.1.0",
   "title": "Index des pièces d'une oeuvre",
-  "category": "widgets",
-  "icon": "smiley",
+  "category": "vt-music-training-cat",
+  "icon": "index-card",
   "description": "C'est le bloc qui va générer l'index des morceaux d'une oeuvre : il est inutile s'il n'y a que 2 ou 3 morceaux",
   "example": {},
   "supports": {

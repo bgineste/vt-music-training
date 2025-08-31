@@ -84,7 +84,7 @@ export default function Edit(props) {
 					/>
 				</div>
 				) : ( 
-					<div>
+					<div className="vt--une-section">
 						<h4>Titre de la section : "{ titreSection }"</h4>
 						<p>Identifiant de la section : "{ idSection }" </p>
 						<InnerBlocks allowedBlocks= { ALLOWED_BLOCKS } />

@@ -21,9 +21,7 @@ export default function save(props) {
     const {attributes: { cheminFichierTutti, nomFichierTutti, typeFichierTutti,labelFichierTutti,affichageClavier, fichierStereo }} = props
 
 	return (
-		<div {...blockProps } className="vt--un-fichier-tutti">
-			<div
-				className="vt--fichier-tutti-trigger"
+		<div {...blockProps } className="vt--un-fichier-tutti"
 				data-chemin={cheminFichierTutti}
 				data-nom={nomFichierTutti}
 				data-type={typeFichierTutti}
@@ -32,7 +30,7 @@ export default function save(props) {
 			>
 				<i class="fa-solid fa-square-caret-right"></i>
 				<div className="vt--label">{ labelFichierTutti }</div>
-			</div>
+			
 		</div>
 
 	)

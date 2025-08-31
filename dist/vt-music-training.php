@@ -4,7 +4,7 @@
  * Description:        Création de pages et de modules d'apprentissage de morceaux de musique 
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.3
+ * Version:           0.1.7
  * Author:            Bernard Gineste
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,9 +12,11 @@
  *
  * @package           create-block
  */
- 
-/* Le filtre ci-dessous avait pour but de ne pas activer le plugin pour les visiteurs n'ayant pas la qualité de choriste, afin dene pas charger inutilement la page d'accueil. Mais on zappe ce filtre pour les sites qui n'ont pas le mécanisme de distinction des choristes */
-if (get_option('c_choeur') != false && get_option('p_choeur') != false) {
+
+
+/* Le filtre ci-dessous avait pour but de ne pas activer le plugin pour les visiteurs n'ayant pas la qualité de choriste, afin de ne pas charger inutilement la page d'accueil. Mais on zappe ce filtre pour les sites qui n'ont pas le mécanisme de distinction des choristes */
+/* CE FILTRE PROVOQUE UN PLANTAGE CAR exit STOPPE LE CHARGEMENT AVEC UNE ERREUR SILENCIEUSE */
+/*if (get_option('c_choeur') != false && get_option('p_choeur') != false) {
 // copie de is_choriste_logged_in() (accessible dans mu-plugins/VT-fonctions.php)
 function is_choriste() {
 	
@@ -30,7 +32,9 @@ function is_choriste() {
 if (!is_choriste()) {
 	exit;
 }
-}
+}*/
+
+
 /**
 * Séquence d'activation du plugin
 */
@@ -201,6 +205,21 @@ function vtmt_supprimer_fichier($request) {
 * Fonctions  appelées au chargement du plugin
 */
 
+// Enregistrement de fontawesome
+function vtmt_enqueue_fontawesome() {
+    // Vérifie si FontAwesome n'est pas déjà chargé par le thème
+    if ( ! wp_style_is( 'font-awesome', 'enqueued' ) ) {
+        wp_enqueue_style(
+            'font-awesome',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css',
+            array(),
+            '6.4.2',
+            'all'
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'vtmt_enqueue_fontawesome', 5 );
+
 // Enregistrement des scripts et styles
 function vt_music_training_ressources_enqueue() {
 	
@@ -218,11 +237,24 @@ function vt_music_training_ressources_enqueue() {
 }
 add_action('init', 'vt_music_training_ressources_enqueue');
 
+// Création d'une catégorie dédiée au plugin
+add_filter( 'block_categories_all', function( $categories, $post ) {
+    return array_merge(
+        $categories,
+        [
+            [
+                'slug'  => 'vt-music-training-cat',
+                'title' => __( 'Blocs music training', 'vt-music-training' ),
+                'icon'  => 'admin-media', 
+            ],
+        ]
+    );
+}, 10, 2 );
 
 // Enregistrement des blocks
 add_action('init', function () {
 	
-	register_block_type( __DIR__ . '/build/bloc-section' );
+	if (register_block_type( __DIR__ . '/build/bloc-section' ) === false) {alert("bloc-section pas chargé");};
 	// creation d'un 'nonce'
 	wp_add_inline_script(
 		'vt-music-training-bloc-section-editor-script', // le handle défini dans le block.json du bloc racine
@@ -233,16 +265,21 @@ add_action('init', function () {
 	);
 
 	register_block_type( __DIR__ . '/build/block-test' );
-	register_block_type( __DIR__ . '/build/bloc-oeuvre' );
+	if (register_block_type( __DIR__ . '/build/bloc-oeuvre' ) === false) {alert("bloc-section pas chargé");};
+	//register_block_type( __DIR__ . '/build/bloc-oeuvre' );
 	register_block_type( __DIR__ . '/build/bloc-module' );
 	register_block_type( __DIR__ . '/build/bloc-fichiers-de-travail' );
 	register_block_type( __DIR__ . '/build/un-fichier-tutti' );
 	register_block_type( __DIR__ . '/build/des-fichiers-pupitre' );
+	register_block_type( __DIR__ . '/build/bloc-des-pupitres' );
+	register_block_type( __DIR__ . '/build/un-groupe-de-pupitres' );
+	register_block_type( __DIR__ . '/build/un-pupitre' );
 	register_block_type( __DIR__ . '/build/une-interpretation' );
 	register_block_type( __DIR__ . '/build/bloc-prononciation' );
 	register_block_type( __DIR__ . '/build/une-prononciation' );
 	register_block_type( __DIR__ . '/build/index-oeuvre' );
-	//register_block_type( __DIR__ . '/build/appel-index-oeuvre' );
+
+    //register_block_type( __DIR__ . '/build/appel-index-oeuvre' );
     // Enregistrement de la catégorie de motifs ??
 	register_block_pattern_category( 'agencement', array( 'label' => __( 'Agencement de page' ) ) );
 });
@@ -299,12 +336,12 @@ function vt_music_training_render_settings_page() {
 			</p>
 		</div>
 		<p style="color: red;">Si l'échantillon ci-dessus est écrit en police "courier", activez-le chargement le la police "Inter var".<br />Cette police est indispensable pour assurer une mise en page correcte des pages d'entrainement</p>
-		<div style="border: 1px solid #ddd; padding: 15px; margin: 15px 0; background-color: #f9f9f9;">
+		<!--<div style="border: 1px solid #ddd; padding: 15px; margin: 15px 0; background-color: #f9f9f9;">
 			<p style="font-family: 'Inter var', courier; font-size: 1.2rem; margin: 0;">
 				<strong>Aperçu :</strong> Ceci est une icone FontAwesome : <i class="far fa-angry"></i>
 			</p>
 		</div>
-		<p style="color: red;">Si l'émoticone "colère" n'apparaît pas ci-dessus, activez-le chargement de la police "FontAwesome".<br />Cette police est indispensable pour assurer un rendu correct des pages d'entrainement</p>
+		<p style="color: red;">Si l'émoticone "colère" n'apparaît pas ci-dessus, activez-le chargement de la police "FontAwesome".<br />Cette police est indispensable pour assurer un rendu correct des pages d'entrainement</p>-->
         <form method="post" action="options.php">
             <?php
             settings_fields( 'vt_music_training_settings_group' ); // Groupe de paramètres
@@ -330,7 +367,7 @@ function vt_music_training_register_settings() {
         'vt-music-training-settings'             // ID de la page
     );
 
-    // Champ pour activer/désactiver FontAwesome
+    /*// Champ pour activer/désactiver FontAwesome
     add_settings_field(
         'vt_music_training_load_fontawesome',        // ID du champ
         'Charger FontAwesome',             // Label
@@ -342,7 +379,7 @@ function vt_music_training_register_settings() {
             'option_name' => 'vt_music_training_settings',
             'key' => 'load_fontawesome',
         ]
-    );
+    );*/
 
     // Champ pour activer/désactiver Inter var
     add_settings_field(
@@ -373,11 +410,11 @@ function vt_music_training_render_checkbox_field( $args ) {
 
 function enqueue_plugin_vt_music_training_styles() {
     $options = get_option( 'vt_music_training_settings' );
-    // Charger FontAwesome si activé
+    /*// Charger FontAwesome si activé
     if ( isset( $options['load_fontawesome'] ) && $options['load_fontawesome'] ) {
 		wp_enqueue_style( 'font-awesome', plugin_dir_url(__FILE__) . 'fonts/fontawesome-free-6.4.2-web/css/all.min.css',array(),'6.4.2','all' );
 //        wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0' );
-    }
+    }*/
 
     // Charger Inter var si activé
     if ( isset( $options['load_inter_var'] ) && $options['load_inter_var'] ) {

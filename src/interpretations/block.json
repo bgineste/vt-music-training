@@ -4,7 +4,7 @@
 	"name": "vt-music-training/vt-interpretations",
 	"version": "0.1.0",
 	"title": "Bloc interprétations",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "Bloc à insérer au bas des modules d'entraînement",
 	"supports": {

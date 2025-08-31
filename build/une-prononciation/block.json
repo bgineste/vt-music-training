@@ -4,7 +4,7 @@
   "name": "vt-music-training/une-prononciation",
   "version": "0.1.0",
   "title": "Une Prononciation",
-  "category": "widgets",
+  "category": "vt-music-training-cat",
   "icon": "smiley",
   "description": "Bloc d'accès à une prononciation.",
   "example": {},

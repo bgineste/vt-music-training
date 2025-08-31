@@ -42,7 +42,7 @@ const handleFileChange = async (e) => {
 
 		// 2. Uploader le nouveau fichier
 		
-		console.log("file avanr uploadFileToServer " + file);
+		console.log("file avant uploadFileToServer " + file);
 		const resultUpload = await uploadFileToServer(file, cheminFichierTutti); // dans vt-files-mngt.js
 		console.log("resultUpload " + resultUpload);
 		setAttributes({
@@ -163,7 +163,7 @@ const handleFileChange = async (e) => {
                  </div>
             ) : (
                 <div>
-					{ labelFichierTutti}
+					{ labelFichierTutti }
                 </div>
             )}
         </div>

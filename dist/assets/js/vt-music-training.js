@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trouver le bloc Gutenberg dans lequel se trouve défini data-classe-bloc-entete
     const blockElement = document.querySelector('[data-classe-bloc-entete]');
     if (!blockElement) {
-        console.warn('Bloc avec data-classe-bloc-entete introuvable.');
+        console.warn('Bloc avec "data-classe-bloc-entete" n\' pas été trouvé. C\'est normal si la page courante n\'est pas une page d\'entrainement.');
         return;
     }
 

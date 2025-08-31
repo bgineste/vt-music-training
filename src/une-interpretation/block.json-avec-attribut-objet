@@ -4,7 +4,7 @@
 	"name": "vt-gut-blocks/vt-une-interpretation",
 	"version": "0.1.0",
 	"title": "Bloc une-interprétation",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "Bloc à insérer dans le bloc interprétations au bas des modules d'entraînement",
 	"supports": {

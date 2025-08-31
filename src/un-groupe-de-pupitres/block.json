@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-music-training/un-groupe-de-pupitres",
+	"version": "0.1.0",
+	"title": "Un ensemble de fichiers de pupitre de même nature",
+	"category": "vt-music-training-cat",
+	"icon": "smiley",
+	"description": "Regroupement de fichiers de pupitres de même nature (voix naturelles, midi, synthé)",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"nomGroupePupitres": {
+			"type": "string",
+			"default": ""
+		},
+		"cheminFichiers": {
+			"type": "string",
+			"default": ""
+		},
+		"typeFichiers": {
+			"type": "string",
+			"default": "a"
+		},
+		"affichageClavier": {
+			"type": "boolean",
+			"default": true
+		},
+		"fichierStereo": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"usesContext": [ 
+		"bloc-des-pupitres/cheminFichiers",
+		"bloc-des-pupitres/typeFichiers",
+        "bloc-des-pupitres/affichageClavier",
+        "bloc-des-pupitres/fichierStereo" ],	
+    "providesContext": {
+        "un-groupe-de-pupitres/cheminFichiers": "cheminFichiers",
+        "un-groupe-de-pupitres/typeFichiers": "typeFichiers",
+        "un-groupe-de-pupitres/affichageClavier": "affichageClavier",
+        "un-groupe-de-pupitres/fichierStereo": "fichierStereo"
+    },
+	"textdomain": "music-training",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

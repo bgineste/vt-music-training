@@ -17,7 +17,7 @@ export default function Edit(props) {
         setAttributes({ cheminFichiers: cheminFichiersModule });
     }
 
-    const ALLOWED_BLOCKS = [ 'vt-music-training/un-fichier-tutti', 'vt-music-training/des-fichiers-pupitre' ] // à compléter
+    const ALLOWED_BLOCKS = [ 'vt-music-training/un-fichier-tutti', 'vt-music-training/des-fichiers-pupitre', 'vt-music-training/bloc-des-pupitres' ] // à compléter
 
 	// Template pour InnerBlocks
     /*const TEMPLATE_PRONONCIATIONS = [
@@ -34,7 +34,7 @@ export default function Edit(props) {
                         value={cheminFichiers}
                         onChange={(val) => setAttributes({ cheminFichiers: val })}
                     />
-                    <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
+                    <p>Insérer ici les blocs de fichiers de travail : un-fichier-tutti, bloc-des-pupitres</p>
                     <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
                         placeholder="Ajoutez vos blocs de fichiers de travail ici"
@@ -45,7 +45,7 @@ export default function Edit(props) {
                     <h5>Fichiers de travail</h5>
                     <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
-                        placeholder="Ajoutez vos blocs de fichiers de travail ici"
+                        placeholder="Ajoutez ici les blocs un-fichier-tutti ou bloc-des-pupitres"
                     />
                 </div>
             )}

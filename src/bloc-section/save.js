@@ -5,6 +5,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { vtModifierLargeurBloc } from './view.js';
+import { useState, useEffect } from '@wordpress/element';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -23,23 +25,23 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function save(props) {
 	const blockProps = useBlockProps.save()
     const {attributes: { idSection }, attributes: { titreSection }, attributes: { largeurPageMax }, attributes: { classeBlocEntete }, attributes: { sectionAffichable } } = props
-	// Récupérer la variable injectée par PHP
-   // const isIphone = window.blockEditorData?.isIphone ?? false;
-//	console.log("section")
-/*
-	// Si on a besoin de disposer de l'attribut isIphone il faudrait remplacer l'instruction ci-dessus par la séquence ci-dessous
-	useEffect(() => {
-		// Détection ou récupération de isIphone
-		const isIphone = window.blockEditorData?.isIphone ?? false;
+	console.log("bloc-section save:28");
+//	const [balanceG, setBalanceG] = useState(10);
+//	const [balanceD, setBalanceD] = useState(10);
+	console.log("bloc-section save:31");
 
-		// Mettre à jour l’attribut
-		setAttributes({ isIphone });
+/*	useEffect(() => {
+	window.attachBalanceSetters = (lecteur) => {
+		lecteur.setBalanceUIG = setBalanceG;
+		lecteur.setBalanceUID = setBalanceD;
+	};
 	}, []);
 */
 
 	if (!sectionAffichable) {
 		return null;
 	}
+	console.log("bloc-section save:44");
 
 	return (
 	<>
@@ -51,7 +53,7 @@ export default function save(props) {
 				<InnerBlocks.Content />
 				<div id="vt--lecteur-entrainement" className="vt--masque-modal" style="display: none;">
 					<div className="vt--masque-modal-inner">
-						<div className="vt--popup-lecteur-entrainement">
+						<div id="vt--popup-lecteur-entrainement" className="vt--popup-lecteur-entrainement">
 							<div id="vt--bloc-lecteur" className="vt--bloc-lecteur"></div>
 							<div id="vt--clavier-lecteur" className="vt--clavier-lecteur">
 								<div>
@@ -67,11 +69,11 @@ export default function save(props) {
 								<div id="vt--balance">
 									<div className="vt--balance">
 										<div className="vt--balance-une-voie">
-											<input type="range" className="vt--balance-curseur" id="balanceG" min="0" max="10" value="10" step="1" onclick="setVol('G', this.value / 10);"  />
+											<input type="range" className="vt--balance-curseur" id="vt--balanceG" min="0" max="10" value="10" step="1"  />
 											<div className="vt--balance-nom-voie">G</div>
 										</div>
 										<div className="vt--balance-une-voie">
-											<input type="range" className="vt--balance-curseur" id="balanceD" min="0" max="10" value="10" step="1" onclick="setVol('D', this.value / 10);"  />
+											<input type="range" className="vt--balance-curseur" id="vt--balanceD" min="0" max="10" value="10" step="1"   />
 											<div className="vt--balance-nom-voie">D</div>
 										</div>
 									</div>
@@ -102,19 +104,21 @@ export default function save(props) {
 									<touche-clavier className="vt--DefFinBoucle" title="Marque la fin de boucle"><i className="fas fa-step-backward"></i></touche-clavier>
 									<select id="vt--choix-boucle" onchange="vtChoixBoucle();" className="block-enregistrement-gr--clients-choix-boucle" style="display: none;" title="choix d'une boucle"></select>
 									<touche-clavier id="vt--btn-boucle" title="Active/désactive la boucle" value="choisir boucle"><i className="fas fa-sync-alt"></i></touche-clavier>
+								</div>
+								<div id="vt--bloc-enreg-boucle">
 									<touche-clavier id="vt--enreg-boucle" className="vt--lanceEnregBoucle;" style="font-size: 1.5rem;" title="Enregistre l'intervalle défini" ><i className="fas fa-circle" style="color: red;"></i></touche-clavier>
 									<touche-clavier id="vt--ren-suppr-boucle" className="vt--supprBoucle;" title="Renomme ou supprime la boucle courante" style="display: none;"><i className="fa-solid fa-trash-can"></i></touche-clavier>
-									<div className="block-enregistrement-gr--clients-saisie-nom-boucle" style="display: none;">
-									<input id="vt--saisie-nom-boucle" type="text" size="20" value="" placeholder="Affecter un nom à cette boucle" />
-									<touche-clavier className="vt--enregBoucle;" title="Valide le nom de la boucle" ><i className="fas fa-check"></i></touche-clavier>
+									<div className="vt--saisie-nom-boucle" style="display: none;">
+										<input id="vt--saisie-nom-boucle" type="text" size="20" value="" placeholder="Donner un nom à cette boucle" />
+										<touche-clavier className="vt--enregBoucle;" title="Valide le nom de la boucle" ><i className="fas fa-check"></i></touche-clavier>
 									</div>
 									
 								</div>
 							</div>
 							<div style="display: flex; width: 100%; justify-content: space-between; align-items: center; ">
 							<div style="display: flex; width: 100%; margin-right: .05vw; gap: 10px; justify-content: flex-start; font-size: 1.5em;">
-							<i className="fa-solid fa-magnifying-glass-plus" style="width: fit-content;" onClick="vtModifierLargeurBloc('vt--bloc-lecteur',50);"></i>
-							<i className="fa-solid fa-magnifying-glass-minus" style="width: fit-content;" onClick="vtModifierLargeurBloc('vt--bloc-lecteur',-50);"></i>
+							<i className="fa-solid fa-magnifying-glass-minus" style="width: fit-content;"></i>
+							<i className="fa-solid fa-magnifying-glass-plus" style="width: fit-content;"></i>
 							</div>
 							<i className
 							="vt--desactiver-lecteur-entrainement fa-sharp fa-regular fa-circle-xmark" style="width: fit-content; cursor: pointer; font-size: 3em; color: white;"></i>

@@ -4,7 +4,7 @@
 	"name": "vt-music-training/bloc-fichiers-de-travail",
 	"version": "0.1.0",
 	"title": "Groupe des fichiers de travail",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "C'est l'espace réservé aux différents types de fichiers de travail (tutti et pupitres)",
 	"example": {},

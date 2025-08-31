@@ -4,7 +4,7 @@
 	"name": "vt-music-training/vt-block-test",
 	"version": "0.1.0",
 	"title": "Block block-test",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "Bloc pour les audios de block-test",
 	"supports": {

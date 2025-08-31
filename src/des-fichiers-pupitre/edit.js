@@ -2,7 +2,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 //import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { TextControl, RadioControl, ToggleControl, Button, PanelBody } from '@wordpress/components';
-import { useState, useRef } from '@wordpress/element';
+import { useState, useRef, useEffect } from '@wordpress/element';
 import './editor.scss';
 import { uploadFileToServer, deleteFileFromServer } from '../../assets/js/vt-files-mngt.js';
 
@@ -11,6 +11,19 @@ export default function Edit(props) {
     const { context, attributes, setAttributes, clientId } = props;
     const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
     const { cheminFichier, typeFichier, affichageClavier, fichierStereo } = attributes;
+/*
+	const inputRef = useRef(null);
+
+
+	useEffect(() => {
+		setTimeout(() => {
+			const input = document.querySelector('input[type="text"]'); // ou un sélecteur plus spécifique
+			if (input) {
+				input.focus();
+			}
+		}, 100); // on attend un peu que tout soit monté
+	}, []);
+*/
 
     // Initialisation du chemin si absent
     if (!cheminFichier) {
@@ -227,6 +240,7 @@ const handleFileChange = async (e, keyGroup, keyFile) => {
 									help="Par ex. : S pour Soprano, A pour Alto..."
 									value={file.label}
 									onChange={(val) => updateFile(groupIndex, fileIndex, 'label', val)}
+									//ref={inputRef} // Ici on passe la ref pour le focus
 								  />
 
 								  <TextControl

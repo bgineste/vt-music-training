@@ -4,8 +4,8 @@
   "name": "vt-music-training/bloc-section",
   "version": "0.1.0",
   "title": "Bloc d'une section d'entraînement",
-  "category": "widgets",
-  "icon": "smiley",
+  "category": "vt-music-training-cat",
+  "icon": "admin-media",
   "description": "C'est une section d'entrainement, contenant une ou plusieurs oeuvres. Généralement elle constitue l'essentiel d'une page dédiée à l'entrainement, mais plusieurs sections peuvent cohabiter dans une même page html non dédiée à l'entrainement. Bloc racine du plugin. Le lecteur audio/vidéo est défini dans ce bloc",
   "example": {},
   "supports": {

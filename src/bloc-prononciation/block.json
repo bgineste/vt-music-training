@@ -4,7 +4,7 @@
 	"name": "vt-music-training/bloc-prononciation",
 	"version": "0.1.0",
 	"title": "Bloc Prononciation",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "C'est le bloc des enregistrements de prononciation, s'il y en a. Il accueille les blocs de prononciation dans un InnerBlocks",
 	"example": {},

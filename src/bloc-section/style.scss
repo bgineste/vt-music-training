@@ -106,8 +106,8 @@
 		display: flex;
 		position: relative;
 		margin: 1vh auto 0; /* 8%*/
-		width: auto;
-		max-width: 100%;
+		width: 900px;
+		max-width: 98%;
 		max-height: calc(100vh - var(--vtmt--hauteur-zone-externe-reservee));
 		background-color: var(--vtmt--bg-popup-lecteur);
 		color: var(--vtmt--co-popup-lecteur); /*rgb(26,26,26);*/
@@ -132,14 +132,16 @@
 	
 	.vt--bloc-lecteur {
 		display: flex;
-		width: 1000px; /* variable d'ajustement pour rester dans le cadre */
-		max-width: 100%; /* 98vw */
+		width: 100%; /* Pour rester dans le cadre lorsqu'il change de dimension */
+		max-width: 95vw; /* 98vw */
 		justify-content: center;
-		margin-top: 0;
-		margin-bottom: 1.5vh;
+		margin: 0 auto 1.5vh;
 	}
 	
 	.vt--bloc-lecteur video {
+		width: 100%;
+	}
+	.vt--bloc-lecteur audio {
 		width: 100%;
 	}
 /*
@@ -162,7 +164,7 @@
 		align-items: center;
 		white-space: nowrap;
 		background-color:  var(--vtmt--bg-clavier);
-		padding: 3px 6px;
+		/*padding: 3px 6px;*/
 		width: fit-content;
 		max-width: 98vw;
 		margin: auto;
@@ -305,6 +307,19 @@
 		padding-right: 3px;
 	}
 
+	.vt--balance-nom-voie {
+		color: black;
+	}
+	.vt--balance-curseur {
+		cursor: pointer;
+	}
+
+	.vt--saisie-nom-boucle {
+		display: flex;
+		width: fit-content !important;
+		background-color: rgba(255, 255, 255, 0);
+	}
+
 
 	.block-enregistrement-gr a, .block-enregistrement-gr button {
 		cursor: pointer;
@@ -312,15 +327,10 @@
 	.block-enregistrement-gr a, .block-enregistrement-gr button:active {
 		color: #aaa;
 	}
-	/*.block-enregistrement-gr .bouton-presse {
-		background-color: var(--bg-flash);
-		color: var(--co-flash);
-	}*/
 	.block-enregistrement-gr .block-lecteur {
 		display: flex;
 		justify-content: center;
 		margin-bottom: 10px;
-	/*	width: 100% !important;*/
 	}
 
 	.block-enregistrement-gr .block-lecteur-elargi {
@@ -330,112 +340,16 @@
 	.block-enregistrement-gr audio, .block-enregistrement-gr video {
 		width: 100% !important;
 	}
-/*
-	.block-enregistrement-gr .aff-compteur{
-		display: flex;
-		background-color: #000;
-		color: #fff;
-		align-items: center;
-		justify-content: center;
-	}
-	*/
-	.block-enregistrement-gr .span-centre-v {
-		/*display: table-cell;
-		vertical-align: bottom;
-		line-height: normal;*/
-	}
-/*
-	.e-gr__support-compteur {
-		position: relative;
-		background-color: #000 !important;
-		color: #fff !important;
-		border-radius: 10% !important;
-	}
-	*/
-/*
-	.e-gr__support-compteur-elargi {
-		width: 100px !important;
-	}
-	.e-gr__support-compteur-elargi .e-gr__masque-fleches {
-		display: flex !important;
-	}
-
-	.e-gr__texte-compteur, .e-gr__masque-fleches {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 50px;
-		color: #fff;
-	}
-	.e-gr__masque-fleches {
-		display: none;
-		flex-direction: row;
-		justify-content: space-between;
-		opacity: 1;
-		
-	}
-	.e-gr__texte-compteur {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-	}
-	.e-gr__fleche {
-		width: 30%;
-		color: #fff;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 10%;	
-	}
-	.e-gr__fleche > div {
-		width: 100%;
-		text-decoration: none;
-		color: #fff;
-		opacity: 0.5;
-		line-height: 50px;
-	}
-	.e-gr__fleche > div:hover {
-		opacity: 1;
-		
-	}
-	.e-gr__fleche-g > div {
-		text-align: left;
-	}
-	.e-gr__fleche-g > div > * {
-		padding-left: 3px;
-	}
-	.e-gr__fleche-d > div {
-		text-align: right;
-	}
-	.e-gr__fleche-d > div > * {
-		padding-right: 3px;
-	}
-*/
+	/*.block-enregistrement-gr .span-centre-v {
+	}*/
 
 	.block-enregistrement-gr--column {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	/*	width: fit-content; */
 		white-space: nowrap;
 	}
-	/*
-	.block-enregistrement-gr--video {
-		margin: 0;
-		padding: 0;
-		border: 2px solid  var(--bg-masque-clair);
-	}
-
-	.block-enregistrement-gr--video figcaption {
-		margin-top: 0;
-		margin-bottom: 0;
-		padding: 5px;
-		text-align: center;
-	}
-	*/
 	.block-enregistrement-gr--row {
 		display: flex;
 		flex-direction: row;
@@ -451,17 +365,11 @@
 	}
 
 	.block-enregistrement-gr--clients {
-	/*	display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;*/
 		width: max-content !important;
 		max-width: 95vw;
 		background-color: var(--bg-masque-clair);
 		border-radius: 8px;
 		padding: 5px;
-		/*margin-top: 7px;*/
 		gap: 20px 10px;
 		white-space: nowrap;
 	}
@@ -511,14 +419,10 @@
 		line-height: 2em;
 		text-align: center;
 		padding: 0 0;
-		/*margin: 0 4px;
-		color: var(--co-symbole-fichier-de-travail);
-	*/
 	}
 	.block-enregistrement-gr--clients-symbole-pupitre .rectangle {
 		display: table;
 		background-color: var(--bg-symbole-fichier-de-travail);
-		/*height: 2em;*/
 		width: fit-content;
 		font-size: 2em;
 		line-height: 1em;
@@ -537,7 +441,6 @@
 	}
 	.block-enregistrement-gr--clients-symbole-pupitre-style:before {
 		font-family: "Font Awesome 5 Free"; 
-	/*	text-rendering: optimizeLegibility;*/
 		font-weight: 900; 
 		content: "\f152";
 		padding-right: 1%;
@@ -552,12 +455,12 @@
 		background-color: var(--bg-masque-clair);
 		color: #000 !important;
 	}
-
+/*
 	.block-enregistrement-gr--clients-saisie-nom-boucle {
 		display: flex;
 		width: fit-content !important;
 		background-color: inherit !important;
-	}
+	}*/
 	.block-enregistrement-gr--clients-choix-boucle {
 		display: block;
 		width: fit-content !important;
@@ -567,9 +470,6 @@
 
 	.parent {
 		position: relative;
-	/*    width: 300px;
-		height: 300px;
-		margin: 10px;*/
 	}
 	.child1 {
 		position: absolute;
@@ -581,35 +481,5 @@
 	}
 	.child2 {
 		z-index: 1;
-	/*    margin: 30px;
-		background: green;*/
 	}
 }
-
-	
-
-
-/* Inutile pour l'éditeur ? */
-/*
-.vt--une-section-editor {
-
-	all: initial;
-	display: block;
-	font-family: 'Inter var', courier, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	letter-spacing: -0.015em; 
-	text-align: left;
-	width: 100%;
-	max-width: var(--vtmt--largeur-utile);
-	margin: auto;
-	padding: 0 !important;
-	box-sizing: border-box;
-	overflow: hidden;
-	border-radius: 4px;
-	background-color: var(--vtmt--bg-page-editor);
-	color: #333;
-	word-break: break-word;
-	word-wrap: break-word;
-}
-*/

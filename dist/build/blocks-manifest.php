@@ -7,7 +7,7 @@ return array(
 		'name' => 'vt-music-training/appel-index-oeuvre',
 		'version' => '0.1.0',
 		'title' => 'Lien vers l\'index des pièces d\'une oeuvre',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Génére le bouton de renvoi à l\'index des morceaux d\'une oeuvre',
 		'example' => array(
@@ -28,13 +28,61 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'bloc-des-pupitres' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'vt-music-training/bloc-des-pupitres',
+		'version' => '0.1.0',
+		'title' => 'Bloc des fichiers de pupitre',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'smiley',
+		'description' => 'Ensemble des fichiers d\'entraînement pour chaque pupitre',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'cheminFichiers' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'typeFichiers' => array(
+				'type' => 'string',
+				'default' => 'a'
+			),
+			'affichageClavier' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'fichierStereo' => array(
+				'type' => 'boolean',
+				'default' => false
+			)
+		),
+		'usesContext' => array(
+			'bloc-fichiers-de-travail/cheminFichiers'
+		),
+		'providesContext' => array(
+			'bloc-des-pupitres/cheminFichiers' => 'cheminFichiers',
+			'bloc-des-pupitres/typeFichiers' => 'typeFichier',
+			'bloc-des-pupitres/affichageClavier' => 'affichageClavier',
+			'bloc-des-pupitres/fichierStereo' => 'fichierStereo'
+		),
+		'textdomain' => 'music-training',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'bloc-fichiers-de-travail' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'vt-music-training/bloc-fichiers-de-travail',
 		'version' => '0.1.0',
 		'title' => 'Groupe des fichiers de travail',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'C\'est l\'espace réservé aux différents types de fichiers de travail (tutti et pupitres)',
 		'example' => array(
@@ -67,8 +115,8 @@ return array(
 		'name' => 'vt-music-training/bloc-module',
 		'version' => '0.1.0',
 		'title' => 'Module d\'entrainement',
-		'category' => 'widgets',
-		'icon' => 'smiley',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'playlist-audio',
 		'description' => 'C\'est le bloc d\'une pièce d\'une oeuvre. Se trouve à la racine d\'un bloc oeuvre. Il peut y en avoir plusieurs, adjacents',
 		'example' => array(
 			
@@ -108,8 +156,8 @@ return array(
 		'name' => 'vt-music-training/bloc-oeuvre',
 		'version' => '0.1.0',
 		'title' => 'Bloc Oeuvre',
-		'category' => 'widgets',
-		'icon' => 'smiley',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'media-audio',
 		'description' => 'C\'est le bloc d\'une oeuvre. Se trouve à la racine d\'une page d\'entrainement. Il peut y en avoir plusieurs, adjacents',
 		'example' => array(
 			
@@ -146,7 +194,7 @@ return array(
 		'name' => 'vt-music-training/bloc-prononciation',
 		'version' => '0.1.0',
 		'title' => 'Bloc Prononciation',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'C\'est le bloc des enregistrements de prononciation, s\'il y en a. Il accueille les blocs de prononciation dans un InnerBlocks',
 		'example' => array(
@@ -182,8 +230,8 @@ return array(
 		'name' => 'vt-music-training/bloc-section',
 		'version' => '0.1.0',
 		'title' => 'Bloc d\'une section d\'entraînement',
-		'category' => 'widgets',
-		'icon' => 'smiley',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'admin-media',
 		'description' => 'C\'est une section d\'entrainement, contenant une ou plusieurs oeuvres. Généralement elle constitue l\'essentiel d\'une page dédiée à l\'entrainement, mais plusieurs sections peuvent cohabiter dans une même page html non dédiée à l\'entrainement. Bloc racine du plugin. Le lecteur audio/vidéo est défini dans ce bloc',
 		'example' => array(
 			
@@ -233,7 +281,7 @@ return array(
 		'name' => 'create-block/vt-gut-blocks',
 		'version' => '0.1.0',
 		'title' => 'Block référence VT',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Block référence',
 		'supports' => array(
@@ -250,7 +298,7 @@ return array(
 		'name' => 'vt-music-training/vt-block-test',
 		'version' => '0.1.0',
 		'title' => 'Block block-test',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Bloc pour les audios de block-test',
 		'supports' => array(
@@ -290,7 +338,7 @@ return array(
 		'name' => 'vt-music-training/des-fichiers-pupitre',
 		'version' => '0.1.0',
 		'title' => 'Des fichiers de pupitre',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Des fichiers d\'entraînement pour chaque pupitre',
 		'example' => array(
@@ -336,8 +384,8 @@ return array(
 		'name' => 'vt-music-training/index-oeuvre',
 		'version' => '0.1.0',
 		'title' => 'Index des pièces d\'une oeuvre',
-		'category' => 'widgets',
-		'icon' => 'smiley',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'index-card',
 		'description' => 'C\'est le bloc qui va générer l\'index des morceaux d\'une oeuvre : il est inutile s\'il n\'y a que 2 ou 3 morceaux',
 		'example' => array(
 			
@@ -371,7 +419,7 @@ return array(
 		'name' => 'vt-music-training/vt-interpretations',
 		'version' => '0.1.0',
 		'title' => 'Bloc interprétations',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Bloc à insérer au bas des modules d\'entraînement',
 		'supports' => array(
@@ -431,7 +479,7 @@ return array(
 		'name' => 'vt-music-training/un-fichier-tutti',
 		'version' => '0.1.0',
 		'title' => 'Un fichier \'tutti\'',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Un fichier d\'entraînement commun à tous les pupitres',
 		'example' => array(
@@ -475,13 +523,121 @@ return array(
 		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	),
+	'un-groupe-de-pupitres' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'vt-music-training/un-groupe-de-pupitres',
+		'version' => '0.1.0',
+		'title' => 'Un ensemble de fichiers de pupitre de même nature',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'smiley',
+		'description' => 'Regroupement de fichiers de pupitres de même nature (voix naturelles, midi, synthé)',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'nomGroupePupitres' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'cheminFichiers' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'typeFichiers' => array(
+				'type' => 'string',
+				'default' => 'a'
+			),
+			'affichageClavier' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'fichierStereo' => array(
+				'type' => 'boolean',
+				'default' => false
+			)
+		),
+		'usesContext' => array(
+			'bloc-des-pupitres/cheminFichiers',
+			'bloc-des-pupitres/typeFichiers',
+			'bloc-des-pupitres/affichageClavier',
+			'bloc-des-pupitres/fichierStereo'
+		),
+		'providesContext' => array(
+			'un-groupe-de-pupitres/cheminFichiers' => 'cheminFichiers',
+			'un-groupe-de-pupitres/typeFichiers' => 'typeFichiers',
+			'un-groupe-de-pupitres/affichageClavier' => 'affichageClavier',
+			'un-groupe-de-pupitres/fichierStereo' => 'fichierStereo'
+		),
+		'textdomain' => 'music-training',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
+	'un-pupitre' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'vt-music-training/un-pupitre',
+		'version' => '0.1.0',
+		'title' => 'Un fichier de pupitre',
+		'category' => 'vt-music-training-cat',
+		'icon' => 'smiley',
+		'description' => 'Un fichier d\'entraînement pour un pupitre',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'attributes' => array(
+			'labelPupitre' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'cheminFichier' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'nomFichier' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'typeFichier' => array(
+				'type' => 'string',
+				'default' => 'a'
+			),
+			'affichageClavier' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'fichierStereo' => array(
+				'type' => 'boolean',
+				'default' => false
+			)
+		),
+		'usesContext' => array(
+			'un-groupe-de-pupitres/cheminFichiers',
+			'un-groupe-de-pupitres/typeFichiers',
+			'un-groupe-de-pupitres/affichageClavier',
+			'un-groupe-de-pupitres/fichierStereo'
+		),
+		'textdomain' => 'music-training',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	),
 	'une-interpretation' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 2,
 		'name' => 'vt-music-training/vt-une-interpretation',
 		'version' => '0.1.0',
 		'title' => 'Bloc une-interprétation',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Bloc à insérer dans le bloc interprétations au bas des modules d\'entraînement',
 		'supports' => array(
@@ -520,7 +676,7 @@ return array(
 		'name' => 'vt-music-training/une-prononciation',
 		'version' => '0.1.0',
 		'title' => 'Une Prononciation',
-		'category' => 'widgets',
+		'category' => 'vt-music-training-cat',
 		'icon' => 'smiley',
 		'description' => 'Bloc d\'accès à une prononciation.',
 		'example' => array(

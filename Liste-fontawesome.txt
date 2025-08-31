@@ -1,0 +1,31 @@
+far fa-angry
+far fa-gem
+fa-sharp
+fa-regular
+fa-circle-xmark
+fa-solid fa-magnifying-glass-minus
+fa-solid fa-magnifying-glass-plus
+fas fa-check
+fa-solid fa-trash-can
+fas fa-circle
+fas fa-sync-alt
+fas fa-step-backward
+fas fa-caret-square-right
+fas fa-caret-square-left
+fas fa-caret-square-right
+fas fa-caret-square-left
+fas fa-step-forward
+vt--aff-vitesse
+fas fa-chevron-up
+fas fa-circle
+fas fa-chevron-down
+fas fa-play
+fas fa-angle-double-right
+fas fa-angle-right
+fas fa-angle-left
+fas fa-angle-double-left
+fas fa-undo-alt
+fa-solid fa-arrows-spin
+fas fa-angle-down
+fas fa-angle-up
+fa-solid fa-square-caret-right

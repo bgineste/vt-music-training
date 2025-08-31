@@ -4,7 +4,7 @@
   "name": "create-block/vt-gut-blocks",
   "version": "0.1.0",
   "title": "Block référence VT",
-  "category": "widgets",
+  "category": "vt-music-training-cat",
   "icon": "smiley",
   "description": "Block référence",
   "supports": {

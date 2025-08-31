@@ -10,9 +10,9 @@ V 1.0
 * FONCTIONS DU LECTEUR
 ------------------------------------------------------------------------------------------------*/
 
-var vtLecteur = null
+var vtLecteur = null;
 
-var pseudoChoriste = null;
+var pseudoChoriste = null; // pas nécessaire
 const vt_urlPHP_TraitementBoucles ='/wp-content/themes/twentytwenty-vt/js/mediaplayer-enreg-boucle.php';
 //const urlPHP_TraitementBoucles ='http://voce-tolosa.ddns.net/sript-php-externe/';
 
@@ -28,14 +28,15 @@ const vt_urlPHP_TraitementBoucles ='/wp-content/themes/twentytwenty-vt/js/mediap
 //var vtAffDebBoucle = null; // champ d'affichage de l'heure de début de boucle
 //var vtAffFinBoucle = null; // champ d'affichage de l'heure de la fin de boucle
 //var vtEtatBoucle = false; // indique si une boucle est activée
-var vtIdSaisieNomBoucle = "";
-var vtBouclesDefinies ={};
-var vtIdChoixBoucle = "";
+//var vtIdSaisieNomBoucle = "";
+//var vtBouclesDefinies ={};
+//var vtIdChoixBoucle = "";
 var vtPupitreActuel = null;
 var vtMediaPlayer = null;
 var vtSuffixePlayer = null;
 var vtNomFichierSourceAudioVideo = null;
 var vtClasseLecteur = "";
+
 const vtoBalance = {
 	audioContext: null,
 	audioSource: null,
@@ -46,7 +47,9 @@ const vtoBalance = {
 	mergeNode: null
 }
 
+/*
 const vtBalance = Object.create(vtoBalance);
+*/
 
 function vtIsIphone() {
   if (typeof navigator === "undefined" || typeof document === "undefined") {
@@ -75,6 +78,18 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 		
 	let vtBlocLecteur = document.getElementById("vt--bloc-lecteur");
 	let source = cheminFichier + nomFichier;
+	
+	/*var datasBalance = {
+		audioContext: null,
+		audioSource: null,
+		volumeNodeL: null,
+		volumeNodeR: null,
+		channelsCount: null,
+		splitterNode: null,
+		mergeNode: null
+	};
+*/
+
 	console.log('vtActiverLecteur/source : ' + cheminFichier + ' - ' + nomFichier);
 	switch (typeFichier) {
 		case "v":
@@ -90,18 +105,25 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 	vtLecteur = vtBlocLecteur.firstElementChild;
 	// Initialiser tous les attributs 
 	Object.assign(vtLecteur, {
+		src: source,				// fichier audio ou vidéo 
 		boutonPlayPause: document.getElementById("vt--PlayPause"),
 		// les attributs
 		etatRepeterEnBoucle: false,  // boucle sur tout de morceau
-		etatBoucle: false,			// boucle active sur un segment
 		btnRepeterEnBoucle: null,    // le bouton "répète en boucle tout le morceau"
 		affVitesse: null,			// le champ d'affichage de la vitesse
+		etatBoucle: false,			// boucle active sur un segment
 		btnBoucler: null, 			// Bouton boucle push/pull
 		affDebBoucle: null,			// le champ d'affichage du début de boucle
 		affFinBoucle: null,			// le champ d'affichage de la fin de boucle
 		tDebBoucle: 0,				// moment du début de boucle
 		tFinBoucle: 0,				// moment de fin de boucle
 		boucleID: null,				// constante associée à l'itération de la boucle
+		bouclesDefinies: {},
+		//idSaisieNomBoucle: "vt--saisie-nom-boucle",
+		//idChoixBoucle: "choix-boucle",
+		oChoixBoucle: null,			// objet html 'select' associé au tableau des boucles enregistrées
+		stereo: false,
+		oBalance: null,		// données de la stéréo
 		// les méthodes
 		SetEcoutePlayPause: vtSetEcoutePlayPause,
 		ActualiserBoutonPlayPause: vtActualiserBoutonPlayPause,
@@ -115,10 +137,16 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 		TraiterFleche: vtTraiterFleche,
 		OnOffBoucle: vtOnOffBoucle,
 		PlayPause: vtEventPlayPause,
+		InitBalance: vtInitBalance,
+		SetVol: vtSetVol,
 		//Play: vtPlay,
 		//Pause: vtPause,
 		DesactiverLecteurEntrainement: vtDesactiverLecteurEntrainement
 	});
+
+	/*if (window.attachBalanceSetters) {
+		window.attachBalanceSetters(vtLecteur);
+	}*/
 
 	vtLecteur.SetEcoutePlayPause("actif");
 
@@ -126,8 +154,9 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 	if (affichageClavier === "false") {
 		document.getElementById("vt--clavier-lecteur").style.display = 'none';
 	} else {
+		vtLecteur.stereo = !(fichierStereo === "false" || vtEnvt.isIphone === true);
 		// affichage de la balance stéréo ?
-		if (fichierStereo === "false" || vtEnvt.isIphone === true) {
+		if (!vtLecteur.stereo) {
 			document.getElementById("vt--balance").style.display = 'none';
 		}
 
@@ -152,6 +181,13 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 		vtLecteur.AffFinBoucle.innerHTML = '00:00';
 		// initialisation du bouton de lancement des boucles
 		vtLecteur.btnBoucler = document.getElementById("vt--btn-boucle");
+		vtLecteur.oChoixBoucle = document.getElementById("vt--choix-boucle");
+		// initialisation de la balance le cas échéant
+		if (vtLecteur.stereo) {
+//			vtLecteur.oBalance = Object.create(vtoBalance);
+			vtLecteur.InitBalance();
+		}
+		//vtLecteur.oBalance = Object.create(datasBalance);
 		
 		
 	}
@@ -239,6 +275,57 @@ function vtEventPlayPause() {
 		}
 	}
 }
+
+// vetLecteur.InitBalance
+function vtInitBalance() {
+	vtLecteur.oBalance = Object.create(vtoBalance);
+	with (vtLecteur.oBalance) {
+		audioContext = new AudioContext();
+		audioSource = audioContext.createMediaElementSource(vtLecteur);
+		volumeNodeL = new GainNode(audioContext);
+		volumeNodeR = new GainNode(audioContext);
+
+		volumeNodeL.gain.value = 1;
+		volumeNodeR.gain.value = 1;
+
+		channelsCount = 2; // or read from: 'audioSource.channelCount'
+
+		splitterNode = new ChannelSplitterNode(audioContext, { numberOfOutputs: channelsCount });
+		mergerNode = new ChannelMergerNode(audioContext, { numberOfInputs: channelsCount });
+
+		audioSource.connect(splitterNode);
+
+		splitterNode.connect(volumeNodeL, 0); // connect OUTPUT channel 0
+		splitterNode.connect(volumeNodeR, 1); // connect OUTPUT channel 1
+
+		volumeNodeL.connect(mergerNode, 0, 0); // connect INPUT channel 0
+		volumeNodeR.connect(mergerNode, 0, 1); // connect INPUT channel 1
+
+		mergerNode.connect(audioContext.destination);
+//	alert("volume gauche " + vtLecteur.oBalance.volumeNodeL.gain.value);
+//	alert("volume droit " + vtLecteur.oBalance.volumeNodeR.gain.value);
+		audioSource.src = vtLecteur.src
+	}
+}
+
+// vtLecteur.SetVol
+function vtSetVol(GD, val) {
+	switch (GD) {
+		case "G":
+			vtLecteur.oBalance.volumeNodeL.gain.value = val;
+			break;
+		case "D":
+			vtLecteur.oBalance.volumeNodeR.gain.value = val;
+			break;
+	}
+}
+
+function setBalance(val) {
+  vtLecteur.oBalance.volumeNodeL.gain.value = 1 - val;
+  vtLecteur.oBalance.volumeNodeR.gain.value = 1 + val;
+}
+
+
 
 // vtLecteur.RepeterEnBoucle
 function vtRepeterEnBoucle(btnRepeterEnBoucle=null) { // push/pull répète en boucle la totalité du morceau

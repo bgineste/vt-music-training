@@ -12,30 +12,18 @@
 		color: var(--vtmt--co-symbole-fichier-de-travail);
 		margin-top: 0.5%;
 		margin-bottom: 0.5%;
-		padding: 0.5%;
+		padding: 0.5% 1%;
 		border-radius: 8px;
-	}
-	@media (min-width: 700px) {
-		.vt--un-fichier-tutti{
-			font-size: 1.5em;
-			max-width: 900px;
-		}
-	}
-
-	.vt--un-fichier-tutti {
-		> * {
+		cursor: pointer;
 		display: flex;
-		padding: 0.5%;
-		
-		flex-direction: row;
-		justify-content: flex-end;
 		align-items: center;
-		gap: 10px;
-		}
+		gap: 1%;
 		.vt--label {
-			white-space: nowrap; /* Empêche le retour à la ligne */
+			white-space: normal; /* Empêche le retour à la ligne */
 			text-align: center;
 			flex-grow: 1; /* S'étend pour occuper l'espace disponible */
+			padding-right: 5px;
+			line-height: 2rem;
 		}
 		.fa-solid {
 			font-size: 1.8em;
@@ -47,6 +35,17 @@
 			.fa-solid {
 				font-size: 2.3em;
 			}
+		}
+	}
+
+
+	@media (min-width: 700px) {
+		.vt--un-fichier-tutti{
+			font-size: 1.5em;
+			max-width: min(95vw,900px);		
+		}
+		.vt--un-fichier-tutti .vt--label {
+			white-space: nowrap;
 		}
 	}
 }

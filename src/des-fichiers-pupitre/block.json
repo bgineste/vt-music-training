@@ -4,7 +4,7 @@
 	"name": "vt-music-training/des-fichiers-pupitre",
 	"version": "0.1.0",
 	"title": "Des fichiers de pupitre",
-	"category": "widgets",
+	"category": "vt-music-training-cat",
 	"icon": "smiley",
 	"description": "Des fichiers d'entraînement pour chaque pupitre",
 	"example": {},

@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "vt-music-training/un-pupitre",
+	"version": "0.1.0",
+	"title": "Un fichier de pupitre",
+	"category": "vt-music-training-cat",
+	"icon": "smiley",
+	"description": "Un fichier d'entraînement pour un pupitre",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {		 
+		"labelPupitre": {
+			"type": "string",
+			"default": ""
+		},
+		"cheminFichier": {
+			"type": "string",
+			"default": ""
+		},
+		"nomFichier": {
+			"type": "string",
+			"default": ""
+		},
+		"typeFichier": {
+			"type": "string",
+			"default": "a"
+		},
+		"affichageClavier": {
+			"type": "boolean",
+			"default": true
+		},
+		"fichierStereo": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"usesContext": [ 	
+		"un-groupe-de-pupitres/cheminFichiers",
+		"un-groupe-de-pupitres/typeFichiers",
+        "un-groupe-de-pupitres/affichageClavier",
+        "un-groupe-de-pupitres/fichierStereo" ],	
+	"textdomain": "music-training",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

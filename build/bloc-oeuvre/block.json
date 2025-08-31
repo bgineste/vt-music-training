@@ -4,8 +4,8 @@
   "name": "vt-music-training/bloc-oeuvre",
   "version": "0.1.0",
   "title": "Bloc Oeuvre",
-  "category": "widgets",
-  "icon": "smiley",
+  "category": "vt-music-training-cat",
+  "icon": "media-audio",
   "description": "C'est le bloc d'une oeuvre. Se trouve à la racine d'une page d'entrainement. Il peut y en avoir plusieurs, adjacents",
   "example": {},
   "supports": {

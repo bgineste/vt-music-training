@@ -110,6 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
 					vtLecteur.TraiterFleche('vt--fin-boucle-plus');
 				}
 			}
+			// Gestion de la stéréo
+			if (target.id === "vt--balanceG") {vtLecteur.SetVol("G", target.value / 10);}
+			if (target.id === "vt--balanceD") {vtLecteur.SetVol("D", target.value / 10);}
 			// Gestion du zoom et du bouton quitter
 			if (target.tagName === 'I') {
 				//const bouton = target;
@@ -120,9 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
 						console.log('Bouton "vt--repete-en-boucle" cliqué :', target);
 						vtRepeterEnBoucle(target); 
 					}
+					else if (target.classList.contains('fa-magnifying-glass-plus')) {
+						console.log('Bouton "zoom +" cliqué :', target);
+						vtModifierLargeurBloc('vt--popup-lecteur-entrainement',50); 
+					}
+					else if (target.classList.contains('fa-magnifying-glass-minus')) {
+						console.log('Bouton "zoom +" cliqué :', target);
+						vtModifierLargeurBloc('vt--popup-lecteur-entrainement',-50); 
+					}
 					else if (target.classList.contains('vt--desactiver-lecteur-entrainement')) {
 						console.log('Bouton "vt--desactiver-lecteur-entrainement" cliqué :', target);
 						vtLecteur.DesactiverLecteurEntrainement(MasqueModalLecteur); 
+						document.getElementById("vt--balanceG").value = 10;
+						document.getElementById("vt--balanceD").value = 10;
 					}
 				}
 			}
@@ -131,3 +144,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 });
 
+function vtModifierLargeurBloc(idBloc, incr) {
+    const o = document.getElementById(idBloc);
+    if (o) {
+        // Récupérer la largeur actuelle
+        let largeurActuelle = parseInt(window.getComputedStyle(o).width, 10);
+        // Ajouter l'incrément
+        let nouvelleLargeur = largeurActuelle + incr;
+        // Appliquer la nouvelle largeur avec l'unité "px"
+        o.style.width = nouvelleLargeur + "px";
+    } else {
+        console.error("Bloc non trouvé avec l'id :", idBloc);
+    }
+}
