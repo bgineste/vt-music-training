@@ -23,7 +23,7 @@ export default function save(props) {
 	return (
 		<div {...blockProps } className="vt--un-fichier-tutti"
 				data-chemin={cheminFichierTutti}
-				data-nom={nomFichierTutti}
+				data-nomfichier={nomFichierTutti}
 				data-type={typeFichierTutti}
 				data-clavier={affichageClavier}
 				data-stereo={fichierStereo}

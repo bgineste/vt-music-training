@@ -1,34 +1,45 @@
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
+import { useEffect } from '@wordpress/element';
 import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
 import { __ } from '@wordpress/i18n';
 
 //import getTypeParentBlock from '../../hooks/getTypeParentBlock';
 import { TextControl } from '@wordpress/components';
-import './editor.scss';
+import './editor.scss'; // vérifier
 
 export default function Edit(props) {
     const blockProps = useBlockProps();
     const { context, attributes, setAttributes, clientId } = props;
     const { "bloc-oeuvre/cheminFichiersOeuvre": cheminFichiersOeuvre } = context;
-    const { cheminFichiersModule, titreModule, hasIndexOeuvre } = attributes;
+    const { cheminFichiersModule, titreModule, hasIndexOeuvre, lyricsPrompter } = attributes;
 
+    
     // Utiliser le hook pour vérifier la présence d'un bloc sibling
     const existIndexOeuvre = useHasSiblingBlock(clientId, 'vt-music-training/index-oeuvre');
-    if (hasIndexOeuvre !== existIndexOeuvre) {
-        setAttributes({ hasIndexOeuvre: existIndexOeuvre });
-    }
-	console.log("existIndexOeuvre",existIndexOeuvre)
+    useEffect(() => {
+        if (hasIndexOeuvre !== existIndexOeuvre) {
+            setAttributes({ hasIndexOeuvre: existIndexOeuvre });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [existIndexOeuvre]);
+    
+	//console.log("existIndexOeuvre",existIndexOeuvre)
     // Initialisation du chemin si absent
-    if (!cheminFichiersModule) {
-        setAttributes({ cheminFichiersModule: cheminFichiersOeuvre });
-    }
+    useEffect(() => {
+        if (!cheminFichiersModule && cheminFichiersOeuvre) {
+            setAttributes({ cheminFichiersModule: cheminFichiersOeuvre });
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[]);
+  
 
-    const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/bloc-fichiers-de-travail', 'vt-music-training/bloc-prononciation' ] // à compléter
+     const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/paroles-du-module', 'vt-music-training/bloc-fichiers-de-travail', 'vt-music-training/bloc-prononciation', 'vt-music-training/consignes-du-module' ] // à compléter
 
-	// Template pour InnerBlocks
-    /*const TEMPLATE_PRONONCIATIONS = [
-        ['vt-music-training/bloc-prononciation', { placeholder: 'Prononciations' }],
-    ];*/
+/* Commande à substituer à TextControl dès que les bugs seront corrigés
+*/
+
+
+     console.log('Rendu bloc module', attributes);
 
     return (
 	
@@ -45,21 +56,36 @@ export default function Edit(props) {
                         value={cheminFichiersModule}
                         onChange={(val) => setAttributes({ cheminFichiersModule: val })}
                     />
+                    <h5>Prompteur pour le lecteur</h5>
+                    {console.log("Avant RichText")}
+                    <RichText
+                        tagName="div"
+                        className="vt--lyrics-prompter"
+                        value={lyricsPrompter}
+                        onChange={(val) => setAttributes({ lyricsPrompter: val })}
+                        placeholder="Saisissez le prompter..."
+                        allowedFormats={['core/bold', 'core/italic', 'core/link', 'core/underline', 'core/text-color']}
+                    />
+                    {console.log("Avant InnerBlocks")}
                     <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
                     <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
                         /*template={TEMPLATE_PRONONCIATIONS}*/
                         placeholder="Ajoutez vos blocs ici"
                     />
+                    {console.log("Après InnerBlocks")}
                 </div>
             ) : (
                 <div>
+                    {console.log("Avant h4")}
                     <h4>{titreModule}</h4>
-                    <InnerBlocks
+                    {console.log("Après h4")}
+                     <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
                         /*template={TEMPLATE_PRONONCIATIONS}*/
                         placeholder="Ajoutez vos blocs ici"
-                    />
+                    /> 
+                    {console.log("Après innerBlocks 2")}
                 </div>
             )}
         </div>

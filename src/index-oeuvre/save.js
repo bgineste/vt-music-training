@@ -20,11 +20,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save(props) {
 	const blockProps = useBlockProps.save();
-    const { attributes: { titreBlocIndex }, attributes: { texteDuBouton },attributes: { etatDuBouton }, setAttributes, } = props;
-
-	if (!etatDuBouton) {
-		return null;
-	}
+    const { attributes: { titreBlocIndex }, attributes: { texteDuBouton }, } = props;
 
 	return (
 		<div {...blockProps }  className="vt--entete-oeuvre" >
@@ -37,8 +33,8 @@ export default function save(props) {
 					<h5> { texteDuBouton }</h5> 
 				</div>
 
-				<div class="vt--popup__support" style="display: none;">
-					<div class="vt--wrap-index-choeurs">
+				<div className="vt--popup__support" style="display: none;">
+					<div className="vt--wrap-index-choeurs">
 				
 					</div>
 				</div>			

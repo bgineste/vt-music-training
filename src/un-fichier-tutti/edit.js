@@ -3,20 +3,29 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 //import getTypeParentBlock from '../../hooks/getTypeParentBlock';
-import { TextControl, RadioControl, ToggleControl } from '@wordpress/components';
+import { TextControl, RadioControl, ToggleControl, Flex, FlexItem, Tooltip, IconButton, Button, Modal } from '@wordpress/components';
+import { lock, unlock, info } from '@wordpress/icons';
 import { useState, useRef } from '@wordpress/element';
 import './editor.scss';
 import { uploadFileToServer, deleteFileFromServer } from '../../assets/js/vt-files-mngt.js';
 //import { useRef } from '@wordpress/element';
+import { useClosestParentAttribute } from '../../hooks/useClosestParentAttribute';
 
 
 export default function Edit(props) {
+	console.log("Edit fichier tutti");
     const blockProps = useBlockProps();
     const { context, attributes, setAttributes, clientId } = props;
     const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
     const { labelFichierTutti, cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo } = attributes;
 
-    // Initialisation du chemin si absent
+	console.log("appel parent attribute",clientId );
+	const ancestorPrompter = useClosestParentAttribute(clientId, 'lyricsPrompter');
+	console.log("TUTTI : PROMPTER",ancestorPrompter);
+
+	const [modifiable, setModifiable] = useState(false);
+	const [isHelpOpen, setIsHelpOpen] = useState(false);
+
     if (!cheminFichierTutti) {
         setAttributes({ cheminFichierTutti: cheminFichiers });
     }
@@ -59,6 +68,7 @@ const handleFileChange = async (e) => {
 }
 	const fullUrl = `${window.location.origin}${cheminFichierTutti}/${nomFichierTutti}`;
 
+
     return (
 	
         <div {...blockProps}>
@@ -75,38 +85,92 @@ const handleFileChange = async (e) => {
                         value={cheminFichierTutti}
                         onChange={(val) => setAttributes({ cheminFichierTutti: val })}
                     />
-					<TextControl
-						label="Nom du fichier"
-						value={nomFichierTutti}
-						readOnly
-					/>
-					<div style={{ marginTop: '1em' }}>
-					  <label className="label css-2o4jwd" style={{ display: 'none' }}>
-						{nomFichierTutti ? 'Remplacer le fichier' : 'Choisir un fichier'}
-					  </label>
+					<Flex align="flex-end"  style={{ gap: '0.5em', marginBottom: '1em' }}>
+						<FlexItem style={{ flexGrow: 1, position: 'relative' }}>
+							<TextControl
+								label="Nom du fichier"
+								value={nomFichierTutti}
+								readOnly={!modifiable}
+								onChange={(value) => setAttributes({ nomFichierTutti: value })}
+							/>
+						</FlexItem>
 
-					  <div style={{ display: 'flex', alignItems: 'center', gap: '1em' }}>
-						<button
-						  type="button"
-						  onClick={() => fileInputRef.current.click()}
-						  className="components-button is-secondary"
+						{/* Icône cadenas */}
+						<FlexItem>
+							<Tooltip text={modifiable ? 'Verrouiller le champ' : 'Déverrouiller pour modifier'}>
+								<IconButton
+									icon={modifiable ? unlock : lock}
+									label={modifiable ? 'Verrouiller' : 'Déverrouiller'}
+									onClick={() => setModifiable(!modifiable)}
+									isPressed={modifiable}
+								/>
+							</Tooltip>
+						</FlexItem>
+
+						{/* Icône d'information */}
+						<FlexItem>
+							<Tooltip
+								text="Aide sur le nom de fichier"
+							>
+								<IconButton
+									icon={info}
+									label="Information sur le nom du fichier"
+									onClick={() => setIsHelpOpen(true)}
+									isTertiary
+								/>
+							</Tooltip>
+						</FlexItem>
+					</Flex>
+
+					{/* Modal d’aide */}
+					{isHelpOpen && (
+						<Modal
+							title="Aide sur le nom du fichier"
+							onRequestClose={() => setIsHelpOpen(false)}
 						>
-						  {nomFichierTutti ? 'Choisir un nouveau fichier' : 'Choisir un fichier'}
-						</button>
+							<p>
+								Le nom du fichier est défini automatiquement après le téléchargement du fichier choisi.
+								Dans la plupart des cas, il n’est pas nécessaire de le modifier.
+							</p>
+							<p>
+								Cependant, vous pouvez exceptionnellement cliquer sur le cadenas pour
+								déverrouiller le champ et saisir un nom personnalisé. (Par exemple, pour indiquer un fichier déjà téléchargé).
+							</p>
+							<div style={{ textAlign: 'right', marginTop: '1em' }}>
+								<Button variant="primary" onClick={() => setIsHelpOpen(false)}>
+									Fermer
+								</Button>
+							</div>
+						</Modal>
+					)}
 
-						<span style={{ fontStyle: 'italic', fontSize: '1rem' }}>
-						  {nomFichierTutti || 'Aucun fichier sélectionné'}
-						</span>
+					<div style={{ marginTop: '1em' }}>
+						<label className="label css-2o4jwd" style={{ display: 'none' }}>
+							{nomFichierTutti ? 'Remplacer le fichier' : 'Choisir un fichier'}
+						</label>
 
-						{/* input caché */}
-						<input
-						  type="file"
-						  accept="audio/*,video/*"
-						  ref={fileInputRef}
-						  onChange={handleFileChange}
-						  style={{ display: 'none' }}
-						/>
-					  </div>
+						<div style={{ display: 'flex', alignItems: 'center', gap: '1em' }}>
+							<button
+							type="button"
+							onClick={() => fileInputRef.current.click()}
+							className="components-button is-secondary"
+							>
+							{nomFichierTutti ? 'Choisir un nouveau fichier' : 'Choisir un fichier'}
+							</button>
+
+							<span style={{ fontStyle: 'italic', fontSize: '1rem' }}>
+							{nomFichierTutti || 'Aucun fichier sélectionné'}
+							</span>
+
+							{/* input caché */}
+							<input
+							type="file"
+							accept="audio/*,video/*"
+							ref={fileInputRef}
+							onChange={handleFileChange}
+							style={{ display: 'none' }}
+							/>
+						</div>
 					</div>
 					{uploading && <p>📤 Téléversement en cours...</p>}
 

@@ -5,6 +5,8 @@ import { TextControl, RadioControl, ToggleControl, Button, PanelBody } from '@wo
 import { useState, useRef, useEffect } from '@wordpress/element';
 import './editor.scss';
 import { uploadFileToServer, deleteFileFromServer } from '../../assets/js/vt-files-mngt.js';
+//import { useClosestParentAttribute } from '../../hooks/useClosestParentAttribute';
+
 
 export default function Edit(props) {
     const blockProps = useBlockProps();
@@ -44,15 +46,16 @@ export default function Edit(props) {
 	const pErreurUpload = 3;
 	
 	let indexParamsPupitre = ""; // pour simplifier l'écriture de l'index de paramsPupitreRefs
-	
+	//const ancestorPrompter = useClosestParentAttribute(clientId, 'lyricsPrompter');
+		
 
 const handleFileChange = async (e, keyGroup, keyFile) => {
 	const fileNew = e.target.files[0];
 	const indexParams = `${keyGroup}-${keyFile}`;
-	console.log(e.target);
+//	console.log(e.target);
 	if (!fileNew) return;
-	console.log("Index courants : " + keyGroup + "/" + keyFile);
-	console.log(paramsPupitresRefs);
+//	console.log("Index courants : " + keyGroup + "/" + keyFile);
+//	console.log(paramsPupitresRefs);
 	
 //	setUploading(true);
 	paramsPupitresRefs.current[indexParams][pUploading] = true;
@@ -123,7 +126,8 @@ const handleFileChange = async (e, keyGroup, keyFile) => {
 			nomfichier: '',
 			typeFichier: typeFichier,
 			affichageClavier: affichageClavier,
-			fichierStereo: fichierStereo
+			fichierStereo: fichierStereo,
+			lyricsPrompter: ancestorPrompter
 		});
 		saveGroupsToAttributes(updatedGroups);
 	};

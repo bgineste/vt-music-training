@@ -1,0 +1,22 @@
+{
+  "apiVersion": 3,
+  "root": "src",
+  "blocks": [
+    "bloc-section",
+    "block-test",
+    "bloc-oeuvre",
+    "bloc-module",
+    "paroles-du-module",
+    "bloc-fichiers-de-travail",
+    "un-fichier-tutti",
+    "des-fichiers-pupitre",
+    "bloc-des-pupitres",
+    "un-groupe-de-pupitres",
+    "un-pupitre",
+    "une-interpretation",
+    "bloc-prononciation",
+    "une-prononciation",
+    "consignes-du-module",
+    "index-oeuvre"
+  ]
+}

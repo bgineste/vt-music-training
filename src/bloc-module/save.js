@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -17,7 +17,8 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  */
 export default function save(props) {
 	const blockProps = useBlockProps.save()
-    const {attributes: { titreModule, hasIndexOeuvre }, } = props
+    const {attributes: { titreModule, hasIndexOeuvre, lyricsPrompter }, } = props
+//	console.log("save prompter",lyricsPrompter);
 
 	return (
 		<div {...blockProps } className="vt--un-module">
@@ -31,7 +32,6 @@ export default function save(props) {
 				<div className="vt--bloc-esc">
 
 					<InnerBlocks.Content />
-
 					{hasIndexOeuvre ? (
 					<>
 					<button className="vt--bouton-appel-index-oeuvre alignleft">Index</button>

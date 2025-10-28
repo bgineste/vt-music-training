@@ -1,6 +1,23 @@
 /**
  * S'applique au bloc bloc-section  sur le site et dans l'éditeur
  */
+
+:root {
+	--vtmt--height-boutons: 50px;
+	--vtmt--width-boutons: 50px;
+}
+@media screen and (max-width: 410px) {
+	:root {
+		--vtmt--width-boutons: calc((98vw / 7) - 8px); // 7 : nombre max de boutons / ligne
+		--vtmt--height-boutons: calc((98vw / 7) - 8px);
+	}
+}
+
+.vt--hidden {
+	display: none !important;
+}
+
+
 .vt--une-section_wrap {
 	/*all: initial;*/
 	display: flex;
@@ -87,7 +104,7 @@
 		height: calc(100vh - var(--vtmt--hauteur-zone-externe-reservee));
 		justify-content: center;
 		align-items: center;
-		z-index: 10000000; /* pour masquer le bouton handicap*/
+		z-index: 1000; /* inférieur à 1060 qui est le z-index de Swal */
 
 
 	}
@@ -185,28 +202,63 @@
 		padding: 3px 0;
 	}
 
-	.vt--clavier-lecteur > * > *:not(.vt--balance > *){
-		/*border: solid 2px #000;*/
+	/*.vt--clavier-lecteur > * > *:not(.vt--balance > *){
 		width: 50px;
 		height: 50px;
-		border-radius: 20%;
 		margin: 3px;
 		text-align: center;
 		padding: 3px;
-		/*margin-top: 10px;*/
 		cursor: pointer;
-	}
-	@media screen and (max-width: 380px) {
+	}*/
+	/*@media screen and (max-width: 380px) {
 		.vt--clavier-lecteur > * > *:not(.vt--balance > *){
 			width: calc((98vw / 7) - 8px);
 		}
-	}
-	/* les deux règles ci-dessous sont de cas particuliers de la règle précédente */
-	touche-clavier { 
+	}*/
+
+	/* les trois règles ci-dessous sont de cas particuliers de la règle précédente */
+	
+	touche-clavier,
+	touche-bouton,
+	compteur-clavier {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		border: none;
+		text-align: center;
+		width: var( --vtmt--width-boutons);
+		height: var(--vtmt--height-boutons);
+		margin: 3px;
+		padding: 3px;
+	}
+	
+	touche-clavier,
+	touche-bouton {
+		cursor: pointer;
+	}
+
+	touche-clavier { 
+		/*display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: none;*/
+		border-radius: 20%;
+		background-color: #fff;
+		color: #000;
+		line-height: 1.25;
+		letter-spacing: 0.0333em;
+		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-weight: 600;
+		user-select: none;
+		font-size: 2rem; /*1.7rem;*/
+	}
+
+	touche-bouton { 
+		/*display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: none;*/
+		border-radius: 50%;
 		background-color: #fff;
 		color: #000;
 		line-height: 1.25;
@@ -218,12 +270,13 @@
 	}
 
 	compteur-clavier {
-		display: inline-flex;
+		/*display: inline-flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: center;*/
 		border: none;
 		background-color: #000;
 		color: #fff;
+		/*height: var(--vtmt--height-boutons);*/
 		line-height: 1.25;
 		letter-spacing: 0.0333em;
 		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
@@ -242,7 +295,7 @@
 		position: relative; /* pour les compteurs de boucles */
 		background-color: #000 !important;
 		color: #fff !important; 
-		border-radius: 5% !important;
+		border-radius: 8% !important;
 		align-items: center;
 		justify-content: center;
 	}
@@ -307,19 +360,94 @@
 		padding-right: 3px;
 	}
 
+	.vt--boucle-courante {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		line-height: 1.25;
+		letter-spacing: 0.0333em;
+		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		/*font-weight: 600;*/
+		user-select: none;
+		font-size: 1.5rem; /*1.7rem;*/
+		position: relative; /* pour les compteurs de boucles */
+		background-color: #000 !important;
+		color: #fff !important; 
+		border-radius: 8% !important;
+	}
+	/*.vt--contenu-boucle-courante {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}*/
+	.vt--nom-boucle-courante,
+	.vt--compteurs-boucle-courante {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1.25;
+		letter-spacing: 0.0333em;
+		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		/*font-weight: 600;*/
+		user-select: none;
+		height: var(--vtmt--height-boutons);
+		font-size: 1.5rem; /*1.7rem;*/
+		/*position: relative;*/ /* pour les compteurs de boucles */
+		border-radius: 8% !important;
+		margin: 3px;
+		padding: 3px;
+	}
+	.vt--compteurs-boucle-courante{
+		background-color: green !important;
+		color: #fff !important;
+	}
+	.vt--nom-boucle-courante{
+		background-color: white !important;
+		color: #000 !important;
+	}
+/*
+	.vt--onoff-boucle {
+		display: none;
+	}
+*/
 	.vt--balance-nom-voie {
 		color: black;
+		text-align:center;
 	}
 	.vt--balance-curseur {
 		cursor: pointer;
 	}
 
-	.vt--saisie-nom-boucle {
+	.vt--bloc-saisie-nom-boucle {
 		display: flex;
 		width: fit-content !important;
 		background-color: rgba(255, 255, 255, 0);
 	}
 
+	.vt--choix-boucle {
+		display: block;
+		width: fit-content !important;
+		background-color: var(--bg-masque-clair) !important;
+		border-radius: 0 !important;
+	}
+
+	.vt--manip-boucles {
+		justify-content: left;
+		background-color: pink;
+		text-align: center;
+	}
+
+	.vt--boucle-courante {
+		width: fit-content !important;
+		padding: 0 2px !important; 
+	}
+
+/*	.vt--hidden {
+		display: none !important;
+	}
+*/
 
 	.block-enregistrement-gr a, .block-enregistrement-gr button {
 		cursor: pointer;
@@ -455,12 +583,7 @@
 		background-color: var(--bg-masque-clair);
 		color: #000 !important;
 	}
-/*
-	.block-enregistrement-gr--clients-saisie-nom-boucle {
-		display: flex;
-		width: fit-content !important;
-		background-color: inherit !important;
-	}*/
+
 	.block-enregistrement-gr--clients-choix-boucle {
 		display: block;
 		width: fit-content !important;

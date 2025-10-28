@@ -23,6 +23,7 @@ export default function save({ attributes }) {
     const { chaineFichiersPupitre } = attributes;
 
     // Convertir la chaîne JSON en tableau d'objets
+    //console.log(chaineFichiersPupitre);
     const groups = chaineFichiersPupitre ? JSON.parse(chaineFichiersPupitre) : [];
 
     return (

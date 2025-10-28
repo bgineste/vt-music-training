@@ -109,7 +109,19 @@ function vtAffichageMasquageModules()
 	}
 }
 
+function vtAffichageMasquageConsignes() {
+	const consigneBlocks = document.querySelectorAll('.wp-block-vt-music-training-consignes-du-module');
 
+  consigneBlocks.forEach(block => {
+    const consigneText = block.querySelector('.vt--consignes p');
+
+    // Vérifie si la consigne est vide ou ne contient que des espaces
+    if (consigneText && consigneText.textContent.trim() === '') {
+      block.style.display = 'none';
+    }
+  });
+
+}
 
 /*
  Script chargement de la section d'entrainement
@@ -145,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	3 - Retour des modules à leur état lors de la dernière session / grâce à des cookies
 	*/
 	vtAffichageMasquageModules();
+
+//	vtAffichageMasquageConsignes();
 });
 
 /**----------------------------------------------------------------------------------------------------

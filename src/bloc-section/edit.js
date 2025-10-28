@@ -34,7 +34,7 @@ import './editor.scss';
 export default function Edit(props) {
 	const blockProps = useBlockProps()
 	// déconstruction
-    const { attributes: { idSection, titreSection, largeurPageMax, classeBlocEntete, sectionAffichable }, setAttributes, } = props
+    const { attributes: { idSection, titreSection, largeurPageMax, classeBlocEntete, fonctionGetIdUtilisateur, sectionAffichable }, setAttributes, } = props
 	const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/bloc-oeuvre' ]
 //	vtLargeurPageMax = largeurPageMax
 	
@@ -71,8 +71,14 @@ export default function Edit(props) {
 							setAttributes( { classeBlocEntete: ( val ) } )
 						}
 					/>
+					<TextControl
+						label={ 'Nom de la fonction d\'initialisation (de la page appelante)' }
+						value={fonctionGetIdUtilisateur}
+						onChange={(value) => setAttributes({ fonctionGetIdUtilisateur: value })}
+						help="Ex: getUtilisateur (doit être une fonction globale disponible sur la page)"
+					/>
 					<ToggleControl
-						label={ 'La section est-elle affichable' }
+						label={ 'La section est-elle affichable ?' }
 						help={ 'Permet d\'attendre que la section soit prête' }
 						checked={ sectionAffichable }
 						onChange={(value) => setAttributes({ sectionAffichable: (value) })}
@@ -85,8 +91,8 @@ export default function Edit(props) {
 				</div>
 				) : ( 
 					<div className="vt--une-section">
-						<h4>Titre de la section : "{ titreSection }"</h4>
-						<p>Identifiant de la section : "{ idSection }" </p>
+						<h4>Titre de la section : { titreSection }</h4>
+						<p>Identifiant de la section : { idSection } </p>
 						<InnerBlocks allowedBlocks= { ALLOWED_BLOCKS } />
 					</div>
 				) 

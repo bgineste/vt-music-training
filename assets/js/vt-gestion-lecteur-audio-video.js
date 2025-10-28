@@ -5,6 +5,249 @@ V 1.0
 // DANS CE SCRIPT ON POSTULE QU'IL N'Y A, A TOUT INSTANT, QU'UN SEUL LECTEUR DEFINI DANS LE NAVIGATEUR
 
 
+class VtMpLecteur {
+    constructor(tagVideoOuAudio) {
+        if (!(tagVideoOuAudio instanceof HTMLMediaElement)) {
+            throw new Error("Il faut un <audio> ou <video>");
+        }
+        this.player = tagVideoOuAudio;
+
+        // Optionnel : garder des références aux handlers si besoin de removeEventListener
+        //this._onPlayHandler = () => {};
+        //this._onPauseHandler = () => {};
+
+        // Abonner aux changements de vitesse natifs (menu options du navigateur chrome)
+       // On garde une référence au handler
+        this._onRateChange = () => {
+            this.dispatchEventCustom("vitesseChanged", { 
+                playbackRate: this.player.playbackRate 
+            });
+        };
+
+        this.player.addEventListener("ratechange", this._onRateChange);
+		
+
+    }
+
+
+    // Émettre des événements personnalisés
+    dispatchEventCustom(name, detail = {}) {
+        const event = new CustomEvent(name, { detail });
+        this.player.dispatchEvent(event);
+    }
+    // Abonnement/désabonnement
+    on(name, handler) {
+        this.player.addEventListener(name, handler);
+    }
+    off(name, handler) {
+        this.player.removeEventListener(name, handler);
+    }
+
+    // Contrôles de base
+    play() {
+        this.player.play();
+    }
+    #pause() {
+        this.player.pause();
+    }
+    togglePlayPause() {
+        if (this.player.paused) {
+            this.play();
+        } else {
+            this.#pause();
+        }
+    }
+
+	getCurrentTime() {
+		return this.player.currentTime;
+	}
+
+	tFinMorceau() {
+		return this.player.duration;
+	}
+
+	isBoucleActive = false;
+	isBoucleValide = false
+	#boucleID = null; // setInterval
+	// propriétés de boucle
+	nomBoucle = null;
+	tDebBoucle = 0;
+	tFinBoucle = 0; 
+
+	setBoucle(nomBoucle, debBoucle, finBoucle) {
+		// nomBoucle : nom des boucles enregistrées ou ""
+		// debBoucle : instant début boucle (format ?)
+		// finBoucle ! instant fin boucle (format ?)
+		this.nomBoucle = nomBoucle;
+		this.tDebBoucle = debBoucle;
+		this.tFinBoucle = finBoucle;
+
+		this.dispatchEventCustom("boucleSetted",{nomBoucle: this.nomBoucle, debBoucle: this.tDebBoucle, finBoucle: this.tFinBoucle});
+		console.log("lecteur : setted boucle");
+	}
+
+	onOffBoucle(supprimerBoucle = false) {
+		console.log("Bcl on/off ", this.tDebBoucle," / ",this.tFinBoucle);
+		//alert(EtatBoucle);
+		let lcr = 0;
+	//	var attente = 0;
+		if (!this.isBoucleActive) {
+			if (parseFloat(this.tFinBoucle) <= parseFloat(this.tDebBoucle)) {
+				console.log("❌ activation boucle inattendue");
+				this.dispatchEventCustom("bouclerDenied");
+				return;
+			}
+			// si on est en train de boucler sur le morceau : on arrête ce bouclage avant de lancel la boucle définie					 
+			if (this.#boucleActiveSurToutLeMorceau) { this.toggleBouclerSurToutLeMorceau();}
+//			vtLecteur.boutonBoucler.classList.add("vt--bouton-clavier-enfonce");
+			lcr = parseInt(this.player.currentTime);
+			// le lecteur n'est pas dans l'intervalle de la boucle : on le ramène au début de la boucle
+			// sinon on diffère la fonction interval du temps restant
+			if (lcr < this.tDebBoucle || lcr >= this.tFinBoucle) { 
+				this.player.currentTime=this.tDebBoucle;
+			}
+			this.#boucleID=setInterval(()=>{
+				if (this.player.currentTime >= this.tFinBoucle || this.player.currentTime <= this.tDebBoucle) this.player.currentTime = this.tDebBoucle;
+			},800);
+			this.isBoucleActive = true;
+		} else {
+			// on arrête la boucle
+			clearInterval(this.#boucleID);
+			this.#boucleID = null;	// V2.1
+			// mais on conserve les données
+			//this.tDebBoucle = 0;
+			//this.tFinBoucle = 0;
+			this.isBoucleActive = false;
+		}
+		this.dispatchEventCustom("bouclerChanged", { isBoucleActive: this.isBoucleActive, supprimer: supprimerBoucle });
+	}
+
+	#boucleActiveSurToutLeMorceau = false;
+
+	toggleBouclerSurToutLeMorceau() {
+		if (!this.#boucleActiveSurToutLeMorceau) {
+			if (this.isBoucleActive) { this.onOffBoucle({suppimerBoucle: true});} // Si une boucle est active on l'arrête
+
+			this.#boucleID=setInterval(()=>{
+				if (this.player.currentTime >= this.player.duration) {
+					this.player.currentTime=0;
+					if (this.player.paused) {
+						this.play();
+					}
+				}
+			},800);
+			this.#boucleActiveSurToutLeMorceau = true;
+		} else {
+			clearInterval(this.#boucleID);
+			this.#boucleID = null; // V3.2
+			this.#boucleActiveSurToutLeMorceau = false;
+			
+		}
+		this.dispatchEventCustom("bouclerSurMorceauChanged", { etat: this.#boucleActiveSurToutLeMorceau});
+	}
+
+	rembobiner(){
+		this.player.currentTime=0;
+	}
+
+	sauter(duree){
+		let end = this.player.seekable.end(0);
+		let curseur = this.player.currentTime + duree;
+		this.player.currentTime = curseur  > end ? end : curseur < 0 ? 0 : curseur ;
+	}
+
+
+	// Gestion des paramètres du lecteur
+	setAjusterVitesse(valeur) {
+		console.log(this.player.playbackRate);
+		switch (valeur) {
+			case 'down':
+				if (this.player.playbackRate > .50) {
+					this.player.playbackRate -= .05;
+				}
+			break;
+			case 'up':
+				if (this.player.playbackRate < 1.25) {
+					this.player.playbackRate += .05;
+				}
+			break;
+			case 'normal': 
+				this.player.playbackRate = 1;
+	//			Rate = 100;
+			break;
+		}
+	}
+
+
+
+    // Exemple : paramètres du lecteur
+    setSegments(segments) {
+        this.segments = segments;
+        this.dispatchEventCustom("segmentsChanged", { segments });
+    }
+    setStereo(value) {
+        this.stereo = value;
+        this.dispatchEventCustom("stereoChanged", { stereo: value });
+    }
+
+    // Nettoyage complet
+    destroy() {
+        // Arrêter le média
+        try {
+            this.#pause();
+        } catch (e) {
+            console.warn("Erreur lors de l'arrêt du média", e);
+        }
+
+        // Libérer la source
+        this.player.removeAttribute("src");
+        //this.player.load(); // force le reset de <audio>/<video>
+/*
+        // Retirer tous les écouteurs éventuellement ajoutés
+        if (this._onPlayHandler) {
+            this.off("play", this._onPlayHandler);
+            this._onPlayHandler = null;
+        }
+        if (this._onPauseHandler) {
+            this.off("pause", this._onPauseHandler);
+            this._onPauseHandler = null;
+        }
+*/
+
+		// Retirer proprement l'écouteur "vitesse"
+		this.player.removeEventListener("ratechange", this._onRateChange);
+
+		// Arrêter les répétitions
+		if (this.#boucleID !== null) {		
+			clearInterval(this.#boucleID);
+			this.#boucleID = null; // V3.2
+			this.#boucleActiveSurToutLeMorceau = false;
+		}
+
+
+		// Nettoyer les propriétés
+        this.segments = null;
+        this.stereo = null;
+		this.player.playbackRate = 1;
+
+
+        // Prévenir la vue que le lecteur est détruit
+        this.dispatchEventCustom("fermeture", { message: "Lecteur détruit" });
+
+        // Briser la référence au tag
+        this.player = null;
+
+        console.log("Lecteur détruit et nettoyé");
+    }
+}
+
+/*
+Fonctions lecteurs audio et video (plugin vt-music-training)
+V 1.0
+*/
+// DANS CE SCRIPT ON POSTULE QU'IL N'Y A, A TOUT INSTANT, QU'UN SEUL LECTEUR DEFINI DANS LE NAVIGATEUR
+
+
 
 /**-----------------------------------------------------------------------------------------------
 * FONCTIONS DU LECTEUR
@@ -12,8 +255,9 @@ V 1.0
 
 var vtLecteur = null;
 
-var pseudoChoriste = null; // pas nécessaire
-const vt_urlPHP_TraitementBoucles ='/wp-content/themes/twentytwenty-vt/js/mediaplayer-enreg-boucle.php';
+var vtIdUtilisateur = null; 
+var vtNomFonctionGetIdUtilisateur = null;  
+
 //const urlPHP_TraitementBoucles ='http://voce-tolosa.ddns.net/sript-php-externe/';
 
 //var vtAffVitesse = null; // champ d'affichage de la vitesse d'exécution
@@ -21,7 +265,7 @@ const vt_urlPHP_TraitementBoucles ='/wp-content/themes/twentytwenty-vt/js/mediap
 //var vtBtnRepeteEnBoucle = null // Bouton Répète tout le morceau push/pull
 //var vtEtatRepeteEnBoucle = false; // indique sila répétition du morceau est activée
 //var vtRepeteEnBoucleID = null;
-//var vtbtnBoucler = null; // Bouton boucle push/pull
+//var vtboutonBoucler = null; // Bouton boucle push/pull
 // var vtLoopID = null;
 //var vtTdebBoucle = 0;
 //var vtTfinBoucle = 0;
@@ -66,6 +310,7 @@ function vtIsIphone() {
 
   return iOSDevice || isTouchMac;
 }
+
 const vtoEnvt = {
 	isIphone: true
 }
@@ -73,46 +318,71 @@ const vtEnvt = Object.create(vtoEnvt);
 vtEnvt.isIphone =  vtIsIphone();
 
 
-
-function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavier, fichierStereo) {
-		
-	let vtBlocLecteur = document.getElementById("vt--bloc-lecteur");
-	let source = cheminFichier + nomFichier;
-	
-	/*var datasBalance = {
-		audioContext: null,
-		audioSource: null,
-		volumeNodeL: null,
-		volumeNodeR: null,
-		channelsCount: null,
-		splitterNode: null,
-		mergeNode: null
-	};
+/*
+Récupérer l'id de l'utilisateur (pour l'enregistrement des boucles)
 */
 
-	console.log('vtActiverLecteur/source : ' + cheminFichier + ' - ' + nomFichier);
-	switch (typeFichier) {
-		case "v":
-			console.log("tag video");
-			vtBlocLecteur.innerHTML='<video controls="" autoplay="" playsinline="" preload="no" controlslist="nodownload" data-origwidth="0" data-origheight="0" src= "' + source + '"><p>Votre navigateur est trop ancien pour lire ce fichier</p></video>';
-		break;
-		case "a":
-			console.log("tag audio");
-			vtBlocLecteur.innerHTML='<audio style="margin-top: 20px;" controls="" autoplay="" playsinline="" preload="no" controlslist="nodownload" data-origwidth="0" data-origheight="0" src= "' + source + '"><p>Votre navigateur est trop ancien pour lire ce fichier</p></video>';
-		
-		break;
+const blockElement = document.querySelector('[data-fonction-get-id-utilisateur]');
+if (!blockElement) {
+	console.warn('Bloc avec "data-fonction-get-id-utilisateur" n\' pas été trouvé. C\'est normal si la page n\'est pas une page d\'entrainement');
+	vtNomFonctionGetIdUtilisateur = null;
+} else {
+	vtNomFonctionGetIdUtilisateur = blockElement.getAttribute('data-fonction-get-id-utilisateur');
+}
+ 
+function vtGetvtIdUtilisateur(vtNomFonctionGetIdUtilisateur) {
+	if (!vtNomFonctionGetIdUtilisateur) {
+		console.warn('Aucune fonction d\'initialisation fournie');
+		return null;
 	}
+
+	// Vérifie que la fonction existe dans window
+	if (typeof window[vtNomFonctionGetIdUtilisateur] !== 'function') {
+		console.warn(`La fonction ${vtNomFonctionGetIdUtilisateur} n'existe pas sur cette page`);
+		return null;
+	}
+
+	try {
+		// Appel de la fonction pour récupérer l'identifiant alias pseudo de l'utilisateur
+		const idUser = window[vtNomFonctionGetIdUtilisateur]();
+		console.log('Pseudo récupéré :', idUser);
+		return idUser;
+	} catch (err) {
+		console.error('Erreur lors de l’appel de la fonction', err);
+		return null;
+	}
+}
+
+if (vtNomFonctionGetIdUtilisateur != null) {
+	vtIdUtilisateur = vtGetvtIdUtilisateur(vtNomFonctionGetIdUtilisateur);
+
+}
+
+
+function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavier, fichierStereo) {
+	
+	alert("caller is " + vtActiverLecteur.caller); // Deprecated
+	let source = cheminFichier + nomFichier;
+	
+	console.log('vtActiverLecteur/source : ' + cheminFichier + ' - ' + nomFichier);
+
+	window.VtGestionLecteur.vtInstalleLecteur(typeFichier, source);
+
+	let vtBlocLecteur = window.VtGestionLecteur.vtBlocLecteur();
 	vtLecteur = vtBlocLecteur.firstElementChild;
 	// Initialiser tous les attributs 
 	Object.assign(vtLecteur, {
-		src: source,				// fichier audio ou vidéo 
-		boutonPlayPause: document.getElementById("vt--PlayPause"),
 		// les attributs
+		src: source,
+		blocLecteurEntrainement: null,	// enveloppe du lecteur
+		blocClavier: null,				// fichier audio ou vidéo 
+		boutonPlayPause: null,
+
 		etatRepeterEnBoucle: false,  // boucle sur tout de morceau
-		btnRepeterEnBoucle: null,    // le bouton "répète en boucle tout le morceau"
-		affVitesse: null,			// le champ d'affichage de la vitesse
+		boutonRepeterEnBoucle: null,    // le bouton "répète en boucle tout le morceau"
+		//affVitesse: null,			// le champ d'affichage de la vitesse
 		etatBoucle: false,			// boucle active sur un segment
-		btnBoucler: null, 			// Bouton boucle push/pull
+		boutonBoucler: null, 			// Bouton boucle push/pull
 		affDebBoucle: null,			// le champ d'affichage du début de boucle
 		affFinBoucle: null,			// le champ d'affichage de la fin de boucle
 		tDebBoucle: 0,				// moment du début de boucle
@@ -122,6 +392,7 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 		//idSaisieNomBoucle: "vt--saisie-nom-boucle",
 		//idChoixBoucle: "choix-boucle",
 		oChoixBoucle: null,			// objet html 'select' associé au tableau des boucles enregistrées
+		boucleChoisie: "",		// identifiant de la boucle choisie
 		stereo: false,
 		oBalance: null,		// données de la stéréo
 		// les méthodes
@@ -139,49 +410,62 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 		PlayPause: vtEventPlayPause,
 		InitBalance: vtInitBalance,
 		SetVol: vtSetVol,
+		ChargeBouclesDefinies: vtChargeBouclesDefinies,
+		SelectBoucle: vtSelectBoucle,
+		LanceEnregBoucle: vtLanceEnregBoucle,
 		//Play: vtPlay,
 		//Pause: vtPause,
 		DesactiverLecteurEntrainement: vtDesactiverLecteurEntrainement
 	});
 
-	/*if (window.attachBalanceSetters) {
-		window.attachBalanceSetters(vtLecteur);
-	}*/
+	
+	[ 
+		vtLecteur.blocLecteurEntrainement,
+		vtLecteur.blocClavier,
+		vtLecteur.blocLecteur,
+		vtLecteur.boutonPlayPause,
+		vtLecteur.boutonRepeterEnBoucle
+	] = window.VtGestionLecteur.vtInitParamsLecteur();
 
 	vtLecteur.SetEcoutePlayPause("actif");
 
 	// affichage du clavier ?
 	if (affichageClavier === "false") {
-		document.getElementById("vt--clavier-lecteur").style.display = 'none';
+		window.VtGestionLecteur.VtAfficherClavier(false);
 	} else {
 		vtLecteur.stereo = !(fichierStereo === "false" || vtEnvt.isIphone === true);
 		// affichage de la balance stéréo ?
 		if (!vtLecteur.stereo) {
-			document.getElementById("vt--balance").style.display = 'none';
+			//document.getElementById("vt--balance").style.display = 'none';
+			window.VtGestionLecteur.VtAfficherBalance(false);
 		}
 
 		// actualisation symbole bouton play/pause
-		console.log("initialisation du bouton play/pause");
+		console.log("initialisation du bouton play/pause : ",vtLecteur.boutonPlayPause);
 		vtLecteur.ActualiserBoutonPlayPause();
 
 		// actualisation du compteur de vitesse
 		let PBR = vtLecteur.playbackRate;
 		let Rate = parseInt(100*PBR,10);
 
-		vtLecteur.AffVitesse = document.getElementById("vt--aff-vitesse");			   
+		/*vtLecteur.AffVitesse = document.getElementById("vt--aff-vitesse");			   
 		if (vtLecteur.AffVitesse != null) {
 			vtLecteur.AffVitesse.innerHTML = Rate+ '%';
-		}
+		}*/
+		window.VtGestionLecteur.VtAffVitesse(Rate);
 		
 		
 		// initialisation des compteurs de boucles
-		vtLecteur.AffDebBoucle = document.getElementById("vt--deb-boucle");			   
+		/*vtLecteur.AffDebBoucle = document.getElementById("vt--deb-boucle");			   
 		vtLecteur.AffFinBoucle = document.getElementById("vt--fin-boucle");			   
 		vtLecteur.AffDebBoucle.innerHTML = '00:00';
-		vtLecteur.AffFinBoucle.innerHTML = '00:00';
+		vtLecteur.AffFinBoucle.innerHTML = '00:00';*/
+		window.VtGestionLecteur.VtSetCompteursBoucle(0, 0);
 		// initialisation du bouton de lancement des boucles
-		vtLecteur.btnBoucler = document.getElementById("vt--btn-boucle");
+		vtLecteur.boutonBoucler = document.getElementById("vt--onoff-boucle");
 		vtLecteur.oChoixBoucle = document.getElementById("vt--choix-boucle");
+		// initialisation du tableua des boucles enregistrées
+		vtLecteur.ChargeBouclesDefinies();
 		// initialisation de la balance le cas échéant
 		if (vtLecteur.stereo) {
 //			vtLecteur.oBalance = Object.create(vtoBalance);
@@ -197,7 +481,6 @@ function vtActiverLecteur(cheminFichier, nomFichier, typeFichier, affichageClavi
 	
 }
 
-
 function vtDesactiverLecteurEntrainement(MasqueModalLecteur) {
 // 	fusion avec vtFermeLecteur
 //	document.getElementById(idMasqueLecteur).style.display='none';
@@ -210,13 +493,15 @@ function vtDesactiverLecteurEntrainement(MasqueModalLecteur) {
 	vtLecteur.pause();
 	clearInterval(vtLecteur.boucleID);
 	vtLecteur.boucleID = null; // V3.2
-	if (vtLecteur.etatRepeterEnBoucle && vtLecteur.btnRepeterEnBoucle) {
-		vtLecteur.btnRepeterEnBoucle.classList.remove("vt--bouton-clavier-enfonce");
+	if (vtLecteur.etatRepeterEnBoucle && vtLecteur.boutonRepeterEnBoucle) {
+		vtLecteur.boutonRepeterEnBoucle.classList.remove("vt--bouton-clavier-enfonce");
 	}
-	/* pas nécessaire : initialisation faire à l'activation */
-	vtLecteur.AffDebBoucle.innerHTML = '00:00';
-	vtLecteur.AffFinBoucle.innerHTML = '00:00';
-	document.getElementById("vt--clavier-lecteur").removeAttribute("style");
+	/* pas nécessaire : initialisation faite à l'activation */
+	/*vtLecteur.AffDebBoucle.innerHTML = '00:00';
+	vtLecteur.AffFinBoucle.innerHTML = '00:00';*/
+	window.VtGestionLecteur.VtSetCompteursBoucle(0, 0);
+	window.VtGestionLecteur.VtAfficherClavier(true);
+	//document.getElementById("vt--clavier-lecteur").removeAttribute("style");
 	if (vtEnvt.isIphone === false) {
 		document.getElementById("vt--balance").removeAttribute("style");
 	}
@@ -276,7 +561,80 @@ function vtEventPlayPause() {
 	}
 }
 
-// vetLecteur.InitBalance
+// vtLecteur.ChargeBouclesDefinies()
+async function vtChargeBouclesDefinies() {
+
+	// Préparation des données à envoyer
+	const data = new FormData();
+	data.append('action', 'lecture-boucles');
+	data.append('utilisateur', vtIdUtilisateur);
+	data.append('nomfic', vtLecteur.src);
+	console.log("nomfic : ",vtLecteur.src);
+
+	// Envoi via fetch
+	try {
+		const response = await fetch(fonctionsBouclesLecteur.ajaxUrl, {
+			method: 'POST',
+			body: data
+		})
+		console.log("response : ",response);
+		if (!response.ok) {
+			throw new Error(`Response status: ${response.status}`);
+		}
+
+		const result = await response.json();
+		console.log("result : ", result);
+		console.log("result data : ", result.data);
+		if (typeof result.data === 'object') {
+			// traiter l'objet
+			vtLecteur.bouclesDefinies = JSON.parse(result.data);
+			var oOption = document.createElement("option");
+			oOption.text = "";
+			oOption.value = "choisir boucle";
+			vtLecteur.oChoixBoucle.add(oOption);
+			var j = 1;
+			var x = "";
+			for(bcl in vtLecteur.bouclesDefinies) {
+				alert("bcl : "+bcl);
+				var oOption = document.createElement("option");
+				oOption.text = bcl;
+				oOption.value = bcl;
+				//alert(BouclesDefinies[bcl][0]);
+				//alert(BouclesDefinies[bcl][1]);
+				//alert(BouclesDefinies[bcl][2]);
+				vtLecteur.oChoixBoucle.add(oOption);
+				j++;
+			}
+			vtLecteur.oChoixBoucle.style.display = "block";
+			vtLecteur.ElargirCompteurBoucle("compteur-deb-boucle"); //-"+suffixeLecteur);
+			vtLecteur.ElargirCompteurBoucle("compteur-fin-boucle"); //-"+suffixeLecteur);
+
+		} else {
+			console.log("result data : ", result.data);
+		}
+	} catch (error) {
+			console.error(error.message);
+	}
+/*
+	.then(response => {response.text(); console.log("response : ",response);}) // On traite la réponse en tant que JSON
+//	.then(console.log(response)) // On traite la réponse en tant que JSON
+	.then(data => {
+		console.log("data : ",data);
+		if (data.success) {
+			console.log("Réponse du serveur: ", data.data);
+		} else {
+			console.log(data);
+			console.error("Erreur: ", data.data);
+		}
+	})
+	.catch(error => {
+		console.error('Erreur lors de l\'envoi du message:', error);
+	});
+*/
+
+}
+
+// vtLecteur.InitBalance
 function vtInitBalance() {
 	vtLecteur.oBalance = Object.create(vtoBalance);
 	with (vtLecteur.oBalance) {
@@ -325,21 +683,35 @@ function setBalance(val) {
   vtLecteur.oBalance.volumeNodeR.gain.value = 1 + val;
 }
 
-
+// vtLecteur.SetChoixBoucle
+function vtSelectBoucle(nomBoucle) {
+	vtLecteur.boucleChoisie = nomBoucle;
+	let bornesBoucles = vtLecteur.BouclesDefinies(nomBoucle).split('|');
+	vtLecteur.tDebBoucle = parsInt(bornesBoucles[0],10);
+	vtLecteur.tFinBoucle = parsInt(bornesBoucles[1],10);
+	
+   /*if (vtLecteur.AffDebBoucle != null) {
+		vtLecteur.AffDebBoucle.innerHTML = cvSecTime(vtLecteur.tDebBoucle);
+   }
+   if (vtLecteur.AffFinBoucle != null) {
+		vtLecteur.AffFinBoucle.innerHTML = cvSecTime(vtLecteur.tFinBoucle);
+   }*/
+	window.VtGestionLecteur.VtSetCompteursBoucle(vtLecteur.tDebBoucle, vtLecteur.tFinBoucle);
+}
 
 // vtLecteur.RepeterEnBoucle
-function vtRepeterEnBoucle(btnRepeterEnBoucle=null) { // push/pull répète en boucle la totalité du morceau
+function vtRepeterEnBoucle(boutonRepeterEnBoucle=null) { // push/pull répète en boucle la totalité du morceau
 //	console.log(vtEtatRepeterEnBoucle);
 	if (!vtLecteur) {return}
-	if (!vtLecteur.btnRepeterEnBoucle && btnRepeterEnBoucle) {
+	if (!vtLecteur.boutonRepeterEnBoucle && boutonRepeterEnBoucle) {
 		Object.assign(vtLecteur, { 		
-		btnRepeterEnBoucle: btnRepeterEnBoucle    // le bouton "répète en boucle"
+		boutonRepeterEnBoucle: boutonRepeterEnBoucle    // le bouton "répète en boucle"
 	});
 	}
 	let etatRepeterEnBoucle = vtLecteur.etatRepeterEnBoucle;
 	if (!etatRepeterEnBoucle) {
 		if (vtLecteur.etatBoucle) { vtOnOffBoucle();} // Si une boucle est active on l'arrête
-		vtLecteur.btnRepeterEnBoucle.classList.add("vt--bouton-clavier-enfonce");
+		vtLecteur.boutonRepeterEnBoucle.classList.add("vt--bouton-clavier-enfonce");
 //		Lecteur.currentTime=0;
 		console.log(vtLecteur.duration);
 		vtLecteur.boucleID=setInterval(function(){
@@ -355,7 +727,7 @@ function vtRepeterEnBoucle(btnRepeterEnBoucle=null) { // push/pull répète en b
 	} else {
 		clearInterval(vtLecteur.boucleID);
 		vtLecteur.boucleID = null; // V3.2
-		vtLecteur.btnRepeterEnBoucle.classList.remove("vt--bouton-clavier-enfonce");
+		vtLecteur.boutonRepeterEnBoucle.classList.remove("vt--bouton-clavier-enfonce");
 		vtLecteur.etatRepeterEnBoucle = false;
 		
 	}
@@ -402,10 +774,10 @@ function vtAjusterVitesse(valeur) {
 				Rate = 100;
 			break;
 		}
-		if (vtLecteur.AffVitesse != null) {
+		/*if (vtLecteur.AffVitesse != null) {
 			vtLecteur.AffVitesse.innerHTML = Rate+ '%';
-		}
-		
+		}*/
+		window.VtGestionLecteur.VtAffVitesse(Rate);
 	}
 }
 
@@ -414,9 +786,10 @@ function vtDefDebBoucle() {
 	let nDeb = vtLecteur.currentTime;
 	vtLecteur.tDebBoucle = parseInt(nDeb,10); //Math.floor(nDeb);
 	
-   if (vtLecteur.AffDebBoucle != null) {
+   /*if (vtLecteur.AffDebBoucle != null) {
 		vtLecteur.AffDebBoucle.innerHTML = cvSecTime(vtLecteur.tDebBoucle);
-   }
+   }*/
+	window.VtGestionLecteur.VtSetCompteursBoucle(vtLecteur.tDebBoucle, vtLecteur.tFinBoucle);   
 }
 
 // vtLecteur.DefFinBoucle
@@ -424,9 +797,10 @@ function vtDefFinBoucle() {
 	let nFin = vtLecteur.currentTime;
 	vtLecteur.tFinBoucle = parseInt(nFin,10); //Math.floor(nFin);
 	
-   if (vtLecteur.AffFinBoucle != null) {
+   /*if (vtLecteur.AffFinBoucle != null) {
 		vtLecteur.AffFinBoucle.innerHTML = cvSecTime(vtLecteur.tFinBoucle);
-   }
+   }*/
+	window.VtGestionLecteur.VtSetCompteursBoucle(vtLecteur.tDebBoucle, vtLecteur.tFinBoucle);   
 }
 
 // vtLecteur.TraiterFleche
@@ -500,7 +874,7 @@ function vtOnOffBoucle(){ //Push / Pull bouton Lance boucle
 		}
 		// si on est en train de boucler sur le morceau : on arrête ce bouclage avant de lancel la boucle définie					 
 		if (vtLecteur.etatRepeterEnBoucle) { vtLecteur.RepeterEnBoucle();}
-		vtLecteur.btnBoucler.classList.add("vt--bouton-clavier-enfonce");
+		vtLecteur.boutonBoucler.classList.add("vt--bouton-clavier-enfonce");
 		lcr = parseInt(vtLecteur.currentTime);
 		// le lecteur n'est pas dans l'intervalle de la boucle : on le ramène au début de la boucle
 		// sinon on diffère la fonction interval du temps restant
@@ -518,12 +892,89 @@ function vtOnOffBoucle(){ //Push / Pull bouton Lance boucle
 		vtLecteur.boucleID = null;	// V2.1
 		vtLecteur.tDebBoucle = 0;
 		vtLecteur.tFinBoucle = parseInt(vtLecteur.duration,10);
-		vtLecteur.btnBoucler.classList.remove("vt--bouton-clavier-enfonce");
+		vtLecteur.boutonBoucler.classList.remove("vt--bouton-clavier-enfonce");
 		vtLecteur.etatBoucle = false;
 		// aspect
 		
 	}
 }
+
+// vt--lecteur.LanceEnregBoucle
+function vtLanceEnregBoucle() {
+/*	var idSaisieNomGroupe = "saisie-nom-boucle-"+SuffixePlayer;
+	var ValideNomGroupe =  document.getElementById(idValideNomGroupe);
+	var divEncadreValidationNomGroupe = ValideNomGroupe.parentElement;
+	divEncadreValidationNomGroupe.style.display="flex";*/
+	if (vtIdUtilisateur === "" || vtIdUtilisateur === null) {
+		alert("Cette fonction est réservée\naux choristes identifiés\n\nPour cela, sélectionner dans le menu\n : Paramètres> Inscription pseudo choriste\n\nPour connaître votre pseudo, contactez le webmaster");
+		return;
+	}
+	// traiter cela en amont (filtre pour autoriser le bouton enreg)
+	if (!vtLecteur.etatBoucle && (parseFloat(vtLecteur.tFinBoucle) <= parseFloat(vtLecteur.tDebBoucle))) {
+		alert("Boucle incorrecte !");
+		return;
+	}
+	var SaisieNomBoucle =  document.getElementById("vt--saisie-nom-boucle"); // input pour la saisie du nom de la boucle
+	var nomBoucle = document.getElementById("vt--choix-boucle").value;
+	if (nomBoucle === "choisir boucle") {
+		SaisieNomBoucle.value = "";
+	} else {
+		SaisieNomBoucle.value = nomBoucle;
+	}
+//	SaisieNomBoucle.value = document.getElementById(idChoixBoucle).value;
+	var divEncadreValidationNomBoucle = SaisieNomBoucle.parentElement; // la div qui reçoit input de saisie et bouton de validation de saisie
+	divEncadreValidationNomBoucle.style.display="flex";
+	SaisieNomBoucle.focus();
+	SaisieNomBoucle.select(); // sélecté si possible
+}
+
+function EnregBoucle() {
+	$.ajax({
+		url:urlPHP_TraitementBoucles, 
+//		url:'<?php echo get_permalink( 2520 );?>', 
+		method:'POST',
+		data:{
+			action:"enreg-boucle",
+			nomFic:NomFichierSourceAudioVideo,
+			choriste: vtIdUtilisateur,
+			nomBoucle:document.getElementById(idSaisieNomBoucle).value,
+			dBoucle:tDebBoucle,
+			fBoucle:tFinBoucle
+		},
+		dataType:"text",
+		success:function(response){
+			document.getElementById(idSaisieNomBoucle).parentElement.style.display="none";
+			// actualiser la liste de boucles
+			BouclesDefinies[document.getElementById(idSaisieNomBoucle).value] = tDebBoucle+"|"+tFinBoucle;
+			var oChoixBoucle = document.getElementById(idChoixBoucle);
+			// s'il s'agit d'une création on ajoute un item à la liste
+			if (!response.includes("mise à jour")) {
+				if (oChoixBoucle === null || oChoixBoucle.length == 0) {
+					//oChoixBoucle.add("choisir boucle");
+					var oOption0 = document.createElement("option");
+					oOption0.text = "choisir boucle";
+					oOption0.value = "choisir boucle";
+					oChoixBoucle.add(oOption0);
+				}
+				var oOption = document.createElement("option");
+				oOption.text = document.getElementById(idSaisieNomBoucle).value;
+				oOption.value = document.getElementById(idSaisieNomBoucle).value;
+						//alert(BouclesDefinies[bcl][0]);
+						//alert(BouclesDefinies[bcl][1]);
+				oChoixBoucle.add(oOption);
+				// on selectione le nouvel élément
+				document.getElementById(idChoixBoucle).value = oOption.value;
+			}
+			oChoixBoucle.style.display = "block";
+			alert(response);
+
+		},
+		error:function (xhr, textStatus, errorThrown) {
+			alert(textStatus);
+		}
+	});
+}
+
 
 // vtLecteur.SetEcoutePlayPause
 function vtSetEcoutePlayPause(etatEcoute) {
@@ -543,9 +994,10 @@ function vtSetEcoutePlayPause(etatEcoute) {
 // vetLecteur.ActualiserBoutonPlayPause
 function vtActualiserBoutonPlayPause() {
 	if (vtLecteur != null) {
-		let etatLecteur = (vtLecteur.paused) ? "pause" : "play"
+		let etatLecteur = (vtLecteur.paused) ? "pause" : "play";
+		window.VtGestionLecteur.VtActualiserBoutonPlayPause(etatLecteur);
 //		console.log(etatLecteur)
-		let target = vtLecteur.boutonPlayPause.firstElementChild
+		/*let target = vtLecteur.boutonPlayPause.firstElementChild
 		if (target) {
 			if (etatLecteur === "pause") {
 				target.classList.remove("fa-pause")
@@ -554,7 +1006,7 @@ function vtActualiserBoutonPlayPause() {
 				target.classList.remove("fa-play")
 				target.classList.add("fa-pause")		
 			}
-		}
+		}*/
 	}
 }
 

@@ -4,7 +4,7 @@
  * Description:        Création de pages et de modules d'apprentissage de morceaux de musique 
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           0.1.7
+ * Version:           0.3
  * Author:            Bernard Gineste
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -40,9 +40,9 @@ if (!is_choriste()) {
 */
 
 function activer_vt_music_training() {
-	//  Le plugin utilise la table zboucles pour enregistrer les boucles définies par l'utilisateur
-    // Appeler la fonction de création de table zboucles
-    creer_la_table_zboucles();
+	//  Le plugin utilise la table vt_zboucles pour enregistrer les boucles définies par l'utilisateur
+    // Appeler la fonction de création de table vt_zboucles
+    creer_la_table_vt_zboucles();
 
     // Vous pouvez également effectuer d'autres tâches d'initialisation ici si nécessaire
 }
@@ -52,22 +52,25 @@ register_activation_hook(__FILE__, 'activer_vt_music_training');
 /**
 * Fonctions  appelées à l'activation du plugin
 */
-function creer_la_table_zboucles() {
+function creer_la_table_vt_zboucles() {
 	global $wpdb;
 	
-	$table_name = $wpdb->prefix . 'zboucles'; 
+//	$table_name = $wpdb->prefix . 'vt_zboucles'; 
+	$table_name = 'vt_zboucles'; 
 
 	// Vérifier si la table existe
 	if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
 		// La table n'existe pas, nous pouvons la créer
-		$charset_collate = $wpdb->get_charset_collate();
+		//$charset_collate = $wpdb->get_charset_collate();
 		$sql = "CREATE TABLE $table_name (
-		  `boucle-ID` int(11) NOT NULL,
-		  `pseudo-choriste` varchar(20) CHARACTER SET utf8 NOT NULL,
-		  `nom-fichier` varchar(120) CHARACTER SET utf8 NOT NULL,
-		  `nom-boucle` varchar(20) CHARACTER SET utf8 NOT NULL,
-		  `bornes-boucle` varchar(20) CHARACTER SET utf8 NOT NULL
-		) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+		  `boucle-ID` int(11) NOT NULL AUTO_INCREMENT,
+		  `pseudo-utilisateur` varchar(20) NOT NULL,
+		  `nom-fichier` varchar(120) NOT NULL,
+		  `nom-boucle` varchar(20) NOT NULL,
+		  `bornes-boucle` varchar(20) NOT NULL,
+          PRIMARY KEY (`boucle-ID`),
+          INDEX `pseudo` (`pseudo-utilisateur`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 		";
 		// on pourrait utiliser $wpdb->query($sql). Mais dbDelta appporte plus de fiabilité (contrôles)
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -80,11 +83,9 @@ function creer_la_table_zboucles() {
 */
 
 function desactiver_vt_music_training() {
-	//  Le plugin utilise la table zboucles pour enregistrer les boucles définies par l'utilisateur
-    // Appeler la fonction de création de table zboucles
-//    creer_la_table_zboucles();
 
-    // Vous pouvez également effectuer d'autres tâches d'initialisation ici si nécessaire
+    // On laisse la table vt_zboucles car le plugin peut être réactivé
+    // O, pourrait effectuer des tâches nécessaires à la désactivation
 }
 
 register_deactivation_hook(__FILE__, 'desactiver_vt_music_training');
@@ -98,14 +99,15 @@ register_deactivation_hook(__FILE__, 'desactiver_vt_music_training');
 */
 
 function desinstaller_vt_music_training() {
-	//  Le plugin utilise la table zboucles pour enregistrer les boucles définies par l'utilisateur
-    // Appeler la fonction de création de table zboucles
-//    creer_la_table_zboucles();
 
-    // Vous pouvez également effectuer d'autres tâches d'initialisation ici si nécessaire
+    // Le plugin a créé et utilisé la table vt_zboucles pour enregistrer les boucles définies par l'utilisateur
+    // Cette table pourrait être supprimée en cas de désinstallation
 }
 
 register_uninstall_hook(__FILE__, 'desinstaller_vt_music_training');
+
+
+creer_la_table_vt_zboucles();
 
 /**
 * API REST pour uploader un fichier du PC vers un dossier du site Wordpress
@@ -229,7 +231,10 @@ function vt_music_training_ressources_enqueue() {
     wp_enqueue_script('vt-music-training-functions-generales', plugin_dir_url(__FILE__) . 'assets/js/vt-functions.js', array('jquery'), false, true);
     wp_enqueue_script('vt-music-training-fonctions-specifiques', plugin_dir_url(__FILE__) . 'assets/js/vt-music-training.js', array(), false, true);
     wp_enqueue_script('vt-music-training-fonctions-lecteur', plugin_dir_url(__FILE__) . 'assets/js/vt-gestion-lecteur-audio-video.js', array(), false, true);
-//    wp_enqueue_script('vt-music-training-management-fichiers', plugin_dir_url(__FILE__) . 'assets/js/vt-files-mngt.js', array(), false, true);
+    // pour définir l'url à passer à fetch()
+    wp_localize_script('vt-music-training-fonctions-lecteur', 'fonctionsBouclesLecteur', array(
+        'ajaxUrl' => plugin_dir_url(__FILE__) . 'assets/fetch-php/vt-lecteur-enreg-boucle.php',
+    ));
 	
 	wp_enqueue_style('vt-music-training-style', plugin_dir_url(__FILE__) . 'assets/css/vt-style.css', array(), '1.0', 'all');
 	wp_enqueue_style('vt-music-training-palette-couleurs', plugin_dir_url(__FILE__) . 'assets/css/vt-palette.css', array(), '1.0', 'all');
@@ -254,7 +259,7 @@ add_filter( 'block_categories_all', function( $categories, $post ) {
 // Enregistrement des blocks
 add_action('init', function () {
 	
-	if (register_block_type( __DIR__ . '/build/bloc-section' ) === false) {alert("bloc-section pas chargé");};
+	if (register_block_type( __DIR__ . '/build/bloc-section' ) === false) {error_log("bloc-section pas chargé");};
 	// creation d'un 'nonce'
 	wp_add_inline_script(
 		'vt-music-training-bloc-section-editor-script', // le handle défini dans le block.json du bloc racine
@@ -265,9 +270,10 @@ add_action('init', function () {
 	);
 
 	register_block_type( __DIR__ . '/build/block-test' );
-	if (register_block_type( __DIR__ . '/build/bloc-oeuvre' ) === false) {alert("bloc-section pas chargé");};
+	if (register_block_type( __DIR__ . '/build/bloc-oeuvre' ) === false) {error_log("bloc-section pas chargé");};
 	//register_block_type( __DIR__ . '/build/bloc-oeuvre' );
 	register_block_type( __DIR__ . '/build/bloc-module' );
+	register_block_type( __DIR__ . '/build/paroles-du-module' );
 	register_block_type( __DIR__ . '/build/bloc-fichiers-de-travail' );
 	register_block_type( __DIR__ . '/build/un-fichier-tutti' );
 	register_block_type( __DIR__ . '/build/des-fichiers-pupitre' );
@@ -277,6 +283,7 @@ add_action('init', function () {
 	register_block_type( __DIR__ . '/build/une-interpretation' );
 	register_block_type( __DIR__ . '/build/bloc-prononciation' );
 	register_block_type( __DIR__ . '/build/une-prononciation' );
+	register_block_type( __DIR__ . '/build/consignes-du-module' );
 	register_block_type( __DIR__ . '/build/index-oeuvre' );
 
     //register_block_type( __DIR__ . '/build/appel-index-oeuvre' );
@@ -410,18 +417,13 @@ function vt_music_training_render_checkbox_field( $args ) {
 
 function enqueue_plugin_vt_music_training_styles() {
     $options = get_option( 'vt_music_training_settings' );
-    /*// Charger FontAwesome si activé
-    if ( isset( $options['load_fontawesome'] ) && $options['load_fontawesome'] ) {
-		wp_enqueue_style( 'font-awesome', plugin_dir_url(__FILE__) . 'fonts/fontawesome-free-6.4.2-web/css/all.min.css',array(),'6.4.2','all' );
-//        wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '6.0.0' );
-    }*/
-
     // Charger Inter var si activé
     if ( isset( $options['load_inter_var'] ) && $options['load_inter_var'] ) {
         wp_enqueue_style( 'inter-var', plugin_dir_url(__FILE__) . 'assets/css/font-inter.css?ver=1.0.1', array(), null );
     }
 }
-add_action( 'init', 'enqueue_plugin_vt_music_training_styles' );
+add_action( 'wp_enqueue_scripts', 'enqueue_plugin_vt_music_training_styles' );
+
 add_action('enqueue_block_editor_assets', 'enqueue_plugin_vt_music_training_styles');
 
 

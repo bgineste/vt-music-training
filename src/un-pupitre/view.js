@@ -1,8 +1,9 @@
 /** 
 * Ecoute des boutons des pupitres
 */
+// L'écoute se fait au niveau de la section
 
-import Swal from 'sweetalert2';
+/*import Swal from 'sweetalert2';
 								 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".vt--pupitre-button").forEach(div => {
@@ -25,17 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
 					title: 'Fichier introuvable',
 					text: "⚠️ Le fichier n'existe pas ou n'est plus disponible.",
 					confirmButtonText: 'OK',
-				});
+					});
 				return;
 				}
 
 
-				if (typeof vtActiverLecteur === 'function') {
-					vtActiverLecteur(chemin, nomfichier, type, clavier, stereo);
+				if (typeof window.VtGestionLecteur.vtActiverLecture === 'function') {
+					window.VtGestionLecteur.vtActiverLecture(chemin, nomfichier, type, clavier, stereo);
 				} else {
-					console.error('La fonction vtActiverLecteur n’est pas définie.');
+					console.error('La fonction vtActiverLecture n’est pas définie.');
 				}
 			}
         });
     });
-});
+});*/

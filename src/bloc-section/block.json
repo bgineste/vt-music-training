@@ -6,7 +6,7 @@
 	"title": "Bloc d'une section d'entraînement",
 	"category": "vt-music-training-cat",
 	"icon": "admin-media",
-	"description": "C'est une section d'entrainement, contenant une ou plusieurs oeuvres. Généralement elle constitue l'essentiel d'une page dédiée à l'entrainement, mais plusieurs sections peuvent cohabiter dans une même page html non dédiée à l'entrainement. Bloc racine du plugin. Le lecteur audio/vidéo est défini dans ce bloc",
+	"description": "C'est une section d'entrainement, contenant une ou plusieurs oeuvres. *** Généralement elle constitue le bloc unique d'une page dédiée à l'entrainement, mais peut aussi s'insérer dans une page html non dédiée à l'entrainement. *** C'est le bloc racine du plugin, dans lequel est défini le lecteur audio/vidéo. *** ATTENTION : UNE SEULE SECTION / PAGE",
 	"example": {},
 	"supports": {
 		"html": false
@@ -32,6 +32,10 @@
             "type": "boolean",
             "default": false
         },
+		"fonctionGetIdUtilisateur": {
+			"type": "string",
+			"default": "getPseudoChoriste"
+		},
 		"sectionAffichable": { 
 			"type": "boolean",
 			"default": false

@@ -35,7 +35,7 @@ import { TextControl, ToggleControl } from '@wordpress/components';
  */
 export default function Edit(props) {
 	const blockProps = useBlockProps()
-    const { attributes: { titreBlocIndex }, attributes: { texteDuBouton }, attributes: { etatDuBouton }, setAttributes, } = props
+    const { attributes: { titreBlocIndex }, attributes: { texteDuBouton }, setAttributes, } = props
 	
 	return (
 		<div  {...blockProps } >
@@ -55,17 +55,11 @@ export default function Edit(props) {
 							setAttributes( { texteDuBouton: ( val ) } )
 						}
 					/>
-					<ToggleControl
-						label={ 'Le bouton d\'index est affiché (utile s\'il y a plusieurs morceaux)' }
-						checked={ etatDuBouton }
-						onChange={(value) => setAttributes({ etatDuBouton: (value) })}
-					/>
 				</div>
 			) : (
 				<>
 					<h4>Titre du bloc d'index : { titreBlocIndex } </h4>
 					<p>Label du bouton : { texteDuBouton } </p>
-					<p>Etat du bouton : { etatDuBouton } </p>
 				</>
 			)
 			}

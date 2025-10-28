@@ -1,10 +1,12 @@
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 //import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { TextControl, RadioControl, ToggleControl, Button, PanelBody } from '@wordpress/components';
-import { useState, useRef, useEffect } from '@wordpress/element';
+import { TextControl, RadioControl, ToggleControl, Flex, FlexItem, Tooltip, IconButton, Button, Modal } from '@wordpress/components';
+import { lock, unlock, info } from '@wordpress/icons';
+import { useState, useRef } from '@wordpress/element';
 import './editor.scss';
 import { uploadFileToServer, deleteFileFromServer } from '../../assets/js/vt-files-mngt.js';
+//import { useClosestParentAttribute } from '../../hooks/useClosestParentAttribute';
 
 export default function Edit(props) {
     const blockProps = useBlockProps();
@@ -15,7 +17,10 @@ export default function Edit(props) {
 		"un-groupe-de-pupitres/fichierStereo": fichierStereoGroupe } = context;
     const { labelPupitre, nomFichier, cheminFichier, typeFichier, affichageClavier, fichierStereo } = attributes;
 
-    const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/un-pupitre' ]; // supprimer core/paragraph ?
+	const [modifiable, setModifiable] = useState(false);
+	const [isHelpOpen, setIsHelpOpen] = useState(false);
+
+	const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/un-pupitre' ]; // supprimer core/paragraph ?
 	
 
     // Initialisation des attributs si non initialisés
@@ -37,17 +42,18 @@ export default function Edit(props) {
 	const fileInputRef = useRef();
 	const [uploading, setUploading] = useState(false);
 	const [erreurUpload, setErreurUpload] = useState(null);
+	//const ancestorPrompter = useClosestParentAttribute(clientId, 'lyricsPrompter');
 	
 //	let cheminFichierServer = [];
 //	let nomFichierServer = [];
 //	const [nomFichierServer, setNomFichierServer] = useState("");
 //	const nomCheminFichierServeurRefs = useRef({});
 //	const paramsPupitresRefs = useRef({});
-	const pNomFichier = 0;
+	/*const pNomFichier = 0;
 	const pCheminFichier = 1;
 	const pUploading = 2;
 	const pErreurUpload = 3;
-	
+	*/
 //	let indexParamsPupitre = ""; // pour simplifier l'écriture de l'index de paramsPupitreRefs
 	
 
@@ -178,11 +184,64 @@ const handleFileChange = async (e) => {
 					onChange={(val) => setAttributes({ cheminFichier: val })}
 					/>
 
-					<TextControl
-					label="Nom du fichier"
-					value={nomFichier}
-					readOnly
-					/>
+					<Flex align="flex-end"  style={{ gap: '0.5em', marginBottom: '1em' }}>
+						<FlexItem style={{ flexGrow: 1, position: 'relative' }}>
+							<TextControl
+								label="Nom du fichier"
+								value={nomFichier}
+								readOnly={!modifiable}
+								onChange={(value) => setAttributes({ nomFichier: value })}
+							/>
+						</FlexItem>
+
+						{/* Icône cadenas */}
+						<FlexItem>
+							<Tooltip text={modifiable ? 'Verrouiller le champ' : 'Déverrouiller pour modifier'}>
+								<IconButton
+									icon={modifiable ? unlock : lock}
+									label={modifiable ? 'Verrouiller' : 'Déverrouiller'}
+									onClick={() => setModifiable(!modifiable)}
+									isPressed={modifiable}
+								/>
+							</Tooltip>
+						</FlexItem>
+
+						{/* Icône d'information */}
+						<FlexItem>
+							<Tooltip
+								text="Aide sur le nom de fichier"
+							>
+								<IconButton
+									icon={info}
+									label="Information sur le nom du fichier"
+									onClick={() => setIsHelpOpen(true)}
+									isTertiary
+								/>
+							</Tooltip>
+						</FlexItem>
+					</Flex>
+
+					{/* Modal d’aide */}
+					{isHelpOpen && (
+						<Modal
+							title="Aide sur le nom du fichier"
+							onRequestClose={() => setIsHelpOpen(false)}
+						>
+							<p>
+								Le nom du fichier est défini automatiquement après le téléchargement du fichier choisi.
+								Dans la plupart des cas, il n’est pas nécessaire de le modifier.
+							</p>
+							<p>
+								Cependant, vous pouvez exceptionnellement cliquer sur le cadenas pour
+								déverrouiller le champ et saisir un nom personnalisé. (Par exemple, pour indiquer un fichier déjà téléchargé).
+							</p>
+							<div style={{ textAlign: 'right', marginTop: '1em' }}>
+								<Button variant="primary" onClick={() => setIsHelpOpen(false)}>
+									Fermer
+								</Button>
+							</div>
+						</Modal>
+					)}
 
 					<div style={{ marginTop: '1em' }}>
 					<button

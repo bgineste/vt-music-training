@@ -1,0 +1,16 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+/*
+	/* --- En édition (éditeur Gutenberg) --- */
+.vt--une-section {
+	.vt--consignes.editor-style p {
+	overflow: auto;
+	min-height: 120px;
+	resize: both;           /* étirable dans l’éditeur */
+	background-color: white;
+	}
+	.vt--consignes h5 {
+		/*text-transform: uppercase;*/
+	}
+}

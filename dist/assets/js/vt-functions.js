@@ -9,6 +9,25 @@ Variables globales
 Fonctions diverses 
 */
 
+function beep(frequency = 440, duration = 200) {
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const oscillator = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+
+  oscillator.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+
+  oscillator.type = "square";      // "sine", "square", "triangle", "sawtooth"
+  oscillator.frequency.value = frequency; // Hz
+
+  oscillator.start();
+  setTimeout(() => {
+    oscillator.stop();
+    audioCtx.close();
+  }, duration);
+}
+
+
 function vtmusicTruncate(str, maxlength) {
   return (str.length > maxlength) ?
     str.slice(0, maxlength - 1) + '…' : str;
