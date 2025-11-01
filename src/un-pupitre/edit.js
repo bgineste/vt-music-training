@@ -1,4 +1,4 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 //import { useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { TextControl, RadioControl, ToggleControl, Flex, FlexItem, Tooltip, IconButton, Button, Modal } from '@wordpress/components';
@@ -6,7 +6,7 @@ import { lock, unlock, info } from '@wordpress/icons';
 import { useState, useRef } from '@wordpress/element';
 import './editor.scss';
 import { uploadFileToServer, deleteFileFromServer } from '../../assets/js/vt-files-mngt.js';
-//import { useClosestParentAttribute } from '../../hooks/useClosestParentAttribute';
+import { useClosestParentAttribute } from '../../hooks/useClosestParentAttribute';
 
 export default function Edit(props) {
     const blockProps = useBlockProps();
@@ -15,12 +15,12 @@ export default function Edit(props) {
 		"un-groupe-de-pupitres/typeFichiers": typeFichiersGroupe, 
 		"un-groupe-de-pupitres/affichageClavier": affichageClavierGroupe,
 		"un-groupe-de-pupitres/fichierStereo": fichierStereoGroupe } = context;
-    const { labelPupitre, nomFichier, cheminFichier, typeFichier, affichageClavier, fichierStereo } = attributes;
+    const { labelPupitre, nomFichier, cheminFichier, typeFichier, affichageClavier, fichierStereo, lyricsPrompter } = attributes;
 
 	const [modifiable, setModifiable] = useState(false);
 	const [isHelpOpen, setIsHelpOpen] = useState(false);
 
-	const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/un-pupitre' ]; // supprimer core/paragraph ?
+	//const ALLOWED_BLOCKS = [ 'core/paragraph', 'vt-music-training/un-pupitre' ]; // supprimer core/paragraph ?
 	
 
     // Initialisation des attributs si non initialisés
@@ -35,6 +35,16 @@ export default function Edit(props) {
     }
    if (!fichierStereo) {
         setAttributes({ fichierStereo: fichierStereoGroupe });
+    }
+
+	const prompterModule = useClosestParentAttribute(clientId, "lyricsPrompter");
+//	prompterModule = (prompterModule == null) ? "" : prompterModule;
+		//console.log(">>>> Lyrics récupérés :",prompterModule,"# Prompter enregistré",lyricsPrompter);
+	
+	// Si lyricsPrompter a encore sa valeur par défaut	
+	if (lyricsPrompter == "" && prompterModule != "") {
+		//console.log("Init par prompterModule");
+        setAttributes({ lyricsPrompter: prompterModule });
     }
 
 
@@ -60,7 +70,7 @@ export default function Edit(props) {
 const handleFileChange = async (e) => {
 	const fileNew = e.target.files[0];
 	//const indexParams = `${keyGroup}-${keyFile}`;
-	console.log(e.target);
+	//console.log(e.target);
 	if (!fileNew) return;
 	//console.log("Index courants : " + keyGroup + "/" + keyFile);
 	//console.log(paramsPupitresRefs);
@@ -109,19 +119,20 @@ const handleFileChange = async (e) => {
 	// Styles particuliers
 	const boutonCommande = "font-size: 23px; font-weight: 600; border: white 2px solid;	border-radius: 8px; margin-right: 10px;"
 //---------------------------------------------------------------------------------------
-
+/*
     // Parse JSON string into an object for internal manipulation
     const initialGroups = attributes.chaineFichiersPupitre ? JSON.parse(attributes.chaineFichiersPupitre) : [];
     const [groups, setGroups] = useState(initialGroups);
-
-    const saveGroupsToAttributes = (updatedGroups) => {
+*/
+/*    const saveGroupsToAttributes = (updatedGroups) => {
         // Convert the object back to a JSON string before saving to attributes
         const jsonString = JSON.stringify(updatedGroups);
         setAttributes({ chaineFichiersPupitre: jsonString });
         setGroups(updatedGroups);
     };
 
-    const addGroup = () => {
+    
+	const addGroup = () => {
         const updatedGroups = [...groups, { titre: '', fichiers: [] }];
         saveGroupsToAttributes(updatedGroups);
     };
@@ -162,6 +173,7 @@ const handleFileChange = async (e) => {
         updatedGroups[groupIndex].fichiers[fileIndex][key] = value;
         saveGroupsToAttributes(updatedGroups);
     };
+	*/
 
 //---------------------------------------------------------------------------------------
 
@@ -177,6 +189,16 @@ const handleFileChange = async (e) => {
 					onChange={(val) => setAttributes({ labelPupitre: val })}
 					//ref={inputRef} // Ici on passe la ref pour le focus
 					/>
+
+                    <label className="css-2o4jwd ej5x27r2 css-qy3gpb">Prompteur pour le pupitre</label>
+                    <RichText
+                        tagName="div"
+                        className="vt--lyrics-prompter components-text-control__input"
+                        value={lyricsPrompter}
+                        onChange={(val) => setAttributes({ lyricsPrompter: val })}
+                        placeholder="Saisissez le prompteur... ou un _ (underscore) pour 'pas de prompteur'"
+                        allowedFormats={['core/bold', 'core/italic', 'core/link', 'core/underline', 'core/text-color']}
+                    />
 
 					<TextControl
 					label="Chemin du fichier"
@@ -314,6 +336,7 @@ const handleFileChange = async (e) => {
 					data-type={typeFichier}
 					data-clavier={affichageClavier}
 					data-stereo={fichierStereo}
+					data-prompter={lyricsPrompter}
 				>
 					<div className="vt--pupitre-label"> {labelPupitre} </div>
 				</div>

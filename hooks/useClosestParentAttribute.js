@@ -11,35 +11,22 @@ import { store as blockEditorStore } from '@wordpress/block-editor';
  * @returns {*} Valeur trouvée ou null
  */
 export function useClosestParentAttribute(clientId, attrName) {
-    console.log("Hook Closest parent attribute",clientId,attrName);
+    //console.log("Hook Closest parent attribute",clientId,attrName);
     return useSelect(
         (select) => {
             const { getBlockParents, getBlockAttributes } = select(blockEditorStore);
             const parents = getBlockParents(clientId);
-            console.log("parents", parents);
+//            console.log("parents", parents);
 
             for (const parentId of parents) {
-                /*const attrs = getBlockAttributes(parentId);
-                console.log("attrs",parentId,attrs);
+                const attrs = getBlockAttributes(parentId);
+                //console.log("attrs",parentId,attrs);
                 if (attrs?.[attrName]) {
                     return attrs[attrName];
-                }*/
-    const attrs = getBlockAttributes(parentId);
-    console.log('Parent ID:', parentId, 'Attributes:', attrs);
+                }
+             }
 
-    if (attrName in attrs) {
-        console.log(`→ L’attribut ${attrName} existe avec valeur:`, attrs[attrName]);
-    } else {
-        console.log(`→ L’attribut ${attrName} est absent`);
-    }
-
-    if (attrs?.[attrName]) {
-        console.log(`✔ Trouvé ${attrName} avec valeur:`, attrs[attrName]);
-        return attrs[attrName];
-    }
-            }
-
-            return null;
+            return "";
         },
         [clientId, attrName]
     );

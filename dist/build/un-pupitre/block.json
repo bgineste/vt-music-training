@@ -35,6 +35,10 @@
     "fichierStereo": {
       "type": "boolean",
       "default": false
+    },
+    "lyricsPrompter": {
+      "type": "string",
+      "default": ""
     }
   },
   "usesContext": [

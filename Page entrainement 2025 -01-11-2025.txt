@@ -1,0 +1,947 @@
+<!-- wp:vt-music-training/bloc-section {"idSection":"2025-1","classeBlocEntete":"header-footer-group","sectionAffichable":true} -->
+<div class="vt--une-section_wrap"><div id="2025-1" class="vt--une-section"><!-- wp:vt-music-training/bloc-oeuvre {"cheminFichiersOeuvre":"/docs/2025-1/Magnificat-Vivaldi","titreOeuvre":"Magnificat de Vivaldi","blocRetractable":true} -->
+<div class="vt--une-oeuvre"><div class="vt--bloc-titre-oeuvre"><h2 class="vt--titre-oeuvre">Magnificat de Vivaldi</h2><label class="vt--bouton__switch"><input class="vt--bouton-oeuvre-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--wrap-oeuvre"><!-- wp:vt-music-training/index-oeuvre {"etatDuBouton":true} -->
+<div class="vt--entete-oeuvre"><div class="vt--block-bouton-index"><h5> Index des choeurs</h5></div><div class="vt--popup__support" style="display: none;"><div class="vt--wrap-index-choeurs"></div></div></div>
+<!-- /wp:vt-music-training/index-oeuvre -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"1 . Magnificat","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">1 . Magnificat</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Magníficat ánima méa Dóminum,</strong><br><em>Mon âme exalte le Seigneur</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"1-Magnificat.mp4","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="1-Magnificat.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_01_sop.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_01_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_01_alt.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_01_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_01_ten.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_01_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_01_bas.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_01_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-1se.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-1se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-1ae.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-1ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-1te.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-1te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-1be.mp3","lyricsPrompter":"\u003cstrong\u003eMagníficat ánima méa Dóminum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-1be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Magníficat ánima méa Dóminum</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Magnificat - SOPRANO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Magnificat - SOPRANO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Magnificat - ALTO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Magnificat - ALTO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Magnificat - TENOR + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Magnificat - TENOR + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Magnificat - BASS + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Magnificat - BASS + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module {"consignes":"lier les notes avec un petit crescendo"} -->
+<div class="wp-block-vt-music-training-consignes-du-module"><h5>Consignes</h5><div class="vt--consignes front-style"><p>lier les notes avec un petit crescendo</p></div></div>
+<!-- /wp:vt-music-training/consignes-du-module --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"2 . Et exultavit","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">2 . Et exultavit</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Et exultávit spíritus méus in Déo salutári méo.</strong><br>Exulte mon esprit en Dieu, mon Sauveur !<br><strong>Quia respéxit humilitátem ancíllæ súæ,</strong><br>Il s’est penché sur son humble servante ;<br><strong>ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong><br>désormais tous les âges me diront bienheureuse.<br><strong>Quia fécit míhi mágna qui pótens est</strong><br>Le Puissant fit pour moi des merveilles :<br><strong>et sánctum nómen éjus</strong><br>Saint est son nom !</p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"2-et exultavit.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="2-et exultavit.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_02_sop.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_02_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_02_alt.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_02_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_02_ten.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_02_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_02_bas.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_02_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-2se.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-2se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-2ae.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-2ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-2te.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-2te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-2be.mp3","lyricsPrompter":"\u003cstrong\u003eEt exultávit spíritus méus in Déo salutári méo.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia respéxit humilitátem ancíllæ súæ,\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eecce enim ex hoc beátam me dícent ómnes generatiónes.\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eQuia fécit míhi mágna qui pótens est\u003c/strong\u003e\u003cbr\u003e\u003cstrong\u003eet sánctum nómen éjus\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-2be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et exultávit spíritus méus in Déo salutári méo.</strong&gt;<br&gt;<strong&gt;Quia respéxit humilitátem ancíllæ súæ,</strong&gt;<br&gt;<strong&gt;ecce enim ex hoc beátam me dícent ómnes generatiónes.</strong&gt;<br&gt;<strong&gt;Quia fécit míhi mágna qui pótens est</strong&gt;<br&gt;<strong&gt;et sánctum nómen éjus</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"3 . Et misericordia","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">3 . Et misericordia</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Et misericórdia éjus a progénie in progénies timéntibus éum.</strong><br><em>Son amour s’étend d’âge en âge sur ceux qui le craignent</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"3-et misericordia.mp4","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="3-et misericordia.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_03_sop.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_03_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_03_alt.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_03_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_03_ten.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_03_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_03_bas.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_03_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-3se.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-3se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-3ae.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-3ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-3te.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-3te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-3be.mp3","lyricsPrompter":"\u003cstrong\u003eEt misericórdia éjus a progénie in progénies timéntibus éum\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-3be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et misericórdia éjus a progénie in progénies timéntibus éum</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Et Misericordia Eius - SOPRANO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Et Misericordia Eius - SOPRANO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Et Misericordia Eius - ALTO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Et Misericordia Eius - ALTO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Et Misericordia Eius - TENOR + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Et Misericordia Eius - TENOR + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Et Misericordia Eius  - BASS + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Et Misericordia Eius  - BASS + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module {"consignes":"piano à partir de la mesure 101"} -->
+<div class="wp-block-vt-music-training-consignes-du-module"><h5>Consignes</h5><div class="vt--consignes front-style"><p>piano à partir de la mesure 101</p></div></div>
+<!-- /wp:vt-music-training/consignes-du-module --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"4 . Fecit potentiam","hasIndexOeuvre":true,"lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">4 . Fecit potentiam</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui.</strong><br><em>Déployant la force de son bras,Il disperse les orgueilleux</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"4-fecit potentiam.mp4","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="4-fecit potentiam.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_04_sop.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_04_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_04_alt.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_04_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_04_ten.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_04_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_04_bas.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_04_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-4se.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-4se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-4ae.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-4ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-4te.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-4te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-4be.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eFecit potentiam in brachio suo.Dispersit superbos mente cordis sui\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-4be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Fecit potentiam in brachio suo.Dispersit superbos mente cordis sui</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Fecit Potentiam - SOPRANO + (ATB) + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Fecit Potentiam - SOPRANO + (ATB) + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Fecit Potentiam - ALTO + (STB) + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Fecit Potentiam - ALTO + (STB) + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Fecit Potentiam - TENOR + (SAB) + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Fecit Potentiam - TENOR + (SAB) + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Fecit Potentiam - BASS + (SAT) + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Fecit Potentiam - BASS + (SAT) + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"5 . Deposuit potentes","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">5 . Deposuit potentes</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Deposuit potentes de sede, et exaltavit humiles</strong><br><em>Il renverse les puissants de leurs trônes, il élève les humbles.</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"5-deposuit potentes.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="5-deposuit potentes.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"F","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_05_women.mp3","lyricsPrompter":"\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_05_women.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Deposuit potentes de sede, et exaltavit humiles</strong&gt;"><div class="vt--pupitre-label"> F </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"M","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_05_MEN.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_05_MEN.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Deposuit potentes de sede, et exaltavit humiles</strong&gt;</small&gt;"><div class="vt--pupitre-label"> M </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-5se.mp3","lyricsPrompter":"_"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-5se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="_"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-5ae.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-5ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Deposuit potentes de sede, et exaltavit humiles</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-5te.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-5te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Deposuit potentes de sede, et exaltavit humiles</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-5be.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eDeposuit potentes de sede, et exaltavit humiles\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-5be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Deposuit potentes de sede, et exaltavit humiles</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"7 . Suscepit Israel","hasIndexOeuvre":true,"lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">7 . Suscepit Israel</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Suscepit Israël puerum suum, recordatus misericordiae suae.</strong><br><em>Il relève Israël, son serviteur, il se souvient de son amour,</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"7-suscepit israel.mp4","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="7-suscepit israel.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_07_sop.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_07_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_07_ALT.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_07_ALT.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_07_TEN.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_07_TEN.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_07_BAS.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_07_BAS.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-6se.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-6se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-6ae.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-6ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-6te.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-6te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-6be.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSuscepit Israël puerum suum, recordatus misericordiae suae\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-6be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Suscepit Israël puerum suum, recordatus misericordiae suae</strong&gt;</small&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Suscepit Israel - SOPRANO + piano.mp4","typeFichier":"v","lyricsPrompter":"_"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Suscepit Israel - SOPRANO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Suscepit Israel - ALTO + piano.mp4","typeFichier":"v","lyricsPrompter":"_"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Suscepit Israel - ALTO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Suscepit Israel - TENOR + piano.mp4","typeFichier":"v","lyricsPrompter":"_"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Suscepit Israel - TENOR + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Suscepit Israel - BASS + piano.mp4","typeFichier":"v","lyricsPrompter":"_"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Suscepit Israel - BASS + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"8 . Sicut locutus","hasIndexOeuvre":true,"lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">8 . Sicut locutus</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Sicut locutus est ad patres nostros, Abraham et semini eius in saecula.</strong><br><em>De la promesse faite à nos pères, en faveur d'Abraham et de sa descendance, à jamais</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"8-sicut locutus.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="8-sicut locutus.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_08_sop.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_08_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_08_alt.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_08_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"TB","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_08_bas.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_08_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> TB </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-7se.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-7se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-7ae.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-7ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"TB","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-7te.mp3","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003eSicut locutus est ad patres nostros, Abraham et semini eius in saecula\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-7te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;Sicut locutus est ad patres nostros, Abraham et semini eius in saecula</strong&gt;</small&gt;"><div class="vt--pupitre-label"> TB </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Sicut locutus est - SOP + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Sicut locutus est - SOP + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Sicut locutus est - ALTO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Sicut locutus est - ALTO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"TB","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Sicut locutus est - BASS + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003csmall\u003e\u003cstrong\u003e_\u003c/strong\u003e\u003c/small\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Sicut locutus est - BASS + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<small&gt;<strong&gt;_</strong&gt;</small&gt;"><div class="vt--pupitre-label"> TB </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Magnificat-Vivaldi","titreModule":"9 . Gloria","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">9 . Gloria</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Gloria Patri, et Filio, et Spiritui Sancto.<br>Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br>Amen.</strong><br><em>Gloire au Père au Fils et au Saint-Esprit<br>Comme au commencement, maintenant et toujours, dans les siècles des siècles.<br>Ainsi soi-t-il.</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : John Alldis Choir - English Chamber Orchestra","cheminFichierTutti":"/docs/2025-1/Magnificat-Vivaldi","nomFichierTutti":"9-gloria.mp4","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="9-gloria.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : John Alldis Choir - English Chamber Orchestra</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_09_SOP.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_09_SOP.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_09_alt.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_09_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_09_ten.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_09_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"VIVALDI_MAGNIFICAT_09_bas.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="VIVALDI_MAGNIFICAT_09_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-8se.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-8se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-8ae.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-8ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-8te.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-8te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"vv04-8be.mp3","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="vv04-8be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"3 - midi/partition","cheminFichiers":"/docs/2025-1/Magnificat-Vivaldi","typeFichiers":"v"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">3 - midi/partition</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Gloria Patri - SOPRANO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003e_\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Gloria Patri - SOPRANO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;_</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Gloria Patri - ALTO + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Gloria Patri - ALTO + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Gloria Patri - TENOR + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Gloria Patri - TENOR + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Magnificat-Vivaldi","nomFichier":"Gloria Patri - BASS + piano.mp4","typeFichier":"v","lyricsPrompter":"\u003cstrong\u003eGloria Patri, et Filio, et Spiritui Sancto.\u003cbr\u003eSicut erat in principio, et nunc et semper, et in saecula saeculorum.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Magnificat-Vivaldi" data-nomfichier="Gloria Patri - BASS + piano.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria Patri, et Filio, et Spiritui Sancto.<br&gt;Sicut erat in principio, et nunc et semper, et in saecula saeculorum.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module --></div></div>
+<!-- /wp:vt-music-training/bloc-oeuvre -->
+
+<!-- wp:vt-music-training/bloc-oeuvre {"cheminFichiersOeuvre":"/docs/2025-1/Gloria-Vivaldi/","titreOeuvre":"Gloria de Vivaldi","blocRetractable":true} -->
+<div class="vt--une-oeuvre"><div class="vt--bloc-titre-oeuvre"><h2 class="vt--titre-oeuvre">Gloria de Vivaldi</h2><label class="vt--bouton__switch"><input class="vt--bouton-oeuvre-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--wrap-oeuvre"><!-- wp:vt-music-training/index-oeuvre -->
+<div class="vt--entete-oeuvre"><div class="vt--block-bouton-index"><h5> Index des choeurs</h5></div><div class="vt--popup__support" style="display: none;"><div class="vt--wrap-index-choeurs"></div></div></div>
+<!-- /wp:vt-music-training/index-oeuvre -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"1 . Gloria in excelsis","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">1 . Gloria in excelsis</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Gloria in excelsis Deo</strong><br><em>Gloire à Dieu au plus haut des cieux</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-gloria.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-gloria.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB-01GLORIA_sop.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB-01GLORIA_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB-01GLORIA_alt.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB-01GLORIA_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB-01GLORIA_ten.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB-01GLORIA_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB-01GLORIA_bas.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB-01GLORIA_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-1se.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-1se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-1ae.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-1ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-1te.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-1te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-1be.mp3","lyricsPrompter":"\u003cstrong\u003eGloria in excelsis Deo\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-1be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gloria in excelsis Deo</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module {"consignes":"Il faut le chanter\u0022 toujours \u0022souriant\u0022 tant dans les \u0022piano\u0022 que dans les \u0022 forte\u0022 . Rester tout le long énergique !!! "} -->
+<div class="wp-block-vt-music-training-consignes-du-module"><h5>Consignes</h5><div class="vt--consignes front-style"><p>Il faut le chanter" toujours "souriant" tant dans les "piano" que dans les " forte" . Rester tout le long énergique !!! </p></div></div>
+<!-- /wp:vt-music-training/consignes-du-module --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"2 . Et in terra pax","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">2 . Et in terra pax</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Et in terra pax hominibus bonae voluntatis</strong>.<br><em>Et paix sur terre aux hommes de bonne volonté</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-et-in-terra-pax.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-et-in-terra-pax.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_02ET_IN_TERRA_sop.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_02ET_IN_TERRA_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_02ET_IN_TERRA_alt.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_02ET_IN_TERRA_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_02ET_IN_TERRA_ten.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_02ET_IN_TERRA_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_02ET_IN_TERRA_bas","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_02ET_IN_TERRA_bas" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-2se.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-2se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-2ae.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-2ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-2te.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-2te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-2be.mp3","lyricsPrompter":"\u003cstrong\u003eEt in terra pax hominibus bonae voluntatis\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-2be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Et in terra pax hominibus bonae voluntatis</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module {"consignes":"Penser à chanter très léger. Bien faire la coupure entre \u0022et\u0022 et \u0022in terra\u0022."} -->
+<div class="wp-block-vt-music-training-consignes-du-module"><h5>Consignes</h5><div class="vt--consignes front-style"><p>Penser à chanter très léger. Bien faire la coupure entre "et" et "in terra".</p></div></div>
+<!-- /wp:vt-music-training/consignes-du-module --><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"4 . Gratias agimus tibi","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">4 . Gratias agimus tibi</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Gratias agimus tibi<br>propter magnam gloriam tuam.</strong><br><em>Nous te rendons grâce<br>pour ta gloire immense</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-gratias-agimus-tibi.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-gratias-agimus-tibi.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_04GRATIAS_PROPTER_sop.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_04GRATIAS_PROPTER_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_04GRATIAS_PROPTER_alt.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_04GRATIAS_PROPTER_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_04GRATIAS_PROPTER_ten.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_04GRATIAS_PROPTER_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_04GRATIAS_PROPTER_bas.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_04GRATIAS_PROPTER_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique GRATIAS","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique GRATIAS</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-3se.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-3se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-3ae.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-3ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-3te.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-3te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-3be.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-3be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique PROPTER","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique PROPTER</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-4se.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-4se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-4ae.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-4ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-4te.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-4te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-4be.mp3","lyricsPrompter":"\u003cstrong\u003eGratias agimus tibi\u003cbr\u003epropter magnam gloriam tuam\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-4be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Gratias agimus tibi<br&gt;propter magnam gloriam tuam</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"6 . Domine Fili unigenite","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">6 . Domine Fili unigenite</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Domine Fili unigenite Jesu Christe.</strong><br><em>Seigneur, fils unique, Jésus Christ</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-domine-fili-unigenite.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-domine-fili-unigenite.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_07DOMINEFILI_sop.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_07DOMINEFILI_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_07DOMINEFILI_alt.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_07DOMINEFILI_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_07DOMINEFILI_ten.mp3|","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_07DOMINEFILI_ten.mp3|" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_07DOMINEFILI_bas.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_07DOMINEFILI_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-5se.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-5se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-5ae.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-5ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-5te.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-5te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-5be.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Fili unigenite Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-5be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Fili unigenite Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"7 . Domine Deus, Agnus Dei","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">7 . Domine Deus, Agnus Dei</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Domine Deus, Agnus Die, Filius Patris.</strong><br><em>Seigneur Dieu, agneau de Dieu, fils du Père</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-domine-deus-agnus-dei.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-domine-deus-agnus-dei.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_08DOMINEAGNUS_SOP.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_08DOMINEAGNUS_SOP.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_08DOMINEAGNUS_ALT.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_08DOMINEAGNUS_ALT.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_08DOMINEAGNUS_TEN.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_08DOMINEAGNUS_TEN.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_08DOMINEAGNUS_BAS.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_08DOMINEAGNUS_BAS.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-6se.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-6se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-6ae.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-6ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-6te.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-6te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-6be.mp3","lyricsPrompter":"\u003cstrong\u003eDomine Deus, Agnus Die, Filius Patris\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-6be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Domine Deus, Agnus Die, Filius Patris</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"8 . Qui tollis peccata mundi","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">8 . Qui tollis peccata mundi</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Qui tollis peccata mundi, miserere nobis.<br>Qui tollis peccata mundi, suscipe deprecationem nostram</strong><br><em>Toi qui portes les péchés du monde, aie pitié de nous<br>Toi qui portes les péchés du monde, reçois nos prières</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-qui-tollis.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-qui-tollis.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_09QUITOLLIS_sop.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_09QUITOLLIS_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_09QUITOLLIS_alt.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_09QUITOLLIS_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_09QUITOLLIS_ten.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_09QUITOLLIS_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_09QUITOLLIS_bas.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_09QUITOLLIS_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-7se.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-7se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-7ae.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-7ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-7te.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-7te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-7be.mp3","lyricsPrompter":"\u003cstrong\u003eQui tollis peccata mundi, miserere nobis.\u003cbr\u003eQui tollis peccata mundi, suscipe deprecationem nostram\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-7be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Qui tollis peccata mundi, miserere nobis.<br&gt;Qui tollis peccata mundi, suscipe deprecationem nostram</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"10 . Quoniam tu solus sanctus","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">10 . Quoniam tu solus sanctus</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Quoniam tu solus sanctus, tu solus Dominus,<br>tu solus Altissimus. Jesu Christe.</strong><br><em>Car vous êtes le seul Saint, le seul Seigneur,<br>le seul Très-Haut, Jésus Christ</em>.</p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-quoniam-tu-solus-sanctus.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-quoniam-tu-solus-sanctus.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_11QUONIAM_sop.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_11QUONIAM_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":",CBB_11QUONIAM_alt.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier=",CBB_11QUONIAM_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_11QUONIAM_ten.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_11QUONIAM_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_11QUONIAM_bas.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_11QUONIAM_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-8se.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-8se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-8ae.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-8ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-8te.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-8te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-8be.mp3","lyricsPrompter":"\u003cstrong\u003eQuoniam tu solus sanctus, tu solus Dominus,\u003cbr\u003etu solus Altissimus. Jesu Christe\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-8be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Quoniam tu solus sanctus, tu solus Dominus,<br&gt;tu solus Altissimus. Jesu Christe</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module -->
+
+<!-- wp:vt-music-training/bloc-module {"cheminFichiersModule":"/docs/2025-1/Gloria-Vivaldi/","titreModule":"11 . Cum Sancto Spiritu","hasIndexOeuvre":true,"lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--un-module"><div class="vt--titre-et-bouton-esc"><h4 class="vt--titre-de-morceau">11 . Cum Sancto Spiritu</h4><label class="vt--bouton__switch"><input class="vt--bouton-bloc-esc" type="checkbox"/><span class="vt--bouton__slider vt--bouton__round"></span></label></div><div class="vt--bloc-esc"><!-- wp:vt-music-training/paroles-du-module -->
+<div class="wp-block-vt-music-training-paroles-du-module"><div class="vt--paroles front-style"><p><strong>Cum Sancto Spiritu, in gloria Dei Patris.<br>Amen.</strong><br><em>Avec le Saint-Esprit dans la gloire de Dieu le Père.<br>Ainsi soit-il.</em></p></div></div>
+<!-- /wp:vt-music-training/paroles-du-module -->
+
+<!-- wp:vt-music-training/bloc-fichiers-de-travail {"cheminFichiers":"Gloria-Vivaldi"} -->
+<h5>Les fichiers de travail</h5><div class="vt--les-fichiers-de-travail"><!-- wp:vt-music-training/un-fichier-tutti {"labelFichierTutti":"Tutti : Vittorio Negri","cheminFichierTutti":"/docs/2025-1/Gloria-Vivaldi/","nomFichierTutti":"A-cum-sancto-spiritu.mp4","lyricsPrompter":"_"} -->
+<div class="vt--un-fichier-tutti" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="A-cum-sancto-spiritu.mp4" data-type="v" data-clavier="true" data-stereo="false" data-prompter="_"><i class="fa-solid fa-square-caret-right"></i><div class="vt--label">Tutti : Vittorio Negri</div></div>
+<!-- /wp:vt-music-training/un-fichier-tutti -->
+
+<!-- wp:vt-music-training/bloc-des-pupitres {"cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--fichiers-pupitre"><!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"1 - piano midi","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">1 - piano midi</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_12CUMSANCTO_sop.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_12CUMSANCTO_sop.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_12CUMSANCTO_alt.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_12CUMSANCTO_alt.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_12CUMSANCTO_ten.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_12CUMSANCTO_ten.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"CBB_12CUMSANCTO_bas.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="CBB_12CUMSANCTO_bas.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres -->
+
+<!-- wp:vt-music-training/un-groupe-de-pupitres {"nomGroupePupitres":"2 - voix synthétique","cheminFichiers":"/docs/2025-1/Gloria-Vivaldi/"} -->
+<div class="vt--group-fichiers-pupitre"><div class="vt--group-fichiers-pupitre-titre">2 - voix synthétique</div><div class="vt--pupitres-container"><!-- wp:vt-music-training/un-pupitre {"labelPupitre":"S","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-9se.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-9se.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> S </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"A","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-9ae.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-9ae.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> A </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"T","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-9te.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-9te.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> T </div></div>
+<!-- /wp:vt-music-training/un-pupitre -->
+
+<!-- wp:vt-music-training/un-pupitre {"labelPupitre":"B","cheminFichier":"/docs/2025-1/Gloria-Vivaldi/","nomFichier":"ch-vv05-9be.mp3","lyricsPrompter":"\u003cstrong\u003eCum Sancto Spiritu, in gloria Dei Patris.\u003cbr\u003eAmen.\u003c/strong\u003e"} -->
+<div class="vt--pupitre-button" data-chemin="/docs/2025-1/Gloria-Vivaldi/" data-nomfichier="ch-vv05-9be.mp3" data-type="a" data-clavier="true" data-stereo="false" data-prompter="<strong&gt;Cum Sancto Spiritu, in gloria Dei Patris.<br&gt;Amen.</strong&gt;"><div class="vt--pupitre-label"> B </div></div>
+<!-- /wp:vt-music-training/un-pupitre --></div></div>
+<!-- /wp:vt-music-training/un-groupe-de-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-des-pupitres --></div>
+<!-- /wp:vt-music-training/bloc-fichiers-de-travail -->
+
+<!-- wp:vt-music-training/consignes-du-module /--><button class="vt--bouton-appel-index-oeuvre alignleft">Index</button><br/></div></div>
+<!-- /wp:vt-music-training/bloc-module --></div></div>
+<!-- /wp:vt-music-training/bloc-oeuvre --><div id="vt--lecteur-entrainement" class="vt--masque-modal vt--hidden"><div class="vt--masque-modal-inner"><div id="vt--popup-lecteur-entrainement" class="vt--popup-lecteur-entrainement"><div id="vt--lyrics-prompter" class="vt--lyrics-prompter"></div><div id="vt--bloc-lecteur" class="vt--bloc-lecteur"></div><div id="vt--clavier-lecteur" class="vt--clavier-lecteur"><div><touche-clavier id="vt--repete-en-boucle" class="vt--repete-en-boucle" title="Répéter en boucle"><i class="fa-solid fa-arrows-spin"></i></touche-clavier><touche-clavier id="vt--rembobiner" class="vt--rembobiner" title="Rembobiner"><i class="fas fa-undo-alt"></i></touche-clavier><touche-clavier id="vt--Ar10" class="vt--Ar10" title="Recul (10 sec)"><i class="fas fa-angle-double-left"></i></touche-clavier><touche-clavier id="vt--Ar3" class="vt--Ar3" title="Recul (3 sec)"><i class="fas fa-angle-left"></i></touche-clavier><touche-clavier id="vt--Av3" class="vt--Av3" title="Avance (3 sec)"><i class="fas fa-angle-right"></i></touche-clavier><touche-clavier id="vt--Av10" class="vt--Av10" title="Avance (10 sec)"><i class="fas fa-angle-double-right"></i></touche-clavier><touche-clavier id="vt--PlayPause" class="vt--PlayPause"><i class="fas fa-play"></i></touche-clavier></div><div id="vt--balance" class="vt--suppl vt--hidden"><div class="vt--balance"><div class="vt--balance-une-voie"><input type="range" class="vt--balance-curseur" id="vt--balanceG" min="0" max="10" value="10" step="1"/><div class="vt--balance-nom-voie">G</div></div><div class="vt--balance-une-voie"><input type="range" class="vt--balance-curseur" id="vt--balanceD" min="0" max="10" value="10" step="1"/><div class="vt--balance-nom-voie">D</div></div></div></div><div><touche-clavier id="vt--SpeedDown" class="vt--SpeedDown" title="Plus lentement"><i class="fas fa-chevron-down"></i></touche-clavier><touche-clavier id="vt--SpeedNormal" class="vt--SpeedNormal" title="Vitesse normale"><i class="fas fa-circle" style="font-size: 1rem;"></i></touche-clavier><touche-clavier id="vt--SpeedUp" class="vt--SpeedUp" title="Plus vite"><i class="fas fa-chevron-up"></i></touche-clavier><compteur-clavier class="vt--aff-compteur"><span id="vt--aff-vitesse">100%</span></compteur-clavier></div><div><touche-clavier id="vt--DefDebBoucle" class="vt--DefDebBoucle" title="Marque le début de boucle"><i class="fas fa-step-forward"></i></touche-clavier><compteur-clavier id="vt--compteur-deb-boucle" class="vt--aff-compteur"><div class="vt--texte-compteur"><div id="vt--deb-boucle">00:00</div></div><div class="vt--masque-fleches"><div id="vt--deb-boucle-fleche-gauche" class="vt--deb-boucle-moins vt--fleche vt--fleche-g"><div><i class="fas fa-caret-square-left"></i></div></div><div id="vt--deb-boucle-fleche-droite" class="vt--deb-boucle-plus vt--fleche vt--fleche-d"><div><i class="fas fa-caret-square-right"></i></div></div></div></compteur-clavier><compteur-clavier id="vt--compteur-fin-boucle" class="vt--aff-compteur"><div class="vt--texte-compteur"><div id="vt--fin-boucle">00:00</div></div><div class="vt--masque-fleches"><div id="vt--fin-boucle-fleche-gauche" class="vt--fin-boucle-moins vt--fleche vt--fleche-g"><div><i class="fas fa-caret-square-left"></i></div></div><div id="vt--fin-boucle-fleche-droite" class="vt--fin-boucle-plus vt--fleche vt--fleche-d"><div><i class="fas fa-caret-square-right"></i></div></div></div></compteur-clavier><touche-clavier id="vt--DefFinBoucle" class="vt--DefFinBoucle" title="Marque la fin de boucle"><i class="fas fa-step-backward"></i></touche-clavier><select id="vt--choix-boucle" class="vt--choix-boucle vt--hidden" title="choix d'une boucle"></select></div><div id="vt--commandes-boucles" class="vt--commandes-boucles vt--hidden"><div class="vt--nom-boucle-courante"><div id="vt--nom-boucle-courante"></div></div><div class="vt--compteurs-boucle-courante"><div id="vt--compteurs-boucle-courante"></div></div><touche-bouton id="vt--onoff-boucle" title="Active/désactive la boucle"><i class="fas fa-sync-alt"></i></touche-bouton><div id="vt--commandes-boucles-nommees" class="vt--commandes-boucles-nommees vt--hidden"><touche-bouton id="vt--modif-bornes-boucle" class="vt--lance-modif-bornes-boucle" style="font-size: 1.5rem;" title="Enregistrer l'intervalle modifié"><i class="fas fa-circle" style="color: green;"></i></touche-bouton><touche-bouton id="vt--modif-nom-boucle" class="vt--lance-modif-nom-boucle" style="font-size: 1.5rem;" title="Choisir un nouveau nom de boucle"><i class="fa-solid fa-pencil-can" style="color: black;"></i></touche-bouton><div id="vt--bloc-modif-nom-boucle" class="vt--bloc-modif-nom-boucle vt--hidden"><input id="vt--resaisie-nom-boucle" type="text" size="20" value="" placeholder="Nouveau nom"/><touche-clavier id="vt--valide-nom-boucle-modifie" class="vt--valide-nom-boucle" title="Valide le nouveau nom de la boucle"><i class="fas fa-check"></i></touche-clavier></div><touche-bouton id="vt--suppr-boucle" class="vt--suppr-boucle vt--hidden" title="Supprime la boucle courante"><i class="fa-solid fa-trash-can"></i></touche-bouton></div><div id="vt--commandes-boucles-anonymes" class="vt--commandes-boucles-nommees vt--hidden"><touche-bouton id="vt--enreg-boucle" class="vt--lance-enreg-boucle" style="font-size: 1.5rem;" title="Enregistrer la boucle"><i class="fas fa-circle" style="color: red;"></i></touche-bouton><div id="vt--bloc-saisie-nom-boucle" class="vt--bloc-saisie-nom-boucle vt--hidden"><input id="vt--saisie-nom-boucle" type="text" size="20" value="" placeholder="Donner un nom à cette boucle"/><touche-clavier id="vt--valide-nom-boucle" class="vt--valide-nom-boucle" title="Valide le nom de la boucle"><i class="fas fa-check"></i></touche-clavier></div></div></div><div id="vt--bloc-enreg-modif-suppr-boucle" class="vt--hidden"><div id="vt--bloc-enreg-boucle" class="vt--hidden"></div><div id="vt--bloc-modif-suppr-boucle" class="vt--modif-suppr-boucle"><touche-clavier id="vt--suppr-boucle" class="vt--suppr-boucle vt--hidden" title="Supprime la boucle courante"><i class="fa-solid fa-trash-can"></i></touche-clavier><div id="vt--bloc-modif-nom-boucle" class="vt--hidden"><touche-clavier id="vt--modif-nom-boucle" class="vt--modif-nom-boucle vt--hidden" title="Renomme la boucle courante"><i class="fa-solid fa-pencil-can"></i></touche-clavier><div id="vt--bloc-saisie-modif-nom-boucle" class="vt--bloc-saisie-nom-boucle vt--hidden"><input id="vt--saisie-modif-nom-boucle" type="text" size="20" value="" placeholder="Donner un nom à cette boucle"/><touche-clavier id="vt--valide-modif-nom-boucle" class="vt--valide-nom-boucle" title="Valide le nom de la boucle"><i class="fas fa-check"></i></touche-clavier></div></div></div></div></div><div style="display: flex; width: 100%; justify-content: space-between; align-items: center; "><div style="display: flex; width: 100%; margin-right: .05vw; gap: 10px; justify-content: flex-start; font-size: 1.5em;"><i id="vt--popup-lecteur-zoom-minus" class="fa-solid fa-magnifying-glass-minus" style="width: fit-content;"></i><i id="vt--popup-lecteur-zoom-plus" class="fa-solid fa-magnifying-glass-plus" style="width: fit-content;"></i></div><i id="vt--popup-lecteur-close" class="vt--desactiver-lecteur-entrainement fa-solid fa-reply" style="width: fit-content; cursor: pointer; font-size: 2em; color: white;"></i></div></div></div></div></div><div data-classe-bloc-entete="header-footer-group"><div data-fonction-get-id-utilisateur="getPseudoChoriste"></div></div></div>
+<!-- /wp:vt-music-training/bloc-section -->

@@ -269,11 +269,15 @@ console.log("Activation nouvelle , fichierStéreo ",fichierStereo,"prompter",lyr
 	}
 
 	const vtBlocPrompter = document.getElementById("vt--lyrics-prompter");
-	if (lyricsPrompter != '_') {
+	const textLyrics = vtConvertToPlain(lyricsPrompter);
+	if(textLyrics != "" && textLyrics != "_") {
 		// affichage du prompter
 		vtBlocPrompter.innerHTML = lyricsPrompter;
+		vtMontrerElement(vtBlocPrompter);
+	} else {
+		vtCacherElement(vtBlocPrompter);
 	}
-
+	
 	const mediaSource = cheminFichier + nomFichier;
 	console.log('MediaSource : ',mediaSource);
 	// insertion de la balise audio ou video
@@ -686,8 +690,8 @@ async function vtLanceLecture(trigger) {
 	const type = trigger.getAttribute("data-type");
 	const clavier = trigger.getAttribute("data-clavier");
 	const stereo = trigger.getAttribute("data-stereo");
-	const lyricsPrompter = trigger.getAttribute("data-lyrics-prompter");
-	console.log("***Chemin : " + chemin + " - " + nomfichier+ " - " + type);
+	const lyricsPrompter = trigger.getAttribute("data-prompter");
+	//console.log("***Chemin : " + chemin + " - " + nomfichier+ " - " + type, "lyrics prompter", lyricsPrompter, trigger);
 
 	const file = chemin + nomfichier;
 	const existe = await window.fileExists(file);
@@ -706,7 +710,7 @@ async function vtLanceLecture(trigger) {
 	if (typeof vtActiverLecture === 'function') {
 		vtActiverLecture(chemin, nomfichier, type, clavier, stereo, lyricsPrompter);
 		vtFinMorceau = vtGetMediaEnd(vtLecteur.player);
-		console.log('après activer lecteur, Fin de morceau : ',vtFinMorceau);
+		//console.log('après activer lecteur, Fin de morceau : ',vtFinMorceau);
 	} else {
 		console.error('La fonction vtActiverLecture n’est pas définie.');
 	}

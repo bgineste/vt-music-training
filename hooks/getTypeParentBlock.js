@@ -14,6 +14,6 @@ export default function getTypeParentBlock(clientId) {
         (select) => select('core/block-editor').getBlocks(parentClientId),
         [parentClientId]
     );
-	console.log("@@@Parents ",siblingBlocks) 
+	//console.log("@@@Parents ",siblingBlocks) 
 	return siblingBlocks[0].name
 }

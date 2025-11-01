@@ -1,4 +1,4 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 //import useHasSiblingBlock from '../../hooks/useHasSiblingBlock';
 import { __ } from '@wordpress/i18n';
 
@@ -17,11 +17,17 @@ export default function Edit(props) {
     const blockProps = useBlockProps();
     const { context, attributes, setAttributes, clientId } = props;
     const { "bloc-fichiers-de-travail/cheminFichiers": cheminFichiers } = context;
-    const { labelFichierTutti, cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo } = attributes;
+    const { labelFichierTutti, cheminFichierTutti, nomFichierTutti, typeFichierTutti, affichageClavier, fichierStereo, lyricsPrompter } = attributes;
 
-	console.log("appel parent attribute",clientId );
-	const ancestorPrompter = useClosestParentAttribute(clientId, 'lyricsPrompter');
-	console.log("TUTTI : PROMPTER",ancestorPrompter);
+	//console.log("appel parent attribute",nomFichierTutti,clientId );
+	const prompterModule = useClosestParentAttribute(clientId, 'lyricsPrompter');
+	//console.log(nomFichierTutti,"TUTTI : PROMPTER",ancestorPrompter);
+	// Si lyricsPrompter a encore sa valeur par défaut	
+	if (lyricsPrompter == "" && prompterModule != "") {
+		//console.log("Init par prompterModule");
+        setAttributes({ lyricsPrompter: prompterModule });
+    }
+
 
 	const [modifiable, setModifiable] = useState(false);
 	const [isHelpOpen, setIsHelpOpen] = useState(false);
@@ -80,6 +86,17 @@ const handleFileChange = async (e) => {
                         value={labelFichierTutti}
                         onChange={(val) => setAttributes({ labelFichierTutti: val })}
                     />
+
+                    <label className="css-2o4jwd ej5x27r2 css-qy3gpb">Prompteur pour le fichier tutti</label>
+                    <RichText
+                        tagName="div"
+                        className="vt--lyrics-prompter components-text-control__input"
+                        value={lyricsPrompter}
+                        onChange={(val) => setAttributes({ lyricsPrompter: val })}
+                        placeholder="Saisissez le prompteur... ou un _ (underscore) pour 'pas de prompteur'"
+                        allowedFormats={['core/bold', 'core/italic', 'core/link', 'core/underline', 'core/text-color']}
+                    />
+
                     <TextControl
                         label="Chemin du fichier 'tutti'"
                         value={cheminFichierTutti}

@@ -22,41 +22,8 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
+//import deprecated from './deprecated';
 
-/*
-// Définitions spécifiques au bloc enfant
-const ALLOWED_PARENT_BLOCKS = [ 'vt-music-training/bloc-oeuvre' ];
-const TARGET_BLOCK = 'vt-music-training/bloc-module';
-
-const restrictInnerBlocks = (allowedBlocks, blockEditorSettings, editorContext) => {
-    const { getBlockHierarchyRootClientId, getBlock } = select('core/block-editor');
-    const { clientId } = editorContext;
-
-    const rootClientId = getBlockHierarchyRootClientId(clientId);
-console.log("rootClientId " + cliendID )
-    if (!rootClientId) {
-        return allowedBlocks;
-    }
-
-    const parentBlock = getBlock(rootClientId);
-console.log("parent " + parentBlock )
-
-    if (parentBlock && !ALLOWED_PARENT_BLOCKS.includes(parentBlock.name)) {
-        if (allowedBlocks === true) {
-            return [ TARGET_BLOCK ];
-        }
-        return allowedBlocks.filter(blockName => blockName !== TARGET_BLOCK);
-    }
-
-    return allowedBlocks;
-};
-
-addFilter(
-    'editor.BlockEdit.allowedBlocks',
-    'vt-music-training/restrict-inner-blocks',
-    restrictInnerBlocks
-);
-*/
 
 
 /**
@@ -74,6 +41,7 @@ registerBlockType( metadata.name, {
 	 * @see ./save.js
 	 */
 	save,
+//    deprecated,
 
 
 } );

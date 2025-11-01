@@ -23,7 +23,6 @@ export default function Edit(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [existIndexOeuvre]);
     
-	//console.log("existIndexOeuvre",existIndexOeuvre)
     // Initialisation du chemin si absent
     useEffect(() => {
         if (!cheminFichiersModule && cheminFichiersOeuvre) {
@@ -56,36 +55,30 @@ export default function Edit(props) {
                         value={cheminFichiersModule}
                         onChange={(val) => setAttributes({ cheminFichiersModule: val })}
                     />
-                    <h5>Prompteur pour le lecteur</h5>
-                    {console.log("Avant RichText")}
+                    <label className="css-2o4jwd ej5x27r2 css-qy3gpb">Prompteur pour le morceau</label>
                     <RichText
                         tagName="div"
-                        className="vt--lyrics-prompter"
+                        className="vt--lyrics-prompter components-text-control__input"
                         value={lyricsPrompter}
                         onChange={(val) => setAttributes({ lyricsPrompter: val })}
-                        placeholder="Saisissez le prompter..."
+                        placeholder="Saisissez le prompteur... ou un _ (underscore) pour 'pas de prompteur'"
                         allowedFormats={['core/bold', 'core/italic', 'core/link', 'core/underline', 'core/text-color']}
                     />
-                    {console.log("Avant InnerBlocks")}
                     <p>Insérer ici les blocs qui composent le module : paroles, vidéos, audios, etc.</p>
                     <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
                         /*template={TEMPLATE_PRONONCIATIONS}*/
                         placeholder="Ajoutez vos blocs ici"
                     />
-                    {console.log("Après InnerBlocks")}
                 </div>
             ) : (
                 <div>
-                    {console.log("Avant h4")}
                     <h4>{titreModule}</h4>
-                    {console.log("Après h4")}
                      <InnerBlocks
                         allowedBlocks= { ALLOWED_BLOCKS }
                         /*template={TEMPLATE_PRONONCIATIONS}*/
                         placeholder="Ajoutez vos blocs ici"
                     /> 
-                    {console.log("Après innerBlocks 2")}
                 </div>
             )}
         </div>

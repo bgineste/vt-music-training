@@ -57,6 +57,14 @@ function vtmusicNormalizePath(path) {
 	return (path.endsWith('/')) ? path : path + '/'
 }
 
+function vtConvertToPlain(html){
+  // création d'un élément temporaire
+  let tempDivElement = document.createElement("div");
+  // initialisation de l'élément
+  tempDivElement.innerHTML = html;
+  return tempDivElement.textContent
+}
+
 window.fileExists = async function (url) {
   try {
     const response = await fetch(url, { method: 'HEAD' });

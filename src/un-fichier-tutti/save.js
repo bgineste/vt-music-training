@@ -18,17 +18,19 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 export default function save(props) {
 	const blockProps = useBlockProps.save()
-    const {attributes: { cheminFichierTutti, nomFichierTutti, typeFichierTutti,labelFichierTutti,affichageClavier, fichierStereo }} = props
+    const {attributes: { cheminFichierTutti, nomFichierTutti, typeFichierTutti,labelFichierTutti,affichageClavier, fichierStereo,lyricsPrompter }} = props
 
 	return (
-		<div {...blockProps } className="vt--un-fichier-tutti"
+		<div {...blockProps }
+				className="vt--un-fichier-tutti"
 				data-chemin={cheminFichierTutti}
 				data-nomfichier={nomFichierTutti}
 				data-type={typeFichierTutti}
 				data-clavier={affichageClavier}
 				data-stereo={fichierStereo}
+                data-prompter={lyricsPrompter}
 			>
-				<i class="fa-solid fa-square-caret-right"></i>
+				<i className="fa-solid fa-square-caret-right"></i>
 				<div className="vt--label">{ labelFichierTutti }</div>
 			
 		</div>

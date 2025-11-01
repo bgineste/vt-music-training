@@ -17,8 +17,8 @@ export default function useHasSiblingBlock(clientId, blockName) {
         [parentClientId]
     );
 
-    console.log('Parent Client ID:', parentClientId);
-    console.log('Sibling Blocks:', siblingBlocks);
+    //console.log('Parent Client ID:', parentClientId);
+    //console.log('Sibling Blocks:', siblingBlocks);
 
     const hasSibling = siblingBlocks.some((block) => block.name === blockName);
     console.log(`Sibling "${blockName}" exists:`, hasSibling);

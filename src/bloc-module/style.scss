@@ -70,14 +70,17 @@
 	}
 
 	.vt--lyrics-prompter {
-		background-color: var(--bg-masque-clair);
+		background-color: white; /*var
+		(--bg-masque-clair);*/
+		color: black;
 		margin: 2% auto;
 		width: 100% !important;
 		max-width: 600px !important;
+		height: fit-content !important;
 	}
-	.vt--lyrics-prompter .block-editor-rich-text__editable {
+	/*.vt--lyrics-prompter .block-editor-rich-text__editable {
 		background-color: white;
-	}
+	}*/
 
 	/* règles communes */
 	div.vt--lyrics-prompter {
