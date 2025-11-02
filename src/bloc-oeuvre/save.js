@@ -28,9 +28,9 @@ export default function save(props) {
 							<h2 className="vt--titre-oeuvre">{ titreOeuvre }</h2>
 							{ blocRetractable ? (
 							<>
-								<label className="vt--bouton__switch">
-									<input className="vt--bouton-oeuvre-esc" type="checkbox"/>
-									<span className="vt--bouton__slider vt--bouton__round"></span>
+								<label className="vt--bouton__switch vt--bouton__switch-oeuvre">
+									<input type="checkbox" role="switch"/>
+									<span className="vt--bouton__slider"></span>
 								</label>
 							</>
 							) : (<><p></p></>)}

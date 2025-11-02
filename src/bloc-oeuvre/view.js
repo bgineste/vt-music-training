@@ -4,7 +4,7 @@
 */
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".vt--bouton-oeuvre-esc").forEach(obj => {
+    document.querySelectorAll(".vt--bouton__switch-oeuvre").forEach(obj => {
         obj.addEventListener("click", () => {
             //console.log("Fonction x exécutée !");
             bascule_affichage_oeuvre(obj);
@@ -37,7 +37,7 @@ function bascule_affichage_oeuvre(boutonEsc) {
 		? bloc_encadrant_oeuvre_padding_bottom
 		: defaultPaddingBottom;
 
-	if (boutonEsc.checked) {
+	if (boutonEsc.firstElementChild.checked) {
 		blocEsc.style.display = "block";
 		blocEncadrant.style.paddingTop = expandedPaddingTop;
 		blocEncadrant.style.paddingBottom = expandedPaddingBottom;

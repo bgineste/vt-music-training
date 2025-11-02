@@ -24,9 +24,9 @@ export default function save(props) {
 		<div {...blockProps } className="vt--un-module">
 				<div className="vt--titre-et-bouton-esc">
 				<h4 className="vt--titre-de-morceau">{ titreModule }</h4>
-				<label className="vt--bouton__switch">
-					<input className="vt--bouton-bloc-esc" type="checkbox"/>
-					<span className="vt--bouton__slider vt--bouton__round"></span>
+				<label className="vt--bouton__switch vt--bouton__switch-module">
+					<input  type="checkbox" role="switch"/>
+					<span className="vt--bouton__slider"></span>
 				</label>
 				</div>
 				<div className="vt--bloc-esc">

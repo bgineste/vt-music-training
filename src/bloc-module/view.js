@@ -1,13 +1,13 @@
 /** 
   Fonctions liées au bloc-module
-  V 1.0 
+  V 1.1
 */
 
 /** Traitement du bouton de rétractation du module
 */
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".vt--bouton-bloc-esc").forEach(bouton => {
+    document.querySelectorAll(".vt--bouton__switch-module").forEach(bouton => {
         bouton.addEventListener("click", () => {
             bascule_affichage_module(bouton);
         });
@@ -53,7 +53,7 @@ function bascule_affichage_module(boutonEsc) {
 		? bloc_encadrant_module_padding_bottom
 		: defaultPaddingBottom;
 
-	if (boutonEsc.checked) {
+	if (boutonEsc.firstElementChild.checked) {
 		blocEsc.style.display = "block";
 		blocEncadrant.style.paddingTop = expandedPaddingTop;
 		blocEncadrant.style.paddingBottom = expandedPaddingBottom;

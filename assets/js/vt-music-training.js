@@ -41,13 +41,15 @@ Mise en conformité des modules avec leurs cookies qui indiquent si le module es
 */
 
 
-function vtAffichageMasquageModules()
+function vtAffichageMasquageOeuvresEtModules()
 {
 	// repérer tous les boutons de masquage des oeuvres
-	var boutons_esc_oeuvre = document.getElementsByClassName('vt--bouton-oeuvre-esc');
+	//var boutons_esc_oeuvre = document.getElementsByClassName('vt--bouton-oeuvre-esc');
+	var boutons_esc_oeuvre = document.getElementsByClassName('vt--bouton__switch-oeuvre');
 	if (boutons_esc_oeuvre != null) {
 		for (var i= 0; i < boutons_esc_oeuvre.length; i++) {
 			var bloc_oeuvre = boutons_esc_oeuvre[i].closest('.vt--une-oeuvre');
+			//var toggle_oeuvre = boutons_esc_oeuvre[i].firstElementChild
 			var bloc_encadrant_oeuvre = bloc_oeuvre;
 			if (i == 0) { // on sauvegarde les valeurs de padding du bloc encadrant l'oeuvre, car on les fait varier pour des raisons esthétiques en fonction de l'état affiché/masqué du bloc masquable VERIFIER SI C'EST VRAI POUR L'OEUVRE (C'est vrai pour le module)
 				var style_bloc_encadrant_oeuvre = window.getComputedStyle(bloc_encadrant_oeuvre, null);
@@ -64,19 +66,19 @@ function vtAffichageMasquageModules()
 			if (etat_initial_oeuvre=="Affiché")
 			{
 				bloc_oeuvre_esc.style.display="block";
-				boutons_esc_oeuvre[i].checked = true;
+				boutons_esc_oeuvre[i].firstElementChild.checked = true;
 			}
 			else
 			{
 				bloc_oeuvre_esc.style.display="none";
-				boutons_esc_oeuvre[i].checked = false;
+				boutons_esc_oeuvre[i].firstElementChild.checked = false;
 				bloc_encadrant_oeuvre.style.paddingTop = "5px";
 				bloc_encadrant_oeuvre.style.paddingBottom = "5px";
 			}			
 		}
 	}
 	// repérer tous les boutons de masquage des modules
-	var boutons_esc_module = document.getElementsByClassName('vt--bouton-bloc-esc');
+	var boutons_esc_module = document.getElementsByClassName('vt--bouton__switch-module');
 	if (boutons_esc_module != null) {
 		for (var i= 0; i < boutons_esc_module.length; i++) {
 			var bloc_entrainement = boutons_esc_module[i].closest('.vt--un-module');
@@ -96,12 +98,12 @@ function vtAffichageMasquageModules()
 			if (etat_initial_module=="Affiché")
 			{
 				bloc_module_esc.style.display="block";
-				boutons_esc_module[i].checked = true;
+				boutons_esc_module[i].firstElementChild.checked = true;
 			}
 			else
 			{
 				bloc_module_esc.style.display="none";
-				boutons_esc_module[i].checked = false;
+				boutons_esc_module[i].firstElementChild.checked = false;
 				bloc_encadrant_module.style.paddingTop = "5px";
 				bloc_encadrant_module.style.paddingBottom = "5px";
 			}			
@@ -156,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	/*
 	3 - Retour des modules à leur état lors de la dernière session / grâce à des cookies
 	*/
-	vtAffichageMasquageModules();
+	vtAffichageMasquageOeuvresEtModules();
 
 //	vtAffichageMasquageConsignes();
 });

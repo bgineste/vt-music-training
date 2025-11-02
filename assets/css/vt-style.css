@@ -162,11 +162,11 @@ Règles générales
 /*---------------------------------------------------------------------------------------------------
 Bouton switch
 -----------------------------------------------------------------------------------------------------*/
-	.vt--bouton__switch {
+/*	.vt--bouton__switch {
 	  position: relative;
 	  display: inline-block;
 	  width: 60px !important;
-	  min-width: 60px !important; /*nécessaire pour les petits écrans, quand ça wrappe*/
+	  min-width: 60px !important; 
 	  height: 34px !important;
 	  margin: 0 0 0 2% !important;
 	}
@@ -184,7 +184,7 @@ Bouton switch
 	  left: 0;
 	  right: 0;
 	  bottom: 0;
-	  background-color: #afafaf; /*#ccc;*/
+	  background-color: #afafaf; 
 	  -webkit-transition: .4s;
 	  transition: .4s;
 	}
@@ -202,13 +202,13 @@ Bouton switch
 	}
 
 	.vt--bouton__switch input:checked + .vt--bouton__slider {
-	  background-color: #2196F3; /* valeur par défaut */
+	  background-color: #2196F3; 
 	  background-color: var(--vtmt--switch-checked);
 	}
 
 	.vt--bouton__switch input:focus + .vt--bouton__slider {
-	  box-shadow: 0 0 1px #2196F3; /* valeur par défaut */
-	  box-shadow: 0 0 1px var(--vtmt--switch-focus); /*#2196F3;*/
+	  box-shadow: 0 0 1px #2196F3; 
+	  box-shadow: 0 0 1px var(--vtmt--switch-focus); 
 	}
 
 	.vt--bouton__switch input:checked + .vt--bouton__slider:before {
@@ -217,7 +217,7 @@ Bouton switch
 	  transform: translateX(26px);
 	}
 
-	/* Rounded sliders */
+	
 	.vt--bouton__slider.vt--bouton__round {
 	  border-radius: 34px;
 	}
@@ -225,7 +225,118 @@ Bouton switch
 	.vt--bouton__slider.vt--bouton__round:before {
 	  border-radius: 50%;
 	}
+*/
 
+/* ---------------------------------------------------------------------------------------------------
+   Bouton switch (responsive & color-flexible)
+--------------------------------------------------------------------------------------------------- */
+
+:root {
+  /* Dimensions adaptatives (entre mobile et desktop) */
+  --vtmt--switch-height: clamp(20px, 3vw, 34px);
+  --vtmt--switch-width: calc(var(--vtmt--switch-height) * 1.8);
+  --vtmt--switch-thumb-size: calc(var(--vtmt--switch-height) * 0.76);
+
+  /* Couleurs par défaut (OFF / ON / focus) */
+  --vtmt--switch-off: #afafaf;
+  --vtmt--switch-on: var(--vtmt--switch-checked);
+  --vtmt--switch-focus: var(--vtmt--switch-checked);
+}
+
+/* Conteneur principal */
+.vt--bouton__switch {
+  position: relative;
+  display: inline-block;
+  width: var(--vtmt--switch-width);
+  height: var(--vtmt--switch-height);
+  margin-left: 2%;
+  vertical-align: middle;
+}
+
+/* Cacher le vrai input */
+.vt--bouton__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Le slider (fond ovale) */
+.vt--bouton__slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--vtmt--switch-off);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border-radius: var(--vtmt--switch-height);
+}
+
+/* Le loquet blanc */
+.vt--bouton__slider::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--vtmt--switch-height) * 0.12);
+  bottom: calc(var(--vtmt--switch-height) * 0.12);
+  width: var(--vtmt--switch-thumb-size);
+  height: var(--vtmt--switch-thumb-size);
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* État activé */
+.vt--bouton__switch input:checked + .vt--bouton__slider {
+  background-color: var(--vtmt--switch-on);
+}
+
+/* Focus (accessibilité clavier) */
+.vt--bouton__switch input:focus + .vt--bouton__slider {
+  box-shadow: 0 0 3px var(--vtmt--switch-focus);
+}
+
+/* Déplacement du loquet */
+.vt--bouton__switch input:checked + .vt--bouton__slider::before {
+  transform: translateX(calc(var(--vtmt--switch-width) - var(--vtmt--switch-height)));
+}
+
+/* ---------------------------------------------------------------------------------------------------
+   Variantes de couleur (optionnelles)
+--------------------------------------------------------------------------------------------------- */
+
+/* switch oeuvre (actuellemnt : valeurs par défaut) */
+.vt--bouton__switch.vt--bouton__switch-oeuvre {
+  --vtmt--switch-on: var(--vtmt--switch-checked);
+  --vtmt--switch-focus: var(--vtmt--switch-checked);
+}
+
+/* switch module */
+.vt--bouton__switch.vt--bouton__switch-module {
+  --vtmt--switch-on: var(--vtmt--bg-symbole-bouton-index);
+  --vtmt--switch-focus: var(--vtmt--bg-symbole-bouton-index);
+}
+
+/* Danger (rouge) */
+.vt--bouton__switch.danger {
+  --vtmt--switch-on: #ef4444;
+  --vtmt--switch-focus: #dc2626;
+}
+
+/* Avertissement (jaune) */
+.vt--bouton__switch.warning {
+  --vtmt--switch-on: #facc15;
+  --vtmt--switch-focus: #ca8a04;
+}
+
+/* Info (bleu) */
+.vt--bouton__switch.info {
+  --vtmt--switch-on: #3b82f6;
+  --vtmt--switch-focus: #2563eb;
+}
+
+/* Désactivé */
+.vt--bouton__switch.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
 
 
 .swal2-popup { font-family: 'InterVTMT', sans-serif; }

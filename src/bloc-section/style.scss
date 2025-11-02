@@ -39,11 +39,18 @@
 	box-sizing: border-box;
 	overflow: hidden;
 	border-radius: 4px;
-	background-color: var(--vtmt--bg-section);
-	color: #333;
+	background-color: #54395b;
+	//color: #fbfbfb;
 	word-break: break-word;
 	word-wrap: break-word;
 
+}
+
+.vt--une-section * {
+	color: #111;
+}
+.vt--une-section > * {
+	color: #eee;
 }
 
 .vt--une-section{
