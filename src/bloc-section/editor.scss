@@ -4,12 +4,28 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+/*
+ Le paramétrage des styles de l'éditeur 
+  est réalisé par le plugin wp-editor-layout
+  DANS CE FICHIER, ON POURRAIT METTRE, SI NECESSAIRE, DES SURCHARGES DU PARMETRAGE DU PLUGIN
+*/
+
+/*
+
 .wp-block-create-block-bloc-prononciation {
 	border: 1px dotted #f00;
 }
 .vt--une-section {
+
+	color:black;
+
+	> * {
+		color: white;
+	}
+
 	h4, h5 {
 		margin-top: 1% !important;
 		margin-bottom: 1% !important;
 	}
 }
+*/

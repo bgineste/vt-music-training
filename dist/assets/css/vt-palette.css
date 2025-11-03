@@ -36,10 +36,10 @@
 
 
 /*utilisés*/
---vtmt--bg-section-wrap: #41403c;
---vtmt--bg-section: #41403c; /* Couleur de fond du site */ 
+--vtmt--bg-section-wrap: var(--bg-body); /*#41403c;*/
+--vtmt--bg-section: var(--bg-body); /*#41403c;*/ /* Couleur de fond du site */ 
 --vtmt--bg-section-editor: red;
---vtmt--bg-oeuvre: #20060b;  /* Couleur de fond d'une oeuvre */ 
+--vtmt--bg-oeuvre: var(--bg-body); /*#20060b;*/  /* Couleur de fond d'une oeuvre */ 
 --vtmt--co-oeuvre: #3e3e3e; /* Couleur de caractères pour oeuvre */ 
 --vtmt--bg-titre-oeuvre: #edefee;
 --vtmt--co-titre-oeuvre: #3e3e3e;
@@ -58,8 +58,8 @@
 
 --vtmt--bg-flash: #73170b;  /* Couleur de fond éclatante */
 
---vtmt--switch-checked: #41403c; /* Boutons swith */
---vtmt--switch-focus: #41403c; /* Boutons swith */
+--vtmt--switch-checked: #41403c; /* Boutons switch */
+--vtmt--switch-focus: #41403c; /* Boutons switch */
 
 --vtmt--bg-symbole-bouton-index: #570016; 
 --vtmt--co-symbole-bouton-index: #fffff0;  
