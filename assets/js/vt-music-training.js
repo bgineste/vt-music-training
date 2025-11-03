@@ -45,7 +45,7 @@ function vtAffichageMasquageOeuvresEtModules()
 {
 	// repérer tous les boutons de masquage des oeuvres
 	//var boutons_esc_oeuvre = document.getElementsByClassName('vt--bouton-oeuvre-esc');
-	var boutons_esc_oeuvre = document.getElementsByClassName('vt--bouton__switch-oeuvre');
+	var boutons_esc_oeuvre = document.getElementsByClassName('vtmt--bouton__switch-oeuvre');
 	if (boutons_esc_oeuvre != null) {
 		for (var i= 0; i < boutons_esc_oeuvre.length; i++) {
 			var bloc_oeuvre = boutons_esc_oeuvre[i].closest('.vt--une-oeuvre');
@@ -78,7 +78,7 @@ function vtAffichageMasquageOeuvresEtModules()
 		}
 	}
 	// repérer tous les boutons de masquage des modules
-	var boutons_esc_module = document.getElementsByClassName('vt--bouton__switch-module');
+	var boutons_esc_module = document.getElementsByClassName('vtmt--bouton__switch-module');
 	if (boutons_esc_module != null) {
 		for (var i= 0; i < boutons_esc_module.length; i++) {
 			var bloc_entrainement = boutons_esc_module[i].closest('.vt--un-module');

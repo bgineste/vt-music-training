@@ -7,7 +7,7 @@
 */
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".vt--bouton__switch-module").forEach(bouton => {
+    document.querySelectorAll(".vtmt--bouton__switch-module").forEach(bouton => {
         bouton.addEventListener("click", () => {
             bascule_affichage_module(bouton);
         });

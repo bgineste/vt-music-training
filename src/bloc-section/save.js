@@ -31,7 +31,7 @@ export default function save(props) {
 	}
 	*/
 	//console.log("bloc-section save:44");
-	const classesSection = (sectionAffichable) ? "vt--une-section" : "vt--une-section vt--hidden";
+	const classesSection = (sectionAffichable) ? "vt--une-section" : "vt--une-section vtmt--hidden";
 
 	return (
 	<>
@@ -41,7 +41,7 @@ export default function save(props) {
 					<h2 className="wp-block-heading">{ titreSection }</h2>
 				) }
 				<InnerBlocks.Content />
-				<div id="vt--lecteur-entrainement" className="vt--masque-modal vt--hidden">
+				<div id="vt--lecteur-entrainement" className="vt--masque-modal vtmt--hidden">
 					<div className="vt--masque-modal-inner">
 						<div id="vt--popup-lecteur-entrainement" className="vt--popup-lecteur-entrainement">
 							<div id="vt--lyrics-prompter" className="vt--lyrics-prompter"></div>
@@ -57,7 +57,7 @@ export default function save(props) {
 									
 									<touche-clavier id="vt--PlayPause" className="vt--PlayPause"><i className="fas fa-play"></i></touche-clavier>
 								</div>
-								<div id="vt--balance" className="vt--suppl vt--hidden">
+								<div id="vt--balance" className="vt--suppl vtmt--hidden">
 									<div className="vt--balance">
 										<div className="vt--balance-une-voie">
 											<input type="range" className="vt--balance-curseur" id="vt--balanceG" min="0" max="10" value="10" step="1"  />
@@ -93,9 +93,9 @@ export default function save(props) {
 										</div>
 									</compteur-clavier>
 									<touche-clavier id="vt--DefFinBoucle" className="vt--DefFinBoucle" title="Marque la fin de boucle"><i className="fas fa-step-backward"></i></touche-clavier>
-									<select id="vt--choix-boucle" className="vt--choix-boucle vt--hidden" title="choix d'une boucle"></select>
+									<select id="vt--choix-boucle" className="vt--choix-boucle vtmt--hidden" title="choix d'une boucle"></select>
 								</div>
-								<div id="vt--commandes-boucles" className="vt--commandes-boucles vt--hidden">
+								<div id="vt--commandes-boucles" className="vt--commandes-boucles vtmt--hidden">
 									<div className="vt--nom-boucle-courante">
 										<div id="vt--nom-boucle-courante"></div>
 									</div>
@@ -103,31 +103,31 @@ export default function save(props) {
 										<div id="vt--compteurs-boucle-courante"></div>
 									</div>
 									<touche-bouton id="vt--onoff-boucle" title="Active/désactive la boucle"><i className="fas fa-sync-alt"></i></touche-bouton>
-									<div id="vt--commandes-boucles-nommees" className="vt--commandes-boucles-nommees vt--hidden">
+									<div id="vt--commandes-boucles-nommees" className="vt--commandes-boucles-nommees vtmt--hidden">
 										<touche-bouton id="vt--modif-bornes-boucle" className="vt--lance-modif-bornes-boucle" style="font-size: 1.5rem;" title="Enregistrer l'intervalle modifié" ><i className="fas fa-circle" style="color: green;"></i></touche-bouton>									
 										<touche-bouton id="vt--modif-nom-boucle" className="vt--lance-modif-nom-boucle" style="font-size: 1.5rem;" title="Choisir un nouveau nom de boucle" ><i className="fa-solid fa-pencil-can" style="color: black;"></i></touche-bouton>									
-										<div id="vt--bloc-modif-nom-boucle" className="vt--bloc-modif-nom-boucle vt--hidden">
+										<div id="vt--bloc-modif-nom-boucle" className="vt--bloc-modif-nom-boucle vtmt--hidden">
 											<input id="vt--resaisie-nom-boucle" type="text" size="20" value="" placeholder="Nouveau nom" />
 											<touche-clavier id="vt--valide-nom-boucle-modifie" className="vt--valide-nom-boucle" title="Valide le nouveau nom de la boucle" ><i className="fas fa-check"></i></touche-clavier>
 										</div>
-										<touche-bouton id="vt--suppr-boucle" className="vt--suppr-boucle vt--hidden" title="Supprime la boucle courante" ><i className="fa-solid fa-trash-can"></i></touche-bouton>
+										<touche-bouton id="vt--suppr-boucle" className="vt--suppr-boucle vtmt--hidden" title="Supprime la boucle courante" ><i className="fa-solid fa-trash-can"></i></touche-bouton>
 									</div>
-									<div id="vt--commandes-boucles-anonymes" className="vt--commandes-boucles-nommees vt--hidden">
+									<div id="vt--commandes-boucles-anonymes" className="vt--commandes-boucles-nommees vtmt--hidden">
 										<touche-bouton id="vt--enreg-boucle" className="vt--lance-enreg-boucle" style="font-size: 1.5rem;" title="Enregistrer la boucle" ><i className="fas fa-circle" style="color: red;"></i></touche-bouton>									
-										<div id="vt--bloc-saisie-nom-boucle" className="vt--bloc-saisie-nom-boucle vt--hidden">
+										<div id="vt--bloc-saisie-nom-boucle" className="vt--bloc-saisie-nom-boucle vtmt--hidden">
 											<input id="vt--saisie-nom-boucle" type="text" size="20" value="" placeholder="Donner un nom à cette boucle" />
 											<touche-clavier id="vt--valide-nom-boucle" className="vt--valide-nom-boucle" title="Valide le nom de la boucle" ><i className="fas fa-check"></i></touche-clavier>
 										</div>
 									</div>
 								</div>
-									<div id="vt--bloc-enreg-modif-suppr-boucle" className="vt--hidden">
-										<div id="vt--bloc-enreg-boucle" className="vt--hidden">
+									<div id="vt--bloc-enreg-modif-suppr-boucle" className="vtmt--hidden">
+										<div id="vt--bloc-enreg-boucle" className="vtmt--hidden">
 										</div>
 										<div id="vt--bloc-modif-suppr-boucle" className="vt--modif-suppr-boucle">
-											<touche-clavier id="vt--suppr-boucle" className="vt--suppr-boucle vt--hidden" title="Supprime la boucle courante" ><i className="fa-solid fa-trash-can"></i></touche-clavier>
-											<div id="vt--bloc-modif-nom-boucle" className="vt--hidden">
-												<touche-clavier id="vt--modif-nom-boucle" className="vt--modif-nom-boucle vt--hidden" title="Renomme la boucle courante"><i className="fa-solid fa-pencil-can"></i></touche-clavier>
-												<div id="vt--bloc-saisie-modif-nom-boucle" className="vt--bloc-saisie-nom-boucle vt--hidden">
+											<touche-clavier id="vt--suppr-boucle" className="vt--suppr-boucle vtmt--hidden" title="Supprime la boucle courante" ><i className="fa-solid fa-trash-can"></i></touche-clavier>
+											<div id="vt--bloc-modif-nom-boucle" className="vtmt--hidden">
+												<touche-clavier id="vt--modif-nom-boucle" className="vt--modif-nom-boucle vtmt--hidden" title="Renomme la boucle courante"><i className="fa-solid fa-pencil-can"></i></touche-clavier>
+												<div id="vt--bloc-saisie-modif-nom-boucle" className="vt--bloc-saisie-nom-boucle vtmt--hidden">
 													<input id="vt--saisie-modif-nom-boucle" type="text" size="20" value="" placeholder="Donner un nom à cette boucle" />
 													<touche-clavier id="vt--valide-modif-nom-boucle" className="vt--valide-nom-boucle" title="Valide le nom de la boucle" ><i className="fas fa-check"></i></touche-clavier>
 												</div>

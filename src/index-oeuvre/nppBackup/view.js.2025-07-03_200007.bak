@@ -18,7 +18,7 @@ function innerHTMLindexOeuvre(element) {
 
 	while (sibling) {
 		let el_titres = sibling.getElementsByClassName('vt--titre-de-morceau');
-		if (el_titres && sibling.id && !sibling.className.includes('vt--display-none')) {
+		if (el_titres && sibling.id && !sibling.className.includes('vtmt--hidden')) {
 			HTMLindex = HTMLindex +'<div class="vt--lien-vers-ancre" onclick="var o=this.closest(\'.vt--une-oeuvre\'); var oCible=document.getElementById(\'' + sibling.id + '\'); var boutonEsc = oCible.getElementsByClassName(\'vt--bouton-bloc-esc\')[0]; boutonEsc.checked=false; boutonEsc.click(); vtmusicScrollToAncor(\'' + sibling.id + '\', ' + vtHauteurReservee + '); this.closest(\'.vt--popup__support\').style.display=\'none\';"> ' + vtmusicTruncate(el_titres[0].innerText,25) + ' </div>'
 		}
 		sibling = sibling.nextElementSibling

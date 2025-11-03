@@ -26,9 +26,9 @@ const deprecated = [
             <div {...blockProps } className="vt--un-module">
                     <div className="vt--titre-et-bouton-esc">
                     <h4 className="vt--titre-de-morceau">{ titreModule }</h4>
-                    <label className="vt--bouton__switch">
+                    <label className="vtmt--bouton__switch">
                         <input className="vt--bouton-bloc-esc" type="checkbox"/>
-                        <span className="vt--bouton__slider vt--bouton__round"></span>
+                        <span className="vtmt--bouton__slider vt--bouton__round"></span>
                     </label>
                     </div>
                     <div className="vt--bloc-esc">

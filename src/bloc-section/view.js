@@ -87,11 +87,11 @@ customElements.define('compteur-clavier', CompteurClavier);
 */
 
 function vtCacherElement(el) {
-  el.classList.add("vt--hidden");
+  el.classList.add("vtmt--hidden");
 }
 
 function vtMontrerElement(el) {
-  el.classList.remove("vt--hidden");
+  el.classList.remove("vtmt--hidden");
 }
 
 function vtEnfoncerBouton(btn) {

@@ -4,7 +4,7 @@
 */
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".vt--bouton__switch-oeuvre").forEach(obj => {
+    document.querySelectorAll(".vtmt--bouton__switch-oeuvre").forEach(obj => {
         obj.addEventListener("click", () => {
             //console.log("Fonction x exécutée !");
             bascule_affichage_oeuvre(obj);
